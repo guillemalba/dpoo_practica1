@@ -15,11 +15,13 @@ public class Logica {
     }
 
     public void fesParelles() {
-        int top1 = 0;
-        int top2 = -1;
+
+        float puntsTop[] = new float[3];
+        int top[] = new int[3];
         int numerosFase1[] = RandomizeArray(0, jsonFileCompeticio.getRappers().size()-1);
         int guanyadorBatallaFase[] = new int[numerosFase1.length/2];
         Random r = new Random();
+
         for (int i = 0; i < numerosFase1.length; i++) {
             float random1 = MIN_PUNTUACIO + r.nextFloat() * (MAX_PUNTUACIO - MIN_PUNTUACIO);
             jsonFileCompeticio.getRappers().get(numerosFase1[i]).setPuntuacio(random1);
@@ -27,10 +29,16 @@ public class Logica {
         jugadorGuanyadorBatallaFase1(numerosFase1, guanyadorBatallaFase);
 
         if (jsonFileCompeticio.getCompetition().getPhases().size() == 2) {
-            // agafem el top1 i top2 de la fase1
-            getTop1Top2(top1, top2, guanyadorBatallaFase);
+            // agafem el top1 i top2 per la batalla final
+            getTop1Top2(top, guanyadorBatallaFase);
 
             // top1 vs top2
+            for (int i = 0; i < top.length; i++) {
+                float random1 = MIN_PUNTUACIO + r.nextFloat() * (MAX_PUNTUACIO - MIN_PUNTUACIO);
+                jsonFileCompeticio.getRappers().get(top[i]).setPuntuacio(random1);
+            }
+            getTop1Top2(top, guanyadorBatallaFase);
+
 
         } else {
             if (jsonFileCompeticio.getCompetition().getPhases().size() == 3) {
@@ -41,32 +49,45 @@ public class Logica {
                     jsonFileCompeticio.getRappers().get(guanyadorBatallaFase[i]).setPuntuacio(random1);
                 }
 
-                jugadorGuanyadorBatallaFase1(guanyadorBatallaFase, guanyadorBatallaFase2);
+                // agafem el top1 i top2 per la batalla final
+                getTop1Top2(top, guanyadorBatallaFase);
 
-                // agafem el top1 i top2 de la fase1
-                getTop1Top2(top1, top2, guanyadorBatallaFase);
-                System.out.println("top1: " + top1);
+                // top1 vs top2
+                for (int i = 0; i < top.length; i++) {
+                    float random1 = MIN_PUNTUACIO + r.nextFloat() * (MAX_PUNTUACIO - MIN_PUNTUACIO);
+                    jsonFileCompeticio.getRappers().get(top[i]).setPuntuacio(random1);
+                }
+                getTop1Top2(top, guanyadorBatallaFase);
             }
         }
-    }
-
-    public void guanyadorFinal (int top1, int top) {
-
+        /*
+        System.out.println("KO1");
+        System.out.println("top1: " + top[1]);
+        System.out.println("top1 puntuacio: " + jsonFileCompeticio.getRappers().get(top[1]).getPuntuacio());
+        System.out.println("top2: " + top[2]);
+        System.out.println("top2 puntuacio: " + jsonFileCompeticio.getRappers().get(top[2]).getPuntuacio());
+         */
     }
 
     // agafem el top1 i top2
-    public void getTop1Top2(int top1, int top2, int guanyadorBatallaFase[]) {
+    public void getTop1Top2(int top[], int guanyadorBatallaFase[]) {
+        int top1 = 0;
+        int top2 = 0;
 
+        float puntuacioJugador;
         for (int i = 0; i < guanyadorBatallaFase.length; i++) {
-            if (top1 < guanyadorBatallaFase[i]) {
+            puntuacioJugador = jsonFileCompeticio.getRappers().get(guanyadorBatallaFase[i]).getPuntuacio();
+            if (jsonFileCompeticio.getRappers().get(top1).getPuntuacio() < puntuacioJugador) {
                 top2 = top1;
                 top1 = guanyadorBatallaFase[i];
             } else {
-                if (top2 < guanyadorBatallaFase[i]) {
+                if (jsonFileCompeticio.getRappers().get(top2).getPuntuacio() < puntuacioJugador) {
                     top2 = guanyadorBatallaFase[i];
                 }
             }
         }
+        top[1] = top1;
+        top[2] = top2;
     }
 
     public static int[] RandomizeArray(int a, int b){
