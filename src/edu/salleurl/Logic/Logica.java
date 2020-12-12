@@ -15,6 +15,8 @@ public class Logica {
     }
 
     public void fesParelles() {
+        int top1 = 0;
+        int top2 = -1;
         int numerosFase1[] = RandomizeArray(0, jsonFileCompeticio.getRappers().size()-1);
         int guanyadorBatallaFase[] = new int[numerosFase1.length/2];
         Random r = new Random();
@@ -23,7 +25,48 @@ public class Logica {
             jsonFileCompeticio.getRappers().get(numerosFase1[i]).setPuntuacio(random1);
         }
         jugadorGuanyadorBatallaFase1(numerosFase1, guanyadorBatallaFase);
-        //hgvjhbkjnlkmhgjbk
+
+        if (jsonFileCompeticio.getCompetition().getPhases().size() == 2) {
+            // agafem el top1 i top2 de la fase1
+            getTop1Top2(top1, top2, guanyadorBatallaFase);
+
+            // top1 vs top2
+
+        } else {
+            if (jsonFileCompeticio.getCompetition().getPhases().size() == 3) {
+                int guanyadorBatallaFase2[] = new int[2];
+
+                for (int i = 0; i < guanyadorBatallaFase.length; i++) {
+                    float random1 = MIN_PUNTUACIO + r.nextFloat() * (MAX_PUNTUACIO - MIN_PUNTUACIO);
+                    jsonFileCompeticio.getRappers().get(guanyadorBatallaFase[i]).setPuntuacio(random1);
+                }
+
+                jugadorGuanyadorBatallaFase1(guanyadorBatallaFase, guanyadorBatallaFase2);
+
+                // agafem el top1 i top2 de la fase1
+                getTop1Top2(top1, top2, guanyadorBatallaFase);
+                System.out.println("top1: " + top1);
+            }
+        }
+    }
+
+    public void guanyadorFinal (int top1, int top) {
+
+    }
+
+    // agafem el top1 i top2
+    public void getTop1Top2(int top1, int top2, int guanyadorBatallaFase[]) {
+
+        for (int i = 0; i < guanyadorBatallaFase.length; i++) {
+            if (top1 < guanyadorBatallaFase[i]) {
+                top2 = top1;
+                top1 = guanyadorBatallaFase[i];
+            } else {
+                if (top2 < guanyadorBatallaFase[i]) {
+                    top2 = guanyadorBatallaFase[i];
+                }
+            }
+        }
     }
 
     public static int[] RandomizeArray(int a, int b){
@@ -46,7 +89,7 @@ public class Logica {
 
     public void jugadorGuanyadorBatallaFase1 (int numerosFase1[], int guanyadorBatallaFase[]) {
         int k = 0;
-        for (int j = 0; j < numerosFase1.length; j= j+2) {
+        for (int j = 0; j < numerosFase1.length; j = j+2) {
             if (jsonFileCompeticio.getRappers().get(numerosFase1[j]).getPuntuacio() < jsonFileCompeticio.getRappers().get(numerosFase1[j+1]).getPuntuacio()) {
                 guanyadorBatallaFase[k] = numerosFase1[j+1];
             }
