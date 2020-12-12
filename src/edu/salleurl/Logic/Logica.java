@@ -9,20 +9,20 @@ public class Logica {
     private static final float MAX_PUNTUACIO = 50;
 
     private JsonFileCompeticio jsonFileCompeticio;
-    int numerosFase1[] = RandomizeArray(0, jsonFileCompeticio.getRappers().size()-1);
-    int guanyadorBatallaFase[] = new int[numerosFase1.length/2];
 
     public Logica (JsonFileCompeticio jsonFileCompeticio) {
         this.jsonFileCompeticio = jsonFileCompeticio;
     }
 
     public void fesParelles() {
+        int numerosFase1[] = RandomizeArray(0, jsonFileCompeticio.getRappers().size()-1);
+        int guanyadorBatallaFase[] = new int[numerosFase1.length/2];
         Random r = new Random();
         for (int i = 0; i < numerosFase1.length; i++) {
             float random1 = MIN_PUNTUACIO + r.nextFloat() * (MAX_PUNTUACIO - MIN_PUNTUACIO);
             jsonFileCompeticio.getRappers().get(numerosFase1[i]).setPuntuacio(random1);
         }
-        jugadorGuanyadorBatallaFase1();
+        jugadorGuanyadorBatallaFase1(numerosFase1, guanyadorBatallaFase);
     }
 
     public static int[] RandomizeArray(int a, int b){
@@ -43,7 +43,7 @@ public class Logica {
         return array;
     }
 
-    public void jugadorGuanyadorBatallaFase1 () {
+    public void jugadorGuanyadorBatallaFase1 (int numerosFase1[], int guanyadorBatallaFase[]) {
         int k = 0;
         for (int j = 0; j < numerosFase1.length; j= j+2) {
             if (jsonFileCompeticio.getRappers().get(numerosFase1[j]).getPuntuacio() < jsonFileCompeticio.getRappers().get(numerosFase1[j+1]).getPuntuacio()) {

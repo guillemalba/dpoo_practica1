@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bbdbf84-97bb-4840-83f1-75fdc0544b0c" name="Default Changelist" comment="" />
+    <list default="true" id="5bbdbf84-97bb-4840-83f1-75fdc0544b0c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LSGallos/edu/salleurl/Logic/Logica.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LSGallos/edu/salleurl/Logic/Logica.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LSGallos/edu/salleurl/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LSGallos/edu/salleurl/Menu.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +18,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1lO6rJJ1XaLSfgciHGLY5cdUUwK" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -68,13 +76,30 @@
       <workItem from="1607769035686" duration="6238000" />
       <workItem from="1607791785678" duration="12000" />
       <workItem from="1607791953150" duration="387000" />
+      <workItem from="1607792426610" duration="1632000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial Commit">
+      <created>1607792566704</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1607792566704</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="617" y="121" key="CommitChangelistDialog2" timestamp="1607792566358">
+      <screen x="0" y="25" width="2048" height="1201" />
+    </state>
+    <state x="617" y="121" key="CommitChangelistDialog2/0.25.2048.1201@0.25.2048.1201" timestamp="1607792566358" />
     <state width="2006" height="331" key="GridCell.Tab.0.bottom" timestamp="1607791766790">
       <screen x="0" y="25" width="2048" height="1201" />
     </state>
@@ -91,5 +116,9 @@
       <screen x="0" y="25" width="2048" height="1201" />
     </state>
     <state width="2006" height="331" key="GridCell.Tab.0.right/0.25.2048.1201@0.25.2048.1201" timestamp="1607791766790" />
+    <state x="624" y="358" key="Vcs.Push.Dialog.v2" timestamp="1607792592335">
+      <screen x="0" y="25" width="2048" height="1201" />
+    </state>
+    <state x="624" y="358" key="Vcs.Push.Dialog.v2/0.25.2048.1201@0.25.2048.1201" timestamp="1607792592335" />
   </component>
 </project>
