@@ -23,6 +23,7 @@ public class Logica {
             jsonFileCompeticio.getRappers().get(numerosFase1[i]).setPuntuacio(random1);
         }
         jugadorGuanyadorBatallaFase1(numerosFase1, guanyadorBatallaFase);
+        //hgvjhbkjnlkmhgjbk
     }
 
     public static int[] RandomizeArray(int a, int b){
