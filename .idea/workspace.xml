@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5bbdbf84-97bb-4840-83f1-75fdc0544b0c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LSGallos/edu/salleurl/Logic/Competicio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LSGallos/edu/salleurl/Logic/Competicio.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LSGallos/edu/salleurl/Logic/Logica.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LSGallos/edu/salleurl/Logic/Logica.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LSGallos/edu/salleurl/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LSGallos/edu/salleurl/Menu.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Logica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Logica.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
