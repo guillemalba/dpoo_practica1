@@ -150,13 +150,13 @@ public class Logica {
 
     public void ranquingCompeticio () {
         int puntuacions[] = new int[jsonFileCompeticio.getRappers().size()];
-        String noms[] = new String[jsonFileCompeticio.getRappers().size()];
-        boolean trobat = false;
 
+        //guardem les puntuacions en un array
         for (int i = 0; i < jsonFileCompeticio.getRappers().size(); i++) {
             puntuacions[i] = jsonFileCompeticio.getRappers().get(i).getPuntuacio();
-            noms[i] = jsonFileCompeticio.getRappers().get(i).getStageName();
         }
+
+        //ordenem l'array de puntuacions de major a menor
         Arrays.sort(puntuacions);
         for( int i = 0; i < puntuacions.length/2; ++i ) {
             int temp = puntuacions[i];
@@ -164,17 +164,22 @@ public class Logica {
             puntuacions[puntuacions.length - i - 1] = temp;
         }
 
-        for (int i = 0; i < jsonFileCompeticio.getRappers().size(); i++) {
-            trobat = false;
-            if (i > 0 && puntuacions[i] == puntuacions[i-1]) {
-                i++;
+        //ens quedem amb les puntuacions uniques
+        int j = 0;
+        for (int i=0; i < puntuacions.length-1; i++){
+            if (puntuacions[i] != puntuacions[i+1]){
+                puntuacions[j++] = puntuacions[i];
             }
-            for (int j = 0; j < jsonFileCompeticio.getRappers().size() && !trobat; j++) {
-                if (jsonFileCompeticio.getRappers().get(j).getPuntuacio() == puntuacions[i]) {
-                        System.out.println(i + 1 + ". " + jsonFileCompeticio.getRappers().get(j).getStageName() + " - " + puntuacions[i]);
-                }
-                else {
-                    trobat = true;
+        }
+        puntuacions[j++] = puntuacions[puntuacions.length-1];
+
+        //mostrem el ranquing
+        int m = 0;
+        for (int i = 0; i < j; i++) {
+            for (int k = 0; k < jsonFileCompeticio.getRappers().size(); k++) {
+                if (jsonFileCompeticio.getRappers().get(k).getPuntuacio() == puntuacions[i]) {
+                    System.out.println(m + 1 + ". " + jsonFileCompeticio.getRappers().get(k).getStageName() + " - " + puntuacions[i]);
+                    m++;
                 }
             }
         }
@@ -184,7 +189,7 @@ public class Logica {
     public void showCompetiStatus() {
         int opcio = 0;
         do {
-            System.out.println("-----------------------------------------------------------");
+            System.out.println("\n-----------------------------------------------------------");
             System.out.println("Phase: " + numFase + " / " + jsonFileCompeticio.getCompetition().getPhases().size() +  " | Score: " + " | Battle: " + numBatalla + " / 2 " + " | Rival: " + contrincant);
             System.out.println("-----------------------------------------------------------\n");
             System.out.println("1. Start the battle");
@@ -195,6 +200,8 @@ public class Logica {
         } while (opcio != 4);
 
     }
+
+
     public int getOptionLobby() {
         int opcio = 0;
             System.out.println("\nChoose an option: ");
@@ -228,6 +235,9 @@ public class Logica {
 
                     break;
                 case 2:
+                    System.out.println("-----------------------------------------------------------");
+                    System.out.println("Pos.  |  Name  |  Score ");
+                    System.out.println("-----------------------------------------------------------\n");
                     ranquingCompeticio();
                     break;
                 case 3:

@@ -147,7 +147,6 @@ public class Competicio {
             for (int i = 0; i < raperos.size(); i++) {
                 if (nom.equalsIgnoreCase(raperos.get(i).getStageName())) {
                     System.out.println("Correct login!");
-                    System.out.println("");
                     trobat = true;
                 }
             }
