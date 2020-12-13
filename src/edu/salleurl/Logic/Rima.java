@@ -1,11 +1,20 @@
 package edu.salleurl.Logic;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import java.util.LinkedList;
 
 public class Rima {
-
+    @SerializedName("1")
+    @Expose
     private LinkedList<String> _1 = new LinkedList<>();
+
+    @SerializedName("2")
+    @Expose
     private LinkedList<String> _2 = new LinkedList<>();
+
+
 
     public Rima () {}
 

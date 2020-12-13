@@ -251,13 +251,13 @@ public class Logica {
             }
             switch (opcio) {
                 case 1:
-                    Batalla batalla = new Batalla(jsonFileBatalla);
+                    Batalla batalla = new Batalla(jsonFileBatalla, jsonFileCompeticio);
                     System.out.println("Batalla feta");
                     switch (numBatalla) {
                         case 1:
                             numBatalla = 2;
                             fesParelles(usuari);
-                            batalla.startBattle();
+                            batalla.startBattle(usuari, contrincant);
                         break;
                         case 2:
                             jugadorGuanyadorBatallaFase1();
