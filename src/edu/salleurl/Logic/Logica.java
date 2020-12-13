@@ -339,7 +339,7 @@ public class Logica {
         }
         switch (opcio) {
             case 1:
-                Batalla batalla = new Batalla(jsonFileBatalla);
+                Batalla batalla = new Batalla(jsonFileBatalla, jsonFileCompeticio);
                 switch (numBatalla) {
                     case 1:
                         System.out.println("Batalla feta");
