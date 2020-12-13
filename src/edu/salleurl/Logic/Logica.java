@@ -339,10 +339,10 @@ public class Logica {
         }
         switch (opcio) {
             case 1:
-                Batalla batalla = new Batalla(jsonFileBatalla, jsonFileCompeticio, tipusBatalla2);
+                Batalla batalla = new Batalla(jsonFileBatalla, jsonFileCompeticio);
                 switch (numBatalla) {
                     case 1:
-                        batalla.startBattle(usuari, contrincant);
+                        batalla.startBattle(usuari, contrincant, tipusBatalla2);
                         numBatalla = 2;
                         fesParelles(usuari);
                     break;
