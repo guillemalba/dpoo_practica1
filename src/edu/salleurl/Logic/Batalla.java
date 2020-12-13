@@ -18,13 +18,16 @@ public class Batalla {
 
 
 
-    public void startBattle(String usuari, String contrincant) {
+    public void startBattle(String usuari, String contrincant, String tipusBatalla) {
         Random random = new Random();
         int index = random.nextInt(jsonFileBatalla.getThemes().size());
         int randUser = random.nextInt(2);
         String rimas[] = new String[4];
         int numRimasUsuari = 0;
         int numRimasContrincant = 0;
+
+        double puntsUsuari = 0;
+        double puntsContrincant = 0;
 
         jsonFileBatalla.getThemes().get(index);
         System.out.println("-----------------------------------------------------------\n");
@@ -101,25 +104,23 @@ public class Batalla {
                             }
                         }
                     }
-                    double puntsUsuari = 0;
-                    double puntsContrincant = 0;
 
                     //calcula puntuacio
-                    /*
-                    // sangre
-                    puntsUsuari += (PI * (numRimasUsuari * numRimasUsuari))/ 4;
-                    // acapella
-                    puntsUsuari += (6 * Math.sqrt(numRimasUsuari) + 3)/2;
-                    // Escrita
-                    puntsUsuari += (16 + 2 + 128 + 64 + 256 + 4 + 32 + 512 + 1024 + numRimasUsuari)/(1024 + 128 + 4 + 64 + 16 + 256 + i + 2 + 32 + 512) + 3 * numRimasUsuari;
 
-                    // sangre
-                    puntsContrincant += (PI * (numRimasContrincant * numRimasContrincant))/ 4;
-                    // acapella
-                    puntsContrincant += (6 * Math.sqrt(numRimasContrincant) + 3)/2;
-                    // Escrita
-                    puntsContrincant += (16 + 2 + 128 + 64 + 256 + 4 + 32 + 512 + 1024 + numRimasContrincant)/(1024 + 128 + 4 + 64 + 16 + 256 + i + 2 + 32 + 512) + 3 * numRimasContrincant;
-                    */
+                    switch (tipusBatalla) {
+                        case 'acapella':
+                            puntsContrincant += (6 * Math.sqrt(numRimasContrincant) + 3)/2;
+                            puntsUsuari += (6 * Math.sqrt(numRimasUsuari) + 3)/2;
+                            break;
+                        case 'sangre':
+                            puntsContrincant += (PI * (numRimasContrincant * numRimasContrincant))/ 4;
+                            puntsUsuari += (PI * (numRimasUsuari * numRimasUsuari))/ 4;
+                            break;
+                        case 'escrita':
+                            puntsContrincant += (16 + 2 + 128 + 64 + 256 + 4 + 32 + 512 + 1024 + numRimasContrincant)/(1024 + 128 + 4 + 64 + 16 + 256 + i + 2 + 32 + 512) + 3 * numRimasContrincant;
+                            puntsUsuari += (16 + 2 + 128 + 64 + 256 + 4 + 32 + 512 + 1024 + numRimasUsuari)/(1024 + 128 + 4 + 64 + 16 + 256 + i + 2 + 32 + 512) + 3 * numRimasUsuari;
+                            break;
+                    }
                 }
                 /*
                 LinkedList<String> ter = new LinkedList<>();
