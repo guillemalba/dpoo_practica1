@@ -295,7 +295,7 @@ public class Logica {
         int opcio = 0;
         do {
             System.out.println("\n-----------------------------------------------------------");
-            System.out.println("Phase: " + numFase + " / " + jsonFileCompeticio.getCompetition().getPhases().size() +  " | Score: " + " | Battle: " + numBatalla + " / 2 " + tipusBatalla + " | Rival: " + contrincant);
+            System.out.println("Phase: " + numFase + " / " + jsonFileCompeticio.getCompetition().getPhases().size() +  " | Score: " + jsonFileCompeticio.getRappers().get(indexUsuari).getPuntuacio() + " | Battle: " + numBatalla + " / 2 " + tipusBatalla + " | Rival: " + contrincant);
             System.out.println("-----------------------------------------------------------\n");
             System.out.println("1. Start the battle");
             System.out.println("2. Show ranking");
@@ -342,14 +342,13 @@ public class Logica {
                 Batalla batalla = new Batalla(jsonFileBatalla, jsonFileCompeticio);
                 switch (numBatalla) {
                     case 1:
-                        System.out.println("Batalla feta");
-                        jsonFileCompeticio.getRappers().get(indexUsuari).setPuntuacio(60);
+                        batalla.startBattle(usuari, contrincant);
                         numBatalla = 2;
                         fesParelles(usuari);
                     break;
 
                     case 2:
-                        System.out.println("Batalla feta");
+                        batalla.startBattle(usuari, contrincant);
                         jugadorGuanyadorBatallaFase1();
                         if (numFase == jsonFileCompeticio.getCompetition().getPhases().size() && acabat) {
                             opcio = 4;
@@ -391,7 +390,6 @@ public class Logica {
                                 if (passaFase) {
                                     numBatalla = 1;
                                     fesParelles(usuari);
-                                    jsonFileCompeticio.getRappers().get(indexUsuari).setPuntuacio(40);
                                 } else {
                                     numFase = 3;
                                     fesParelles(usuari);
