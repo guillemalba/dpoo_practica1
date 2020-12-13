@@ -269,6 +269,7 @@ public class Logica {
                         case 1:
                             numBatalla = 2;
                             fesParelles(usuari);
+                            batalla.startBattle();
                         break;
                         case 2:
                             jugadorGuanyadorBatallaFase1();
