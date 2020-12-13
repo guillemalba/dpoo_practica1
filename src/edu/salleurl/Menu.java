@@ -104,6 +104,7 @@ public class Menu {
             String usuari = competicio.loginRapero();
             logica.fesParelles(usuari);
             logica.showCompetiStatus();
+            logica.showCompetiAcabada();
         }
     }
 }
