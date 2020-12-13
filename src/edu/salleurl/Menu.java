@@ -1,11 +1,14 @@
 package edu.salleurl;
 
+import edu.salleurl.ApiJson.JsonFileBatalla;
 import edu.salleurl.ApiJson.JsonFileCompeticio;
 import edu.salleurl.Logic.Competicio;
 import edu.salleurl.Logic.Fase;
 import edu.salleurl.Logic.Logica;
 import edu.salleurl.Logic.Rapero;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.LinkedList;
 import java.util.Scanner;
@@ -13,16 +16,45 @@ import java.util.Scanner;
 public class Menu {
     int opcioCompetition = 0;
     private Competicio competicio;
+    private JsonFileBatalla jsonFileBatalla;
     private LinkedList<Rapero> raperos;
     private LinkedList<String> paisos;
     private Logica logica;
 
-    public Menu (int opcio, JsonFileCompeticio jsonFileCompeticio) {
-        this.opcioCompetition = opcio;
+    public Menu (JsonFileCompeticio jsonFileCompeticio, JsonFileBatalla jsonFileBatalla) {
         this.competicio = jsonFileCompeticio.getCompetition();
         this.raperos = jsonFileCompeticio.getRappers();
         this.paisos = jsonFileCompeticio.getCountries();
-        this.logica = new Logica(jsonFileCompeticio);
+        this.logica = new Logica(jsonFileCompeticio, jsonFileBatalla);
+        this.jsonFileBatalla = jsonFileBatalla;
+    }
+
+    public void showCompeticio () {
+        LocalDate today = LocalDate.now();
+
+        System.out.println("Welcome to competition: " + competicio.getName());
+        System.out.println("Starts on " + competicio.getStartDate());
+        System.out.println("Ends on " + competicio.getEndDate());
+        System.out.println("Phases: " + competicio.getPhases().size());
+        System.out.println("Currently: " + raperos.size() + " participants");
+
+        Date date1 = java.sql.Date.valueOf(competicio.getStartDate());
+        Date date2 = java.sql.Date.valueOf(competicio.getEndDate());
+        Date todayDate = java.sql.Date.valueOf(today);
+
+        if (date1.equals(todayDate) || date1.before(todayDate)) {
+            if (date2.after(todayDate)) {
+                System.out.println("\nCompetition started. Do you want to:");
+                opcioCompetition = 1;
+            }
+            else {
+                opcioCompetition = 2;
+            }
+        }
+        if (date1.after(todayDate)) {
+            System.out.println("\nCompetition hasn't started yet. Do you want to:");
+            opcioCompetition = 3;
+        }
     }
 
     public void showMenu () {
@@ -69,8 +101,8 @@ public class Menu {
         }
         if (opcio == 1 && opcioCompetition == 1) {
             competicio.setRaperos(raperos);
-            competicio.loginRapero();
-            logica.fesParelles();
+            String usuari = competicio.loginRapero();
+            logica.fesParelles(usuari);
             logica.showCompetiStatus();
             logica.getOptionLobby();
         }

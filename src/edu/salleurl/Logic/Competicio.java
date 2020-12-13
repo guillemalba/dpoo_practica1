@@ -136,13 +136,14 @@ public class Competicio {
         }
     }
 
-    public void loginRapero () {
+    public String loginRapero () {
         boolean trobat = false;
+        String nom = null;
         do {
             System.out.println("-----------------------------------------------------------");
             System.out.println("Enter your artistic name: ");
             Scanner reader = new Scanner(System.in);
-            String nom = reader.nextLine();
+            nom = reader.nextLine();
             for (int i = 0; i < raperos.size(); i++) {
                 if (nom.equalsIgnoreCase(raperos.get(i).getStageName())) {
                     System.out.println("Correct login!");
@@ -154,6 +155,7 @@ public class Competicio {
                 System.out.println("Yo' bro, there's no " + nom + " in ma' list.\n");
             }
         } while (trobat == false);
+        return nom;
     }
 
     public static boolean comprovarData (String dia) {

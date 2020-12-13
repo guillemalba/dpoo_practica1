@@ -1,5 +1,6 @@
 package edu.salleurl.Logic;
 
+import edu.salleurl.ApiJson.JsonFileBatalla;
 import edu.salleurl.ApiJson.JsonFileCompeticio;
 
 import java.util.Random;
@@ -12,25 +13,38 @@ public class Logica {
     private static final float MAX_PUNTUACIO = 50;
 
     private JsonFileCompeticio jsonFileCompeticio;
+    private JsonFileBatalla jsonFileBatalla;
     int numerosFase1[];
     int guanyadorBatallaFase[];
+    int contrincant1 = 0;
 
-    public Logica (JsonFileCompeticio jsonFileCompeticio) {
+    public Logica (JsonFileCompeticio jsonFileCompeticio, JsonFileBatalla jsonFileBatalla) {
         this.jsonFileCompeticio = jsonFileCompeticio;
+        this.jsonFileBatalla = jsonFileBatalla;
         this.numerosFase1 = RandomizeArray(0, jsonFileCompeticio.getRappers().size()-1);
         this.guanyadorBatallaFase = new int[numerosFase1.length/2];
     }
 
-    public void fesParelles() {
-
-        float puntsTop[] = new float[3];
+    public void fesParelles(String usuari) {
         int top[] = new int[3];
-
         Random r = new Random();
 
         for (int i = 0; i < numerosFase1.length; i++) {
             float random1 = MIN_PUNTUACIO + r.nextFloat() * (MAX_PUNTUACIO - MIN_PUNTUACIO);
-            jsonFileCompeticio.getRappers().get(numerosFase1[i]).setPuntuacio(random1);
+            if (jsonFileCompeticio.getRappers().get(numerosFase1[i]).getStageName().equalsIgnoreCase(usuari)) {
+                if (i%2 == 0) {
+                    jsonFileCompeticio.getRappers().get(numerosFase1[i]).setPuntuacio(0);
+                    jsonFileCompeticio.getRappers().get(numerosFase1[i + 1]).setPuntuacio(0);
+                    i++;
+                }
+                else {
+                    jsonFileCompeticio.getRappers().get(numerosFase1[i]).setPuntuacio(0);
+                    jsonFileCompeticio.getRappers().get(numerosFase1[i - 1]).setPuntuacio(0);
+                }
+            }
+            else {
+                jsonFileCompeticio.getRappers().get(numerosFase1[i]).setPuntuacio(random1);
+            }
         }
         jugadorGuanyadorBatallaFase1();
 
@@ -131,8 +145,7 @@ public class Logica {
     public void showCompetiStatus() {
         System.out.println("-----------------------------------------------------------");
         System.out.println("Phase: " + " / " + " | Score: " + " | Battle: " + " / 2: " + " | Rival: ");
-        System.out.println("-----------------------------------------------------------");
-        System.out.println("");
+        System.out.println("-----------------------------------------------------------\n");
         System.out.println("1. Start the battle");
         System.out.println("2. Show ranking");
         System.out.println("3. Create profile");
@@ -142,21 +155,35 @@ public class Logica {
     }
     public void getOptionLobby() {
         int opcio = 0;
+        do {
+            System.out.println("\nChoose an option: ");
+            Scanner reader = new Scanner(System.in);
+            try {
+                opcio = reader.nextInt();
+                if (opcio > 4 || opcio < 1) {
+                    System.out.println("Nomes pots insertar numeros del 1 al 4.\n");
+                }
 
-        System.out.println("\nChoose an option: ");
-        Scanner reader = new Scanner(System.in);
-        try {
-            opcio = reader.nextInt();
-            if (opcio > 4|| opcio < 1) {
-                System.out.println("Nomes pots insertar numeros del 1 al 4.\n");
+            } catch (InputMismatchException ime) {
+                System.out.println("Nomes pots insertar numeros.\n");
+                reader.next();
             }
+            switch (opcio) {
+                case 1:
+                    System.out.println(jsonFileBatalla.getThemes().get(0).getRhymes().get(0).getLevel1().get(0));
+                    Batalla batalla = new Batalla(jsonFileBatalla);
 
-        } catch (InputMismatchException ime) {
-            System.out.println("Nomes pots insertar numeros.\n");
-            reader.next();
-        }
-        if (opcio == 2) {
-            System.out.println("Thanks for your visit!");
-        }
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+                    System.out.println("This option is not active yet.");
+                    break;
+                case 4:
+                    System.out.println("Thanks for your visit!");
+                    break;
+            }
+        } while (opcio == 2 || opcio == 3);
     }
 }

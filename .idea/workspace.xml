@@ -3,10 +3,26 @@
   <component name="ChangeListManager">
     <list default="true" id="5bbdbf84-97bb-4840-83f1-75fdc0544b0c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LSGallos/edu/salleurl/ApiJson/JsonFileBatalla.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LSGallos/edu/salleurl/ApiJson/JsonFileBatalla.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LSGallos/edu/salleurl/ApiJson/JsonFileCompeticio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LSGallos/edu/salleurl/ApiJson/JsonFileCompeticio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LSGallos/edu/salleurl/Logic/Batalla.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LSGallos/edu/salleurl/Logic/Batalla.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LSGallos/edu/salleurl/Logic/Competicio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LSGallos/edu/salleurl/Logic/Competicio.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LSGallos/edu/salleurl/Logic/Logica.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LSGallos/edu/salleurl/Logic/Logica.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LSGallos/edu/salleurl/Logic/Rapero.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LSGallos/edu/salleurl/Logic/Rapero.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LSGallos/edu/salleurl/Logic/Rima.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LSGallos/edu/salleurl/Logic/Rima.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LSGallos/edu/salleurl/Logic/Tema.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LSGallos/edu/salleurl/Logic/Tema.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LSGallos/edu/salleurl/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LSGallos/edu/salleurl/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LSGallos/edu/salleurl/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LSGallos/edu/salleurl/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/JsonFileBatalla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/JsonFileBatalla.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/JsonFileCompeticio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/JsonFileCompeticio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Batalla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Batalla.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Competicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Competicio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Logica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Logica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Rapero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Rapero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Rima.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Rima.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Tema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Tema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,11 +54,11 @@
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/libs" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/files" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/libs" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -113,7 +129,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607810651157</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary=".">
+      <created>1607819542525</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1607819542525</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

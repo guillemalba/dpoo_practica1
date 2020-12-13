@@ -27,8 +27,8 @@ public class Main {
         int opcio = 0;
         boolean exit = false;
         if(jsonCompeticio != null && jsonBatalla != null) {
-            opcio = jsonCompeticio.showCompeticio();
-            Menu menu = new Menu(opcio, jsonCompeticio);
+            Menu menu = new Menu(jsonCompeticio, jsonBatalla);
+            menu.showCompeticio();
             menu.showMenu();
             menu.getOption();
         } else {

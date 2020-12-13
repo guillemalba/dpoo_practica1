@@ -2,12 +2,12 @@ package edu.salleurl.ApiJson;
 
 import edu.salleurl.Logic.Tema;
 
-import java.util.List;
+import java.util.LinkedList;
 
 public class JsonFileBatalla {
-    private List<Tema> themes = null;
+    private LinkedList<Tema> themes = null;
 
-    public List<Tema> getThemes() {
+    public LinkedList<Tema> getThemes() {
         return themes;
     }
 }

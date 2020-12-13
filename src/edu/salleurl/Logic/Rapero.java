@@ -77,6 +77,11 @@ public class Rapero {
     }
 
     public void setPuntuacio(float puntuacio) {
-        this.puntuacio = this.puntuacio + puntuacio;
+        if (puntuacio == 0) {
+            this.puntuacio = 0;
+        }
+        else {
+            this.puntuacio = this.puntuacio + puntuacio;
+        }
     }
 }
