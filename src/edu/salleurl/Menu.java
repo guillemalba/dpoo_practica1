@@ -71,7 +71,8 @@ public class Menu {
             competicio.setRaperos(raperos);
             competicio.loginRapero();
             logica.fesParelles();
-            
+            logica.showCompetiStatus();
+            logica.getOptionLobby();
         }
     }
 }
