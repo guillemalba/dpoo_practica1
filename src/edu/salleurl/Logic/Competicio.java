@@ -110,7 +110,8 @@ public class Competicio {
             Rapero rapero2 = new Rapero(nom, nomArtistic, birthday, pais, nivell, foto);
 
             //part on s'escriu al fitxer Json
-            /*JSONObject rapero = new JSONObject();
+            /*
+            JSONObject rapero = new JSONObject();
             rapero.put("realName", nom);
             rapero.put("stageName", nomArtistic);
             rapero.put("birth", birthday);
@@ -125,8 +126,8 @@ public class Competicio {
                 file.close();
             } catch (IOException e) {
                 System.out.println("Error when coppying the rapper to the Json file");
-            }*/
-
+            }
+            */
             raperos.add(rapero2);
             System.out.println("Registration completed!");
             System.out.println("-----------------------------------------------------------");
