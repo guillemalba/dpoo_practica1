@@ -1,6 +1,7 @@
 package edu.salleurl.Logic;
 
 import edu.salleurl.ApiJson.JsonFileBatalla;
+import java.util.*;
 
 public class Batalla {
     private JsonFileBatalla jsonFileBatalla;
