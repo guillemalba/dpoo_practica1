@@ -4,10 +4,8 @@
     <list default="true" id="5bbdbf84-97bb-4840-83f1-75fdc0544b0c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LSGallos/edu/salleurl/Logic/Logica.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LSGallos/edu/salleurl/Logic/Logica.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LSGallos/edu/salleurl/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LSGallos/edu/salleurl/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LSGallos/edu/salleurl/Logic/Rima.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LSGallos/edu/salleurl/Logic/Rima.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Logica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Logica.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Rima.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Rima.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607863424806</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary=".">
+      <created>1607872198490</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1607872198490</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
