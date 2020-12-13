@@ -108,15 +108,15 @@ public class Batalla {
                     //calcula puntuacio
 
                     switch (tipusBatalla) {
-                        case 'acapella':
+                        case "acapella":
                             puntsContrincant += (6 * Math.sqrt(numRimasContrincant) + 3)/2;
                             puntsUsuari += (6 * Math.sqrt(numRimasUsuari) + 3)/2;
                             break;
-                        case 'sangre':
+                        case "sangre":
                             puntsContrincant += (PI * (numRimasContrincant * numRimasContrincant))/ 4;
                             puntsUsuari += (PI * (numRimasUsuari * numRimasUsuari))/ 4;
                             break;
-                        case 'escrita':
+                        case "escrita":
                             puntsContrincant += (16 + 2 + 128 + 64 + 256 + 4 + 32 + 512 + 1024 + numRimasContrincant)/(1024 + 128 + 4 + 64 + 16 + 256 + i + 2 + 32 + 512) + 3 * numRimasContrincant;
                             puntsUsuari += (16 + 2 + 128 + 64 + 256 + 4 + 32 + 512 + 1024 + numRimasUsuari)/(1024 + 128 + 4 + 64 + 16 + 256 + i + 2 + 32 + 512) + 3 * numRimasUsuari;
                             break;
