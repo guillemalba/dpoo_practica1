@@ -339,7 +339,7 @@ public class Logica {
         }
         switch (opcio) {
             case 1:
-                Batalla batalla = new Batalla(jsonFileBatalla, jsonFileCompeticio);
+                Batalla batalla = new Batalla(jsonFileBatalla, jsonFileCompeticio, tipusBatalla2);
                 switch (numBatalla) {
                     case 1:
                         batalla.startBattle(usuari, contrincant);
@@ -348,7 +348,7 @@ public class Logica {
                     break;
 
                     case 2:
-                        batalla.startBattle(usuari, contrincant);
+                        batalla.startBattle(usuari, contrincant, tipusBatalla2);
                         jugadorGuanyadorBatallaFase1();
                         if (numFase == jsonFileCompeticio.getCompetition().getPhases().size() && acabat) {
                             opcio = 4;
