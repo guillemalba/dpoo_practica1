@@ -58,8 +58,10 @@ public class Logica {
         }
 
         if (numFase == 2) {
+            //String nomsFase2[] = new String[];
             int guanyadorBatallaFase2[] = new int[2];
 
+            System.out.println("1-" + topBatalla1.length);
             //ens quedem amb les puntuacions uniques
             int j = 0;
             for (int i=0; i < topBatalla1.length-1; i++){
@@ -69,24 +71,30 @@ public class Logica {
             }
             topBatalla1[j++] = topBatalla1[topBatalla1.length-1];
 
+            System.out.println("2-" + topBatalla1.length);
             //mostrem el ranquing
             int m = 0;
             for (int i = 0; i < j; i++) {
                 for (int k = 0; k < jsonFileCompeticio.getRappers().size(); k++) {
                     if (jsonFileCompeticio.getRappers().get(k).getPuntuacio() == topBatalla1[i]) {
-                        System.out.println(m + 1 + ". " + jsonFileCompeticio.getRappers().get(k).getStageName() + " - " + topBatalla1[i]);
+                        //nomsFase2[m] = jsonFileCompeticio.getRappers().get(k).getStageName();
                         m++;
                     }
                 }
             }
 
             for (int i = 0; i < topBatalla1.length; i++) {
+                //System.out.println(nomsFase2[i]);
+                //jsonFileCompeticio.getRappers().get(guanyadorBatallaFase[i]).setPuntuacio(random1);
+            }
+
+            /*for (int i = 0; i < topBatalla1.length; i++) {
                 int random1 = (int) (Math.random() * MAX_PUNTUACIO);
                 //jsonFileCompeticio.getRappers().get(guanyadorBatallaFase[i]).setPuntuacio(random1);
             }
 
             // agafem el top1 i top2 per la batalla final
-            /*topPosicio = getTop1Top2();
+            topPosicio = getTop1Top2();
 
             // top1 vs top2
             for (int i = 0; i < top.length; i++) {
@@ -94,6 +102,9 @@ public class Logica {
                 jsonFileCompeticio.getRappers().get(top[i]).setPuntuacio(random1);
             }
             getTop1Top2(top);*/
+        }
+        for (int i = 0; i < jsonFileCompeticio.getRappers().size(); i++) {
+            System.out.println(jsonFileCompeticio.getRappers().get(i).getPuntuacio());
         }
     }
 
@@ -237,6 +248,7 @@ public class Logica {
 
     public int getOptionLobby() {
         int opcio = 0;
+        boolean passaFase = false;
             System.out.println("\nChoose an option: ");
             Scanner reader = new Scanner(System.in);
             try {
@@ -274,14 +286,14 @@ public class Logica {
                             }
                             if (jsonFileCompeticio.getCompetition().getPhases().size() == 3) {
                                 numFase = 2;
-                                for (int i = 0; i < topBatalla1.length; i++) {
+                                for (int i = 0; i < topBatalla1.length && !passaFase; i++) {
                                     if (topBatalla1[i] == jsonFileCompeticio.getRappers().get(indexUsuari).getPuntuacio()) {
-                                        fesParelles(usuari);
-                                        System.out.println("batalla feta");
+                                        passaFase = true;
                                     }
-                                    else {
-                                        fesParelles(usuari);
-                                    }
+                                }
+                                if (passaFase) {
+                                    fesParelles(usuari);
+                                    System.out.println("batalla feta");
                                 }
                             }
                             numBatalla = 1;
