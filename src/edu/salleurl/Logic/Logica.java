@@ -4,6 +4,9 @@ import edu.salleurl.ApiJson.JsonFileCompeticio;
 
 import java.util.Random;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 public class Logica {
     private static final float MIN_PUNTUACIO = 0;
     private static final float MAX_PUNTUACIO = 50;
@@ -121,4 +124,36 @@ public class Logica {
         }
     }
 
+    //mostrem la info de la competicio
+    public void showCompetiStatus() {
+        System.out.println("-----------------------------------------------------------");
+        System.out.println("Phase: " + " / " + " | Score: " + " | Battle: " + " / 2: " + " | Rival: ");
+        System.out.println("-----------------------------------------------------------");
+        System.out.println("");
+        System.out.println("1. Start the battle");
+        System.out.println("2. Show ranking");
+        System.out.println("3. Create profile");
+        System.out.println("4. Leave competition");
+
+
+    }
+    public void getOptionLobby() {
+        int opcio = 0;
+
+        System.out.println("\nChoose an option: ");
+        Scanner reader = new Scanner(System.in);
+        try {
+            opcio = reader.nextInt();
+            if (opcio > 4|| opcio < 1) {
+                System.out.println("Nomes pots insertar numeros del 1 al 4.\n");
+            }
+
+        } catch (InputMismatchException ime) {
+            System.out.println("Nomes pots insertar numeros.\n");
+            reader.next();
+        }
+        if (opcio == 2) {
+            System.out.println("Thanks for your visit!");
+        }
+    }
 }
