@@ -1,67 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bbdbf84-97bb-4840-83f1-75fdc0544b0c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/out/production/LSGallos/edu/salleurl/Logic/Batalla.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LSGallos/edu/salleurl/Logic/Batalla.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LSGallos/edu/salleurl/Logic/Logica.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LSGallos/edu/salleurl/Logic/Logica.class" afterDir="false" />
+    <list default="true" id="9b5f7e3c-b67c-4926-b27e-fd24f37ff2ce" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/libs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Projecte1-DPOO-2020.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/gson_2_8_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/json_simple_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/project-template.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LSGallos.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Batalla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Batalla.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Logica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Logica.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1lO6rJJ1XaLSfgciHGLY5cdUUwK" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1lhMuPyLOWkOXzRLR1cdwc8ROQm" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.2" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/files" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/libs" />
-    </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.salleurl.Main" />
-      <module name="LSGallos" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
+      <module name="Projecte1-DPOO-2020" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.salleurl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -72,176 +67,82 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5bbdbf84-97bb-4840-83f1-75fdc0544b0c" name="Default Changelist" comment="" />
-      <created>1607455988042</created>
+      <changelist id="9b5f7e3c-b67c-4926-b27e-fd24f37ff2ce" name="Default Changelist" comment="" />
+      <created>1608045091933</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1607455988042</updated>
-      <workItem from="1607455992333" duration="20961000" />
-      <workItem from="1607593833626" duration="2817000" />
-      <workItem from="1607769035686" duration="6238000" />
-      <workItem from="1607791785678" duration="12000" />
-      <workItem from="1607791953150" duration="387000" />
-      <workItem from="1607792426610" duration="17781000" />
+      <updated>1608045091933</updated>
+      <workItem from="1608045093145" duration="66000" />
+      <workItem from="1608045202869" duration="182000" />
+      <workItem from="1608637357839" duration="3860000" />
+      <workItem from="1608655725972" duration="10000" />
+      <workItem from="1608731398949" duration="1063000" />
+      <workItem from="1608764478464" duration="21264000" />
     </task>
-    <task id="LOCAL-00001" summary="Initial Commit">
-      <created>1607792566704</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1607792566704</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Logica.java arreglat">
-      <created>1607794605346</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1607794605346</updated>
-    </task>
-    <task id="LOCAL-00003" summary=".">
-      <created>1607810651157</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1607810651157</updated>
-    </task>
-    <task id="LOCAL-00004" summary=".">
-      <created>1607819542525</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1607819542525</updated>
-    </task>
-    <task id="LOCAL-00005" summary=".">
-      <created>1607823845277</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1607823845277</updated>
-    </task>
-    <task id="LOCAL-00006" summary=".">
-      <created>1607828027729</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1607828027729</updated>
-    </task>
-    <task id="LOCAL-00007" summary=".">
-      <created>1607861419173</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1607861419173</updated>
-    </task>
-    <task id="LOCAL-00008" summary=".">
-      <created>1607863424806</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1607863424806</updated>
-    </task>
-    <task id="LOCAL-00009" summary=".">
-      <created>1607872198490</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1607872198490</updated>
-    </task>
-    <task id="LOCAL-00010" summary=".">
-      <created>1607873635509</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1607873635509</updated>
-    </task>
-    <task id="LOCAL-00011" summary=".">
-      <created>1607898693884</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1607898693884</updated>
-    </task>
-    <task id="LOCAL-00012" summary=".">
-      <created>1607898789255</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1607898789255</updated>
-    </task>
-    <task id="LOCAL-00013" summary=".">
-      <created>1607899161838</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1607899161838</updated>
-    </task>
-    <task id="LOCAL-00014" summary=".">
-      <created>1607899596440</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1607899596440</updated>
-    </task>
-    <task id="LOCAL-00015" summary=".">
-      <created>1607899705775</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1607899705775</updated>
-    </task>
-    <task id="LOCAL-00016" summary=".">
-      <created>1607899968742</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1607899968742</updated>
-    </task>
-    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initial Commit" />
-    <MESSAGE value="Logica.java arreglat" />
-    <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
-  </component>
   <component name="WindowStateProjectService">
-    <state x="617" y="121" key="CommitChangelistDialog2" timestamp="1607810650977">
-      <screen x="0" y="25" width="2048" height="1201" />
+    <state x="304" y="169" width="1071" height="706" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608637509365">
+      <screen x="0" y="25" width="1680" height="971" />
     </state>
-    <state x="617" y="121" key="CommitChangelistDialog2/0.25.2048.1201@0.25.2048.1201" timestamp="1607810650977" />
-    <state width="2006" height="331" key="GridCell.Tab.0.bottom" timestamp="1607814843626">
-      <screen x="0" y="25" width="2048" height="1201" />
+    <state x="304" y="169" width="1071" height="706" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1680.971@0.25.1680.971" timestamp="1608637509365" />
+    <state width="1638" height="314" key="GridCell.Tab.0.bottom" timestamp="1609037072639">
+      <screen x="0" y="25" width="1680" height="971" />
     </state>
-    <state width="2006" height="331" key="GridCell.Tab.0.bottom/0.25.2048.1201@0.25.2048.1201" timestamp="1607814843626" />
-    <state width="2006" height="331" key="GridCell.Tab.0.center" timestamp="1607814843625">
-      <screen x="0" y="25" width="2048" height="1201" />
+    <state width="1638" height="314" key="GridCell.Tab.0.bottom/0.25.1680.971@0.25.1680.971" timestamp="1609037072639" />
+    <state width="1638" height="314" key="GridCell.Tab.0.center" timestamp="1609037072637">
+      <screen x="0" y="25" width="1680" height="971" />
     </state>
-    <state width="2006" height="331" key="GridCell.Tab.0.center/0.25.2048.1201@0.25.2048.1201" timestamp="1607814843625" />
-    <state width="2006" height="331" key="GridCell.Tab.0.left" timestamp="1607814843624">
-      <screen x="0" y="25" width="2048" height="1201" />
+    <state width="1638" height="314" key="GridCell.Tab.0.center/0.25.1680.971@0.25.1680.971" timestamp="1609037072637" />
+    <state width="1638" height="314" key="GridCell.Tab.0.left" timestamp="1609037072637">
+      <screen x="0" y="25" width="1680" height="971" />
     </state>
-    <state width="2006" height="331" key="GridCell.Tab.0.left/0.25.2048.1201@0.25.2048.1201" timestamp="1607814843624" />
-    <state width="2006" height="331" key="GridCell.Tab.0.right" timestamp="1607814843626">
-      <screen x="0" y="25" width="2048" height="1201" />
+    <state width="1638" height="314" key="GridCell.Tab.0.left/0.25.1680.971@0.25.1680.971" timestamp="1609037072637" />
+    <state width="1638" height="314" key="GridCell.Tab.0.right" timestamp="1609037072639">
+      <screen x="0" y="25" width="1680" height="971" />
     </state>
-    <state width="2006" height="331" key="GridCell.Tab.0.right/0.25.2048.1201@0.25.2048.1201" timestamp="1607814843626" />
-    <state x="624" y="358" key="Vcs.Push.Dialog.v2" timestamp="1607810672520">
-      <screen x="0" y="25" width="2048" height="1201" />
+    <state width="1638" height="314" key="GridCell.Tab.0.right/0.25.1680.971@0.25.1680.971" timestamp="1609037072639" />
+    <state width="1638" height="314" key="GridCell.Tab.1.bottom" timestamp="1609037072640">
+      <screen x="0" y="25" width="1680" height="971" />
     </state>
-    <state x="624" y="358" key="Vcs.Push.Dialog.v2/0.25.2048.1201@0.25.2048.1201" timestamp="1607810672520" />
-    <state x="828" y="539" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607795700829">
-      <screen x="0" y="25" width="2048" height="1201" />
+    <state width="1638" height="314" key="GridCell.Tab.1.bottom/0.25.1680.971@0.25.1680.971" timestamp="1609037072640" />
+    <state width="1638" height="314" key="GridCell.Tab.1.center" timestamp="1609037072640">
+      <screen x="0" y="25" width="1680" height="971" />
     </state>
-    <state x="828" y="539" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.25.2048.1201@0.25.2048.1201" timestamp="1607795700829" />
+    <state width="1638" height="314" key="GridCell.Tab.1.center/0.25.1680.971@0.25.1680.971" timestamp="1609037072640" />
+    <state width="1638" height="314" key="GridCell.Tab.1.left" timestamp="1609037072640">
+      <screen x="0" y="25" width="1680" height="971" />
+    </state>
+    <state width="1638" height="314" key="GridCell.Tab.1.left/0.25.1680.971@0.25.1680.971" timestamp="1609037072640" />
+    <state width="1638" height="314" key="GridCell.Tab.1.right" timestamp="1609037072640">
+      <screen x="0" y="25" width="1680" height="971" />
+    </state>
+    <state width="1638" height="314" key="GridCell.Tab.1.right/0.25.1680.971@0.25.1680.971" timestamp="1609037072640" />
+    <state x="246" y="99" key="new project wizard" timestamp="1608732599054">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="246" y="99" key="new project wizard/0.0.1680.1050@0.0.1680.1050" timestamp="1608732599054" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/edu/salleurl/Logic/Batalla.java</url>
+          <line>147</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/edu/salleurl/Logic/Batalla.java</url>
+          <line>172</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

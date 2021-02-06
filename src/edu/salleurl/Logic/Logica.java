@@ -320,7 +320,6 @@ public class Logica {
         } while (opcio != 4);
     }
 
-
     public int getOptionLobby(String tipusBatalla) {
         int opcio = 0;
         boolean passaFase = false;

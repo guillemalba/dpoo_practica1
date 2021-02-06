@@ -8,8 +8,8 @@ import java.lang.Math;
 public class Batalla {
     private static final double PI = 3.1415926535898;
 
-    private JsonFileBatalla jsonFileBatalla;
-    private JsonFileCompeticio jsonFileCompeticio;
+    private final JsonFileBatalla jsonFileBatalla;
+    private final JsonFileCompeticio jsonFileCompeticio;
 
     public Batalla (JsonFileBatalla jsonFileBatalla, JsonFileCompeticio jsonFileCompeticio) {
         this.jsonFileBatalla = jsonFileBatalla;
@@ -22,17 +22,17 @@ public class Batalla {
         Random random = new Random();
         int index = random.nextInt(jsonFileBatalla.getThemes().size());
         int randUser = random.nextInt(2);
-        String rimas[] = new String[4];
-        int numRimasUsuari = 0;
-        int numRimasContrincant = 0;
+        String[] rimas;
+        int numRimasUsuari;
+        int numRimasContrincant;
 
-        double puntsUsuari = 0;
-        double puntsContrincant = 0;
+        float puntsUsuari = 0;
+        float puntsContrincant = 0;
 
         jsonFileBatalla.getThemes().get(index);
         System.out.println("-----------------------------------------------------------\n");
         System.out.println("Topic: " + jsonFileBatalla.getThemes().get(index).getName());
-        System.out.println("");
+        System.out.println();
         System.out.println("A coin is tossed in the air and...");
 
 
@@ -40,168 +40,39 @@ public class Batalla {
         switch (randUser) {
             case 1:
                 for (int i = 0; i < 2; i++) {
-                    System.out.println(usuari + " your turn! Drop it!\n");
-                    System.out.println(usuari + ":\n");
-                    Scanner rimaUser = new Scanner(System.in);
-                    rimas[0] = rimaUser.nextLine();
-                    rimas[1] = rimaUser.nextLine();
-                    rimas[2] = rimaUser.nextLine();
-                    rimas[3] = rimaUser.nextLine();
-                    /*
-                    System.out.println("rima1: " + rimas[0]);
-                    System.out.println("rima2: " + rimas[1]);
-                    System.out.println("rima3: " + rimas[2]);
-                    System.out.println("rima4: " + rimas[3]);
-                    */
+                    // Comença usuari
+                    rimas = demanaVersosUsuari (usuari);
+                    numRimasUsuari = getNumRimas (rimas);
 
                     // torn del contrincant
-                    System.out.println(contrincant + " your turn! Drop it\n");
-                    System.out.println(contrincant + ":\n");
-
-                    //System.out.println("lenght: " + jsonFileCompeticio.getRappers().size());
-
-                    int level = 0;
-
-                    for (int j = 0; j < jsonFileCompeticio.getRappers().size(); j++) {
-                        if (jsonFileCompeticio.getRappers().get(j).getStageName().equalsIgnoreCase(usuari)) {
-                            /*
-                            System.out.println("meu: " + usuari);
-                            System.out.println("jsonUser: " + jsonFileCompeticio.getRappers().get(j).getStageName());
-                            System.out.println("lvl es: " + jsonFileCompeticio.getRappers().get(j).getLevel());
-                            System.out.println("index es: " + index);
-                            */
-                            level = jsonFileCompeticio.getRappers().get(j).getLevel();
-                            //level = 1; // delete this line
-                            switch (level) {
-                                case 1:
-                                    if (i < jsonFileBatalla.getThemes().get(index).getRhymes().get(0).get_1().size()) {
-                                        rimas = jsonFileBatalla.getThemes().get(index).getRhymes().get(0).get_1().get(i).split("\n");
-
-                                        System.out.println("" + rimas[0]);
-                                        System.out.println("" + rimas[1]);
-                                        System.out.println("" + rimas[2]);
-                                        System.out.println("" + rimas[3]);
-                                        System.out.println("");
-                                    } else {
-                                        System.out.println("M'he quedat en blanc\n");
-                                    }
-
-                                    break;
-                                case 2:
-                                    if (i < jsonFileBatalla.getThemes().get(index).getRhymes().get(0).get_2().size()) {
-                                        rimas = jsonFileBatalla.getThemes().get(index).getRhymes().get(0).get_2().get(i).split("\n");
-
-                                        System.out.println("" + rimas[0]);
-                                        System.out.println("" + rimas[1]);
-                                        System.out.println("" + rimas[2]);
-                                        System.out.println("" + rimas[3]);
-                                        System.out.println("");
-                                    } else {
-                                        System.out.println("M'he quedat en blanc\n");
-                                    }
-                                    break;
-                            }
-                        }
-                    }
+                    rimas = mostraVersosContrincant (usuari, index, i, contrincant);
+                    numRimasContrincant = getNumRimas (rimas);
 
                     //calcula puntuacio
-
-                    switch (tipusBatalla) {
-                        case "acapella":
-                            puntsContrincant += (6 * Math.sqrt(numRimasContrincant) + 3)/2;
-                            puntsUsuari += (6 * Math.sqrt(numRimasUsuari) + 3)/2;
-                            break;
-                        case "sangre":
-                            puntsContrincant += (PI * (numRimasContrincant * numRimasContrincant))/ 4;
-                            puntsUsuari += (PI * (numRimasUsuari * numRimasUsuari))/ 4;
-                            break;
-                        case "escrita":
-                            puntsContrincant += (16 + 2 + 128 + 64 + 256 + 4 + 32 + 512 + 1024 + numRimasContrincant)/(1024 + 128 + 4 + 64 + 16 + 256 + i + 2 + 32 + 512) + 3 * numRimasContrincant;
-                            puntsUsuari += (16 + 2 + 128 + 64 + 256 + 4 + 32 + 512 + 1024 + numRimasUsuari)/(1024 + 128 + 4 + 64 + 16 + 256 + i + 2 + 32 + 512) + 3 * numRimasUsuari;
-                            break;
-                    }
+                    System.out.println();
+                    System.out.println("Usuari: ");
+                    puntsUsuari += calculaPuntuacio(tipusBatalla, numRimasUsuari);
+                    System.out.println("Contrincant: ");
+                    puntsContrincant += calculaPuntuacio(tipusBatalla, numRimasContrincant);
                 }
-                /*
-                LinkedList<String> ter = new LinkedList<>();
-                LinkedList<Integer> pun = new LinkedList<>();
-
-                for (String rima: rimas){
-                    if(ter.contains(rima.substring(rima.length()-2))){
-                        int index = ter.indexOf(rima.substring(rima.length()-2));
-                        pun.set(index,pun.get(index)+1);
-                    } else {
-                        ter.add(rima.substring(rima.length()-2));
-                        pun.add(1);
-                    }
-                }
-                */
-
                 break;
+
             case 0:
-
                 for (int i = 0; i < 2; i++) {
-                    // torn del contrincant
-                    System.out.println(contrincant + " your turn! Drop it\n");
-                    System.out.println(contrincant + ":\n");
+                    // Comença el contrincant
+                    rimas = mostraVersosContrincant (usuari, index, i, contrincant);
+                    numRimasContrincant = getNumRimas (rimas);
 
-                    //System.out.println("lenght: " + jsonFileCompeticio.getRappers().size());
+                    // torn del usuari
+                    rimas = demanaVersosUsuari (usuari);
+                    numRimasUsuari = getNumRimas (rimas);
 
-                    int level = 0;
-
-                    for (int j = 0; j < jsonFileCompeticio.getRappers().size(); j++) {
-                        if (jsonFileCompeticio.getRappers().get(j).getStageName().equalsIgnoreCase(usuari)) {
-                            /*
-                            System.out.println("meu: " + usuari);
-                            System.out.println("jsonUser: " + jsonFileCompeticio.getRappers().get(j).getStageName());
-                            System.out.println("lvl es: " + jsonFileCompeticio.getRappers().get(j).getLevel());
-                            System.out.println("index es: " + index);
-                            */
-                            level = jsonFileCompeticio.getRappers().get(j).getLevel();
-                            //level = 1; // delete this line
-                            switch (level) {
-                                case 1:
-                                    if (i < jsonFileBatalla.getThemes().get(index).getRhymes().get(0).get_1().size()) {
-                                        rimas = jsonFileBatalla.getThemes().get(index).getRhymes().get(0).get_1().get(i).split("\n");
-
-                                        System.out.println("" + rimas[0]);
-                                        System.out.println("" + rimas[1]);
-                                        System.out.println("" + rimas[2]);
-                                        System.out.println("" + rimas[3]);
-                                        System.out.println("");
-                                    } else {
-                                        System.out.println("M'he quedat en blanc\n");
-                                    }
-
-                                    break;
-                                case 2:
-                                    if (i < jsonFileBatalla.getThemes().get(index).getRhymes().get(0).get_2().size()) {
-                                        rimas = jsonFileBatalla.getThemes().get(index).getRhymes().get(0).get_2().get(i).split("\n");
-
-                                        System.out.println("" + rimas[0]);
-                                        System.out.println("" + rimas[1]);
-                                        System.out.println("" + rimas[2]);
-                                        System.out.println("" + rimas[3]);
-                                        System.out.println("");
-                                    } else {
-                                        System.out.println("M'he quedat en blanc\n");
-                                    }
-                                    break;
-                            }
-                        }
-                    }
-                    System.out.println(usuari + " your turn! Drop it!\n");
-                    System.out.println(usuari + ":\n");
-                    Scanner rimaUser = new Scanner(System.in);
-                    rimas[0] = rimaUser.nextLine();
-                    rimas[1] = rimaUser.nextLine();
-                    rimas[2] = rimaUser.nextLine();
-                    rimas[3] = rimaUser.nextLine();
-                    /*
-                    System.out.println("rima1: " + rimas[0]);
-                    System.out.println("rima2: " + rimas[1]);
-                    System.out.println("rima3: " + rimas[2]);
-                    System.out.println("rima4: " + rimas[3]);
-                    */
+                    //calcula puntuacio
+                    System.out.println();
+                    System.out.println("User: ");
+                    puntsUsuari += calculaPuntuacio(tipusBatalla, numRimasUsuari);
+                    System.out.println("Contrincant: ");
+                    puntsContrincant += calculaPuntuacio(tipusBatalla, numRimasContrincant);
 
                 }
                 break;
@@ -209,9 +80,111 @@ public class Batalla {
                 System.out.println("Error on randUser!");
                 break;
         }
+    }
 
+    public float calculaPuntuacio (String tipusBatalla, int numRimas) {
+        float puntuacio = 0;
 
+        switch (tipusBatalla) {
+            case "acapella":
+                puntuacio += (6 * Math.sqrt(numRimas) + 3)/2;
+                System.out.println("Acapella " + puntuacio);
+                break;
+            case "sangre":
+                puntuacio += (PI * (numRimas * numRimas))/ 4;
+                System.out.println("Sangre " + puntuacio);
+                break;
+            case "escrita":
+                puntuacio += (16 + 2 + 128 + 64 + 256 + 4 + 32 + 512 + 1024 + numRimas)/(1024 + 128 + 4 + 64 + 16 + 256 + numRimas + 2 + 32 + 512) + 3 * numRimas;
+                System.out.println("Escrita " + puntuacio);
+                break;
+        }
+        return puntuacio;
+    }
 
+    public int getNumRimas (String[] rimas) {
+        LinkedList<String> lettersRimas = new LinkedList<>();
+        LinkedList<Integer> numRimas = new LinkedList<>();
+        int numRimasUsuari = 0;
+        int indexRima = 0;
+
+        for (String rima: rimas){
+            if (rima.endsWith(",") || rima.endsWith(".")) {
+                rima = rima.substring(0, rima.length() - 1);
+            }
+            if (lettersRimas.contains(rima.substring(rima.length()-2))) {
+                indexRima = lettersRimas.indexOf(rima.substring(rima.length()-2));
+                numRimas.set(indexRima,numRimas.get(indexRima)+1);
+            } else {
+                lettersRimas.add(rima.substring(rima.length()-2));
+                numRimas.add(1);
+            }
+
+        }
+
+        for (int j = 0; j < numRimas.size(); j++) {
+            if (numRimas.get(j) > 1) {
+                numRimasUsuari += numRimas.get(j);
+            }
+        }
+
+        System.out.println(numRimas);
+        System.out.println(lettersRimas);
+
+        return numRimasUsuari;
+    }
+
+    public String[] mostraVersosContrincant (String usuari, int index, int i, String contrincant) {
+        int level;
+        String[] rimas = new String[4];
+
+        System.out.println(contrincant + " your turn! Drop it\n");
+        System.out.println(contrincant + ":\n");
+
+        for (int j = 0; j < jsonFileCompeticio.getRappers().size(); j++) {
+            if (jsonFileCompeticio.getRappers().get(j).getStageName().equalsIgnoreCase(usuari)) {
+                level = jsonFileCompeticio.getRappers().get(j).getLevel();
+                //level = 1; // delete this line
+                switch (level) {
+                    case 1:
+                        if (i < jsonFileBatalla.getThemes().get(index).getRhymes().get(0).get_1().size()) {
+                            rimas = jsonFileBatalla.getThemes().get(index).getRhymes().get(0).get_1().get(i).split("\n");
+
+                        } else {
+                            System.out.println("M'he quedat en blanc\n");
+                        }
+
+                        break;
+                    case 2:
+                        if (i < jsonFileBatalla.getThemes().get(index).getRhymes().get(0).get_2().size()) {
+                            rimas = jsonFileBatalla.getThemes().get(index).getRhymes().get(0).get_2().get(i).split("\n");
+                        } else {
+                            System.out.println("M'he quedat en blanc\n");
+                        }
+                        break;
+                }
+                System.out.println(rimas[0]);
+                System.out.println(rimas[1]);
+                System.out.println(rimas[2]);
+                System.out.println(rimas[3]);
+                System.out.println();
+            }
+        }
+        return rimas;
+    }
+
+    public String[] demanaVersosUsuari (String usuari) {
+        String[] rimas = new String[4];
+
+        System.out.println(usuari + " your turn! Drop it!\n");
+        System.out.println(usuari + ":\n");
+        Scanner rimaUser = new Scanner(System.in);
+        rimas[0] = rimaUser.nextLine();
+        rimas[1] = rimaUser.nextLine();
+        rimas[2] = rimaUser.nextLine();
+        rimas[3] = rimaUser.nextLine();
+
+        return rimas;
     }
 
 }
