@@ -1,18 +1,16 @@
 package edu.salleurl.Logic;
 
-import com.google.gson.stream.JsonWriter;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
+import edu.salleurl.ApiJson.WriteJson;
 
-import java.io.FileWriter;
-import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.LinkedList;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Competicio {
+
+    private WriteJson writeJson;
+
     private String name = null;
     private String startDate = null;
     private String endDate =null;
@@ -20,10 +18,9 @@ public class Competicio {
     private LinkedList<Rapero> raperos;
     private LinkedList<String> paisos;
 
-    private static FileWriter file;
-
     public Competicio () {
         this.phases = new LinkedList<>();
+        this.writeJson = new WriteJson();
     }
 
     public String getName() {
@@ -117,55 +114,10 @@ public class Competicio {
         Rapero rapero2 = new Rapero(nom, nomArtistic, birthday, pais, nivell, foto);
         raperos.add(rapero2);
 
-        JSONArray arrayPhases = new JSONArray();
-        for (int i = 0; i < phases.size(); i++) {
-            JSONObject objCountriesPhases = new JSONObject();
-            objCountriesPhases.put("budget", phases.get(i).getBudget());
-            objCountriesPhases.put("country", phases.get(i).getCountry());
-            arrayPhases.add(objCountriesPhases);
+        if(writeJson.write(name, startDate, endDate, phases, raperos, paisos)) {
+            System.out.println("Registration completed!");
+            System.out.println("-----------------------------------------------------------");
         }
-
-
-        JSONObject objCompetition = new JSONObject();
-        objCompetition.put("name", getName());
-        objCompetition.put("startDate", getStartDate());
-        objCompetition.put("endDate", getEndDate());
-        objCompetition.put("phases", arrayPhases);
-
-        JSONArray arrayCountries = new JSONArray();
-        for (int i = 0; i < paisos.size(); i++) {
-            arrayCountries.add(paisos.get(i));
-        }
-
-        JSONArray arrayRaperos = new JSONArray();
-        for (int i = 0; i < raperos.size(); i++) {
-            JSONObject objRaperos = new JSONObject();
-            objRaperos.put("realName", raperos.get(i).getRealName());
-            objRaperos.put("stageName", raperos.get(i).getStageName());
-            objRaperos.put("birth", raperos.get(i).getBirth());
-            objRaperos.put("nationality", raperos.get(i).getNationality());
-            objRaperos.put("level", raperos.get(i).getLevel());
-            objRaperos.put("photo", raperos.get(i).getPhoto());
-            arrayRaperos.add(objRaperos);
-        }
-
-        JSONObject objTotal = new JSONObject();
-        objTotal.put("competition", objCompetition);
-        objTotal.put("countries", arrayCountries);
-        objTotal.put("rappers", arrayRaperos);
-
-        try {
-            FileWriter file = new FileWriter("files/competició.json");
-            file.write(objTotal.toJSONString());
-            System.out.println("Successfully copied new rapper to file");
-            file.flush();
-            file.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        System.out.println("Registration completed!");
-        System.out.println("-----------------------------------------------------------");
     }
 
     public String loginRapero () {
