@@ -40,7 +40,6 @@ public class Logica {
         }
 
         if (numFase == 3 && !acabat) {
-            System.out.println("quan entrem?");
             // agafem el top1 i top2 per la batalla final
             topPosicio = getTop1Top2();
 

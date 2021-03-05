@@ -5,6 +5,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import java.io.FileWriter;
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.LinkedList;
@@ -56,6 +57,7 @@ public class Competicio {
         String nom;
         String nomArtistic;
         String birthday;
+        String pais;
 
         System.out.println("-----------------------------------------------------------");
         System.out.println("Please, enter your personal information:");
@@ -92,49 +94,78 @@ public class Competicio {
         } while (!comprovacioData);
 
         existeix = false;
-        System.out.println("- Country: ");
-        String pais = reader.nextLine();
-        for (int i = 0; i<paisos.size() && !existeix; i++) {
-            if (pais.equalsIgnoreCase(paisos.get(i))) {
-                existeix = true;
+        do {
+            System.out.println("- Country: ");
+            pais = reader.nextLine();
+            for (int i = 0; i<paisos.size(); i++) {
+                if (pais.equalsIgnoreCase(paisos.get(i))) {
+                    existeix = true;
+                }
             }
-        }
-        if (existeix) {
-            System.out.println("- Level: ");
-            String nivellString = reader.nextLine();
-            int nivell = Integer.parseInt(nivellString);
-
-            System.out.println("- Photo URL: ");
-            String foto = reader.nextLine();
-
-            Rapero rapero2 = new Rapero(nom, nomArtistic, birthday, pais, nivell, foto);
-
-            //part on s'escriu al fitxer Json
-            /*
-            JSONObject rapero = new JSONObject();
-            rapero.put("realName", nom);
-            rapero.put("stageName", nomArtistic);
-            rapero.put("birth", birthday);
-            rapero.put("nationality", pais);
-            rapero.put("level", nivell);
-            rapero.put("photo", foto);
-
-            try {
-                file = new FileWriter("files/competició.json");
-                file.write(rapero.toJSONString());
-                file.flush();
-                file.close();
-            } catch (IOException e) {
-                System.out.println("Error when coppying the rapper to the Json file");
+            if (!existeix) {
+                System.out.println("You can't register this competition. You country is not accepted!");
             }
-            */
-            raperos.add(rapero2);
-            System.out.println("Registration completed!");
-            System.out.println("-----------------------------------------------------------");
+        } while (!existeix);
+
+        System.out.println("- Level: ");
+        String nivellString = reader.nextLine();
+        int nivell = Integer.parseInt(nivellString);
+
+        System.out.println("- Photo URL: ");
+        String foto = reader.nextLine();
+
+        Rapero rapero2 = new Rapero(nom, nomArtistic, birthday, pais, nivell, foto);
+        raperos.add(rapero2);
+
+        JSONArray arrayPhases = new JSONArray();
+        for (int i = 0; i < phases.size(); i++) {
+            JSONObject objCountriesPhases = new JSONObject();
+            objCountriesPhases.put("budget", phases.get(i).getBudget());
+            objCountriesPhases.put("country", phases.get(i).getCountry());
+            arrayPhases.add(objCountriesPhases);
         }
-        else {
-            System.out.println("You can't register this competition. You country is not accepted!");
+
+
+        JSONObject objCompetition = new JSONObject();
+        objCompetition.put("name", getName());
+        objCompetition.put("startDate", getStartDate());
+        objCompetition.put("endDate", getEndDate());
+        objCompetition.put("phases", arrayPhases);
+
+        JSONArray arrayCountries = new JSONArray();
+        for (int i = 0; i < paisos.size(); i++) {
+            arrayCountries.add(paisos.get(i));
         }
+
+        JSONArray arrayRaperos = new JSONArray();
+        for (int i = 0; i < raperos.size(); i++) {
+            JSONObject objRaperos = new JSONObject();
+            objRaperos.put("realName", raperos.get(i).getRealName());
+            objRaperos.put("stageName", raperos.get(i).getStageName());
+            objRaperos.put("birth", raperos.get(i).getBirth());
+            objRaperos.put("nationality", raperos.get(i).getNationality());
+            objRaperos.put("level", raperos.get(i).getLevel());
+            objRaperos.put("photo", raperos.get(i).getPhoto());
+            arrayRaperos.add(objRaperos);
+        }
+
+        JSONObject objTotal = new JSONObject();
+        objTotal.put("competition", objCompetition);
+        objTotal.put("countries", arrayCountries);
+        objTotal.put("rappers", arrayRaperos);
+
+        try {
+            FileWriter file = new FileWriter("files/competició.json");
+            file.write(objTotal.toJSONString());
+            System.out.println("Successfully copied new rapper to file");
+            file.flush();
+            file.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Registration completed!");
+        System.out.println("-----------------------------------------------------------");
     }
 
     public String loginRapero () {
