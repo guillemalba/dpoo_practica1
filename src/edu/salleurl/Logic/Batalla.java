@@ -6,7 +6,6 @@ import java.util.*;
 import java.lang.Math;
 
 public abstract class Batalla {
-    private static final double PI = 3.1415926535898;
 
     private final JsonFileBatalla jsonFileBatalla;
     private final JsonFileCompeticio jsonFileCompeticio;
@@ -79,7 +78,7 @@ public abstract class Batalla {
         }
     }
 
-    public abstract float calculaPuntuacio (int numRimas) {}
+    public abstract float calculaPuntuacio (int numRimas);
 
     public int getNumRimas (String[] rimas) {
         LinkedList<String> lettersRimas = new LinkedList<>();

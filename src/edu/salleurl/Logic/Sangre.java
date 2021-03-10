@@ -5,6 +5,8 @@ import edu.salleurl.ApiJson.JsonFileCompeticio;
 
 public class Sangre extends Batalla{
 
+    private static final double PI = 3.1415926535898;
+
     private String nomProductor;
     private float puntuacio;
 
