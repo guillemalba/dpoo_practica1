@@ -76,6 +76,14 @@ public abstract class Batalla {
                 System.out.println("Error on randUser!");
                 break;
         }
+        for (int j = 0; j < jsonFileCompeticio.getRappers().size(); j++) {
+            if (jsonFileCompeticio.getRappers().get(j).getStageName().equalsIgnoreCase(usuari)) {
+                jsonFileCompeticio.getRappers().get(j).setPuntuacio(puntsUsuari);
+            }
+            if (jsonFileCompeticio.getRappers().get(j).getStageName().equalsIgnoreCase(contrincant)) {
+                jsonFileCompeticio.getRappers().get(j).setPuntuacio(puntsContrincant);
+            }
+        }
     }
 
     public abstract float calculaPuntuacio (int numRimas);

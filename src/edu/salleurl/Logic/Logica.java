@@ -12,9 +12,9 @@ public class Logica {
     private JsonFileBatalla jsonFileBatalla;
     int numerosFase1[];
     int numerosFase2[];
-    int guanyadorBatallaFase[];
-    int topBatalla1[];
-    int topBatalla2[];
+    float guanyadorBatallaFase[];
+    float topBatalla1[];
+    float topBatalla2[];
     int topPosicio[];
     String nomsFase2[];
     String usuari = null;
@@ -33,7 +33,7 @@ public class Logica {
     public void fesParelles(String usuari) {
         this.usuari = usuari;
         this.numerosFase1 = RandomizeArray(0, jsonFileCompeticio.getRappers().size()-1);
-        this.guanyadorBatallaFase = new int[numerosFase1.length];
+        this.guanyadorBatallaFase = new float[numerosFase1.length];
 
         if ((numBatalla == 1 || numBatalla == 2) && numFase == 1) {
             parellesFase1();
@@ -186,7 +186,7 @@ public class Logica {
         }
         Arrays.sort(guanyadorBatallaFase);
         for( int i = 0; i < guanyadorBatallaFase.length/2; ++i ) {
-            int temp = guanyadorBatallaFase[i];
+            float temp = guanyadorBatallaFase[i];
             guanyadorBatallaFase[i] = guanyadorBatallaFase[guanyadorBatallaFase.length - i - 1];
             guanyadorBatallaFase[guanyadorBatallaFase.length - i - 1] = temp;
         }
@@ -215,7 +215,7 @@ public class Logica {
         }
         Arrays.sort(guanyadorBatallaFase);
         for( int i = 0; i < guanyadorBatallaFase.length/2; ++i ) {
-            int temp = guanyadorBatallaFase[i];
+            float temp = guanyadorBatallaFase[i];
             guanyadorBatallaFase[i] = guanyadorBatallaFase[guanyadorBatallaFase.length - i - 1];
             guanyadorBatallaFase[guanyadorBatallaFase.length - i - 1] = temp;
         }
@@ -238,8 +238,18 @@ public class Logica {
         }
     }
 
-    public void ranquingCompeticio () {
-        int puntuacions[] = new int[jsonFileCompeticio.getRappers().size()];
+    public void ranquingCompeticio (int numFase) {
+        int numParticipants = 0;
+        if (numFase == 1) {
+            numParticipants = jsonFileCompeticio.getRappers().size();
+        }
+        else if (numFase == 2) {
+            numParticipants = jsonFileCompeticio.getRappers().size()/2;
+        }
+        else if (numFase == 3) {
+            numParticipants = 2;
+        }
+        float puntuacions[] = new float[jsonFileCompeticio.getRappers().size()];
 
         //guardem les puntuacions en un array
         for (int i = 0; i < jsonFileCompeticio.getRappers().size(); i++) {
@@ -249,7 +259,7 @@ public class Logica {
         //ordenem l'array de puntuacions de major a menor
         Arrays.sort(puntuacions);
         for( int i = 0; i < puntuacions.length/2; ++i ) {
-            int temp = puntuacions[i];
+            float temp = puntuacions[i];
             puntuacions[i] = puntuacions[puntuacions.length - i - 1];
             puntuacions[puntuacions.length - i - 1] = temp;
         }
@@ -266,7 +276,7 @@ public class Logica {
         //mostrem el ranquing
         int m = 0;
         for (int i = 0; i < j; i++) {
-            for (int k = 0; k < jsonFileCompeticio.getRappers().size(); k++) {
+            for (int k = 0; k < numParticipants; k++) {
                 if (jsonFileCompeticio.getRappers().get(k).getPuntuacio() == puntuacions[i]) {
                     if (jsonFileCompeticio.getRappers().get(k).getStageName().equalsIgnoreCase(usuari)) {
                         System.out.println(m + 1 + ". " + jsonFileCompeticio.getRappers().get(k).getStageName() + " - " + puntuacions[i] + " <-- You");
@@ -432,7 +442,7 @@ public class Logica {
                     System.out.println("-----------------------------------------------------------");
                     System.out.println("Pos.  |  Name  |  Score ");
                     System.out.println("-----------------------------------------------------------\n");
-                    ranquingCompeticio();
+                    ranquingCompeticio(numFase);
                 break;
 
                 case 3:

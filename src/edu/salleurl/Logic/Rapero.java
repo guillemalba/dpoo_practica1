@@ -10,7 +10,7 @@ public class Rapero {
     private int level = 0;
     private String photo = null;
 
-    private int puntuacio = 0;
+    private float puntuacio = 0;
 
 
     public Rapero () {}
@@ -72,11 +72,11 @@ public class Rapero {
         this.photo = photo;
     }
 
-    public int getPuntuacio() {
+    public float getPuntuacio() {
         return puntuacio;
     }
 
-    public void setPuntuacio(int puntuacio) {
+    public void setPuntuacio(float puntuacio) {
         this.puntuacio = this.puntuacio + puntuacio;
     }
 }
