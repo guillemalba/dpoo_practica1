@@ -326,7 +326,6 @@ public class Logica {
     public int getOptionLobby(String tipusBatalla) {
         int opcio = 0;
         boolean passaFase = false;
-        String tipusBatalla2 = tipusBatalla;
         System.out.println("\nChoose an option: ");
         Scanner reader = new Scanner(System.in);
         try {
@@ -341,16 +340,30 @@ public class Logica {
         }
         switch (opcio) {
             case 1:
-                Batalla batalla = new Batalla(jsonFileBatalla, jsonFileCompeticio);
+                //Batalla batalla = new Batalla(jsonFileBatalla, jsonFileCompeticio);
+                Acapella acapella = new Acapella(jsonFileBatalla, jsonFileCompeticio);
+                Sangre sangre = new Sangre(jsonFileBatalla, jsonFileCompeticio);
+                Escrita escrita = new Escrita(jsonFileBatalla, jsonFileCompeticio);
+                
                 switch (numBatalla) {
                     case 1:
-                        batalla.startBattle(usuari, contrincant, tipusBatalla2);
+                        switch (tipusBatalla) {
+                            case "acapella":
+                                acapella.startBattle(usuari, contrincant, tipusBatalla);
+                                break;
+                            case "sangre":
+                                sangre.startBattle(usuari, contrincant, tipusBatalla);
+                                break;
+                            case "escrita":
+                                escrita.startBattle(usuari, contrincant, tipusBatalla);
+                                break;
+                        }
                         numBatalla = 2;
                         fesParelles(usuari);
                     break;
 
                     case 2:
-                        batalla.startBattle(usuari, contrincant, tipusBatalla2);
+                        batalla.startBattle(usuari, contrincant, tipusBatalla);
                         jugadorGuanyadorBatallaFase1();
                         if (numFase == jsonFileCompeticio.getCompetition().getPhases().size() && acabat) {
                             opcio = 4;
