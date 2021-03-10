@@ -35,7 +35,6 @@ public class Batalla {
         System.out.println();
         System.out.println("A coin is tossed in the air and...");
 
-
         //randUser = 1;   // esborra aquesta linea
         switch (randUser) {
             case 1:
