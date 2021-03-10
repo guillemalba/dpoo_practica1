@@ -121,6 +121,7 @@ public abstract class Batalla {
     }
 
     public String[] mostraVersosContrincant (String usuari, int index, int i, String contrincant) {
+        boolean end = false;
         int level;
         String[] rimas = new String[4];
 
@@ -146,14 +147,17 @@ public abstract class Batalla {
                             rimas = jsonFileBatalla.getThemes().get(index).getRhymes().get(0).get_2().get(i).split("\n");
                         } else {
                             System.out.println("M'he quedat en blanc\n");
+                            end = true;
                         }
                         break;
                 }
-                System.out.println(rimas[0]);
-                System.out.println(rimas[1]);
-                System.out.println(rimas[2]);
-                System.out.println(rimas[3]);
-                System.out.println();
+                if (!end) {
+                    System.out.println(rimas[0]);
+                    System.out.println(rimas[1]);
+                    System.out.println(rimas[2]);
+                    System.out.println(rimas[3]);
+                    System.out.println();
+                }
             }
         }
         return rimas;
