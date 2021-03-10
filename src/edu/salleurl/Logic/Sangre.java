@@ -6,10 +6,17 @@ import edu.salleurl.ApiJson.JsonFileCompeticio;
 public class Sangre extends Batalla{
 
     private String nomProductor;
+    private float puntuacio;
 
     public Sangre(JsonFileBatalla jsonFileBatalla, JsonFileCompeticio jsonFileCompeticio) {
         super(jsonFileBatalla, jsonFileCompeticio);
     }
 
-
+    @java.lang.Override
+    public float calculaPuntuacio(int numRimas) {
+        puntuacio += (PI * (numRimas * numRimas))/ 4;
+        System.out.println("Sangre " + puntuacio);
+        System.out.println("FUNCIONAAAAAAAAAAAA");
+        return puntuacio;
+    }
 }

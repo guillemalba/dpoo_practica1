@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b5f7e3c-b67c-4926-b27e-fd24f37ff2ce" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Acapella.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Acapella.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Batalla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Batalla.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Escrita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Escrita.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Logica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Logica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Sangre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Sangre.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615368666704</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="safdsg">
+      <created>1615369495569</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1615369495571</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,33 +245,38 @@
     <MESSAGE value="Logica.java arreglat" />
     <MESSAGE value="." />
     <MESSAGE value="add acapella escrita i sangre" />
-    <option name="LAST_COMMIT_MESSAGE" value="add acapella escrita i sangre" />
+    <MESSAGE value="safdsg" />
+    <option name="LAST_COMMIT_MESSAGE" value="safdsg" />
   </component>
   <component name="WindowStateProjectService">
     <state x="304" y="169" width="1071" height="706" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608637509365">
       <screen x="0" y="25" width="1680" height="971" />
     </state>
     <state x="304" y="169" width="1071" height="706" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1680.971@0.25.1680.971" timestamp="1608637509365" />
-    <state x="410" y="25" key="CommitChangelistDialog2" timestamp="1615368666214">
+    <state x="653" y="218" key="#com.intellij.ide.util.MemberChooser" timestamp="1615370203311">
       <screen x="0" y="25" width="1680" height="971" />
     </state>
-    <state x="410" y="25" key="CommitChangelistDialog2/0.25.1680.971@0.25.1680.971" timestamp="1615368666214" />
-    <state width="1638" height="314" key="GridCell.Tab.0.bottom" timestamp="1609037072639">
+    <state x="653" y="218" key="#com.intellij.ide.util.MemberChooser/0.25.1680.971@0.25.1680.971" timestamp="1615370203311" />
+    <state x="410" y="25" key="CommitChangelistDialog2" timestamp="1615369495273">
       <screen x="0" y="25" width="1680" height="971" />
     </state>
-    <state width="1638" height="314" key="GridCell.Tab.0.bottom/0.25.1680.971@0.25.1680.971" timestamp="1609037072639" />
-    <state width="1638" height="314" key="GridCell.Tab.0.center" timestamp="1609037072637">
+    <state x="410" y="25" key="CommitChangelistDialog2/0.25.1680.971@0.25.1680.971" timestamp="1615369495273" />
+    <state width="1638" height="524" key="GridCell.Tab.0.bottom" timestamp="1615369553020">
       <screen x="0" y="25" width="1680" height="971" />
     </state>
-    <state width="1638" height="314" key="GridCell.Tab.0.center/0.25.1680.971@0.25.1680.971" timestamp="1609037072637" />
-    <state width="1638" height="314" key="GridCell.Tab.0.left" timestamp="1609037072637">
+    <state width="1638" height="524" key="GridCell.Tab.0.bottom/0.25.1680.971@0.25.1680.971" timestamp="1615369553020" />
+    <state width="1638" height="524" key="GridCell.Tab.0.center" timestamp="1615369553019">
       <screen x="0" y="25" width="1680" height="971" />
     </state>
-    <state width="1638" height="314" key="GridCell.Tab.0.left/0.25.1680.971@0.25.1680.971" timestamp="1609037072637" />
-    <state width="1638" height="314" key="GridCell.Tab.0.right" timestamp="1609037072639">
+    <state width="1638" height="524" key="GridCell.Tab.0.center/0.25.1680.971@0.25.1680.971" timestamp="1615369553019" />
+    <state width="1638" height="524" key="GridCell.Tab.0.left" timestamp="1615369553017">
       <screen x="0" y="25" width="1680" height="971" />
     </state>
-    <state width="1638" height="314" key="GridCell.Tab.0.right/0.25.1680.971@0.25.1680.971" timestamp="1609037072639" />
+    <state width="1638" height="524" key="GridCell.Tab.0.left/0.25.1680.971@0.25.1680.971" timestamp="1615369553017" />
+    <state width="1638" height="524" key="GridCell.Tab.0.right" timestamp="1615369553019">
+      <screen x="0" y="25" width="1680" height="971" />
+    </state>
+    <state width="1638" height="524" key="GridCell.Tab.0.right/0.25.1680.971@0.25.1680.971" timestamp="1615369553019" />
     <state width="1638" height="314" key="GridCell.Tab.1.bottom" timestamp="1609037072640">
       <screen x="0" y="25" width="1680" height="971" />
     </state>
@@ -277,10 +293,10 @@
       <screen x="0" y="25" width="1680" height="971" />
     </state>
     <state width="1638" height="314" key="GridCell.Tab.1.right/0.25.1680.971@0.25.1680.971" timestamp="1609037072640" />
-    <state x="440" y="243" key="Vcs.Push.Dialog.v2" timestamp="1615368677250">
+    <state x="440" y="243" key="Vcs.Push.Dialog.v2" timestamp="1615369500173">
       <screen x="0" y="25" width="1680" height="971" />
     </state>
-    <state x="440" y="243" key="Vcs.Push.Dialog.v2/0.25.1680.971@0.25.1680.971" timestamp="1615368677250" />
+    <state x="440" y="243" key="Vcs.Push.Dialog.v2/0.25.1680.971@0.25.1680.971" timestamp="1615369500173" />
     <state x="246" y="99" key="new project wizard" timestamp="1608732599054">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>

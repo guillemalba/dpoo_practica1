@@ -5,7 +5,7 @@ import edu.salleurl.ApiJson.JsonFileCompeticio;
 import java.util.*;
 import java.lang.Math;
 
-public class Batalla {
+public abstract class Batalla {
     private static final double PI = 3.1415926535898;
 
     private final JsonFileBatalla jsonFileBatalla;
@@ -15,8 +15,6 @@ public class Batalla {
         this.jsonFileBatalla = jsonFileBatalla;
         this.jsonFileCompeticio = jsonFileCompeticio;
     }
-
-
 
     public void startBattle(String usuari, String contrincant, String tipusBatalla) {
         Random random = new Random();
@@ -50,9 +48,9 @@ public class Batalla {
                     //calcula puntuacio
                     System.out.println();
                     System.out.println("Usuari: ");
-                    puntsUsuari += calculaPuntuacio(tipusBatalla, numRimasUsuari);
+                    puntsUsuari += calculaPuntuacio(numRimasUsuari);
                     System.out.println("Contrincant: ");
-                    puntsContrincant += calculaPuntuacio(tipusBatalla, numRimasContrincant);
+                    puntsContrincant += calculaPuntuacio(numRimasContrincant);
                 }
                 break;
 
@@ -69,9 +67,9 @@ public class Batalla {
                     //calcula puntuacio
                     System.out.println();
                     System.out.println("User: ");
-                    puntsUsuari += calculaPuntuacio(tipusBatalla, numRimasUsuari);
+                    puntsUsuari += calculaPuntuacio(numRimasUsuari);
                     System.out.println("Contrincant: ");
-                    puntsContrincant += calculaPuntuacio(tipusBatalla, numRimasContrincant);
+                    puntsContrincant += calculaPuntuacio(numRimasContrincant);
 
                 }
                 break;
@@ -81,25 +79,7 @@ public class Batalla {
         }
     }
 
-    public float calculaPuntuacio (String tipusBatalla, int numRimas) {
-        float puntuacio = 0;
-
-        switch (tipusBatalla) {
-            case "acapella":
-                puntuacio += (6 * Math.sqrt(numRimas) + 3)/2;
-                System.out.println("Acapella " + puntuacio);
-                break;
-            case "sangre":
-                puntuacio += (PI * (numRimas * numRimas))/ 4;
-                System.out.println("Sangre " + puntuacio);
-                break;
-            case "escrita":
-                puntuacio += (16 + 2 + 128 + 64 + 256 + 4 + 32 + 512 + 1024 + numRimas)/(1024 + 128 + 4 + 64 + 16 + 256 + numRimas + 2 + 32 + 512) + 3 * numRimas;
-                System.out.println("Escrita " + puntuacio);
-                break;
-        }
-        return puntuacio;
-    }
+    public abstract float calculaPuntuacio (int numRimas) {}
 
     public int getNumRimas (String[] rimas) {
         LinkedList<String> lettersRimas = new LinkedList<>();

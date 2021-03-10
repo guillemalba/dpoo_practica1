@@ -344,7 +344,7 @@ public class Logica {
                 Acapella acapella = new Acapella(jsonFileBatalla, jsonFileCompeticio);
                 Sangre sangre = new Sangre(jsonFileBatalla, jsonFileCompeticio);
                 Escrita escrita = new Escrita(jsonFileBatalla, jsonFileCompeticio);
-                
+
                 switch (numBatalla) {
                     case 1:
                         switch (tipusBatalla) {
@@ -363,7 +363,19 @@ public class Logica {
                     break;
 
                     case 2:
-                        batalla.startBattle(usuari, contrincant, tipusBatalla);
+
+                        switch (tipusBatalla) {
+                            case "acapella":
+                                acapella.startBattle(usuari, contrincant, tipusBatalla);
+                                break;
+                            case "sangre":
+                                sangre.startBattle(usuari, contrincant, tipusBatalla);
+                                break;
+                            case "escrita":
+                                escrita.startBattle(usuari, contrincant, tipusBatalla);
+                                break;
+                        }
+
                         jugadorGuanyadorBatallaFase1();
                         if (numFase == jsonFileCompeticio.getCompetition().getPhases().size() && acabat) {
                             opcio = 4;
