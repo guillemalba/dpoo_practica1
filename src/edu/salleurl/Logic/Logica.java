@@ -268,7 +268,11 @@ public class Logica {
         for (int i = 0; i < j; i++) {
             for (int k = 0; k < jsonFileCompeticio.getRappers().size(); k++) {
                 if (jsonFileCompeticio.getRappers().get(k).getPuntuacio() == puntuacions[i]) {
-                    System.out.println(m + 1 + ". " + jsonFileCompeticio.getRappers().get(k).getStageName() + " - " + puntuacions[i]);
+                    if (jsonFileCompeticio.getRappers().get(k).getStageName().equalsIgnoreCase(usuari)) {
+                        System.out.println(m + 1 + ". " + jsonFileCompeticio.getRappers().get(k).getStageName() + " - " + puntuacions[i] + " <-- You");
+                    } else {
+                        System.out.println(m + 1 + ". " + jsonFileCompeticio.getRappers().get(k).getStageName() + " - " + puntuacions[i]);
+                    }
                     m++;
                 }
             }
