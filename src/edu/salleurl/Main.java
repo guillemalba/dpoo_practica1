@@ -4,6 +4,7 @@ import edu.salleurl.ApiJson.JsonFileBatalla;
 import edu.salleurl.ApiJson.JsonFileCompeticio;
 import edu.salleurl.ApiJson.ReadJson;
 import edu.salleurl.Logic.Competicio;
+import edu.salleurl.Logic.Controller;
 
 /**
  * Classe on es fan les crides per a que l'exercici funcioni be
@@ -17,12 +18,16 @@ public class Main {
     public static void main(String[] args) {
         ReadJson readJsonBatalla = new ReadJson();
         ReadJson readJsonCompeticio = new ReadJson();
-        JsonFileCompeticio jsonCompeticio = null;
-        JsonFileBatalla jsonBatalla = null;
 
+        Controller controller = new Controller(readJsonCompeticio.read(), readJsonBatalla.read2());
+        controller.startProgram();
+
+        //JsonFileCompeticio jsonCompeticio = null;
+        //JsonFileBatalla jsonBatalla = null;
+
+        /*
         jsonCompeticio = readJsonCompeticio.read();
         jsonBatalla = readJsonBatalla.read2();
-        //no agafa bé les rimes
 
         int opcio = 0;
         boolean exit = false;
@@ -34,7 +39,7 @@ public class Main {
         } else {
             System.out.println("Error.");
         }
-
+*/
 
     }
 }

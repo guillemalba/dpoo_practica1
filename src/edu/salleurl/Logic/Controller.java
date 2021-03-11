@@ -2,12 +2,13 @@ package edu.salleurl.Logic;
 
 import edu.salleurl.ApiJson.JsonFileBatalla;
 import edu.salleurl.ApiJson.JsonFileCompeticio;
+import edu.salleurl.Menu;
 
 import java.util.*;
 
-public class Logica {
+public class Controller {
     private static final float MAX_PUNTUACIO = 30;
-
+    private Menu menu = new Menu();
     private JsonFileCompeticio jsonFileCompeticio;
     private JsonFileBatalla jsonFileBatalla;
     int numerosFase1[];
@@ -25,9 +26,22 @@ public class Logica {
     int indexUsuari = 0;
     boolean acabat = false;
 
-    public Logica (JsonFileCompeticio jsonFileCompeticio, JsonFileBatalla jsonFileBatalla) {
+    public Controller(JsonFileCompeticio jsonFileCompeticio, JsonFileBatalla jsonFileBatalla) {
         this.jsonFileCompeticio = jsonFileCompeticio;
         this.jsonFileBatalla = jsonFileBatalla;
+    }
+
+    public void startProgram() {
+        int opcio = 0;
+        boolean exit = false;
+        if(jsonFileCompeticio != null && jsonFileBatalla != null) {
+            Menu menu = new Menu(jsonFileCompeticio, jsonFileBatalla);
+            menu.showCompeticio();
+            menu.showMenu();
+            menu.getOption();
+        } else {
+            System.out.println("Error.");
+        }
     }
 
     public void fesParelles(String usuari) {
@@ -208,6 +222,11 @@ public class Logica {
         }
     }
 
+    // retorna el guanyador de la competicio
+    public String getWinner() {
+        return jsonFileCompeticio.getRappers().get(guanyador).getStageName();
+    }
+
     public void jugadorGuanyadorBatallaFase2 () {
         for (int j = 0; j < jsonFileCompeticio.getRappers().size(); j++) {
             guanyadorBatallaFase[j] = jsonFileCompeticio.getRappers().get(j).getPuntuacio();
@@ -288,6 +307,7 @@ public class Logica {
         }
     }
 
+    /*
     //mostrem la info de la competicio
     public void showCompetiStatus() {
         Random tipusBatallaRandom = new Random();
@@ -320,9 +340,16 @@ public class Logica {
 
     public void showCompetiAcabada() {
         int opcio = 0;
+        String phrase;
+        if (guanyador == indexUsuari) {
+            phrase = "Congrat broda! You've WON the competition!";
+        } else {
+            phrase = "You've lost kid, I'm sure you'll do better next time...";
+        }
+        // You've lost kid, I'm sure you'll do better next time...
         do {
             System.out.println("\n-----------------------------------------------------------");
-            System.out.println("Winner: " + jsonFileCompeticio.getRappers().get(guanyador).getStageName() + " | Score: " + jsonFileCompeticio.getRappers().get(guanyador).getPuntuacio() + " | Battle: ");
+            System.out.println("Winner: " + jsonFileCompeticio.getRappers().get(guanyador).getStageName() + " | Score: " + jsonFileCompeticio.getRappers().get(guanyador).getPuntuacio() + " | " + phrase);
             System.out.println("-----------------------------------------------------------\n");
             System.out.println("1. Start the battle (deactivated)");
             System.out.println("2. Show ranking");
@@ -331,7 +358,7 @@ public class Logica {
             opcio = getOptionLobby("");
         } while (opcio != 4);
     }
-
+*/
     public int getOptionLobby(String tipusBatalla) {
         int opcio = 0;
         boolean passaFase = false;

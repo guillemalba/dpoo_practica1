@@ -94,30 +94,41 @@ public abstract class Batalla {
         int numRimasUsuari = 0;
         int indexRima = 0;
 
-        for (String rima: rimas){
-            if (rima.endsWith(",") || rima.endsWith(".")) {
-                rima = rima.substring(0, rima.length() - 1);
-            }
-            if (lettersRimas.contains(rima.substring(rima.length()-2))) {
-                indexRima = lettersRimas.indexOf(rima.substring(rima.length()-2));
-                numRimas.set(indexRima,numRimas.get(indexRima)+1);
-            } else {
-                lettersRimas.add(rima.substring(rima.length()-2));
-                numRimas.add(1);
+        System.out.println();
+        System.out.println();
+        System.out.println("rima0: " + rimas[0]);
+        //System.out.println("rimaLeng: " + rimas[0].lenght()); // TODO:
+
+        System.out.println();
+        if (rimas[0] == null) {
+            return 0;
+        } else {
+            for (String rima: rimas){
+
+                if (rima.endsWith(",") || rima.endsWith(".")) {
+                    rima = rima.substring(0, rima.length() - 1);
+                }
+                if (lettersRimas.contains(rima.substring(rima.length()-2))) {
+                    indexRima = lettersRimas.indexOf(rima.substring(rima.length()-2));
+                    numRimas.set(indexRima,numRimas.get(indexRima)+1);
+                } else {
+                    lettersRimas.add(rima.substring(rima.length()-2));
+                    numRimas.add(1);
+                }
+
             }
 
+            for (int j = 0; j < numRimas.size(); j++) {
+                if (numRimas.get(j) > 1) {
+                    numRimasUsuari += numRimas.get(j);
+                }
+            }
+
+            System.out.println(numRimas);
+            System.out.println(lettersRimas);
+
+            return numRimasUsuari;
         }
-
-        for (int j = 0; j < numRimas.size(); j++) {
-            if (numRimas.get(j) > 1) {
-                numRimasUsuari += numRimas.get(j);
-            }
-        }
-
-        System.out.println(numRimas);
-        System.out.println(lettersRimas);
-
-        return numRimasUsuari;
     }
 
     public String[] mostraVersosContrincant (String usuari, int index, int i, String contrincant) {
@@ -136,9 +147,9 @@ public abstract class Batalla {
                     case 1:
                         if (i < jsonFileBatalla.getThemes().get(index).getRhymes().get(0).get_1().size()) {
                             rimas = jsonFileBatalla.getThemes().get(index).getRhymes().get(0).get_1().get(i).split("\n");
-
                         } else {
                             System.out.println("M'he quedat en blanc\n");
+                            end = true;
                         }
 
                         break;

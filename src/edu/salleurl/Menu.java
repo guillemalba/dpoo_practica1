@@ -3,8 +3,7 @@ package edu.salleurl;
 import edu.salleurl.ApiJson.JsonFileBatalla;
 import edu.salleurl.ApiJson.JsonFileCompeticio;
 import edu.salleurl.Logic.Competicio;
-import edu.salleurl.Logic.Fase;
-import edu.salleurl.Logic.Logica;
+import edu.salleurl.Logic.Controller;
 import edu.salleurl.Logic.Rapero;
 
 import java.time.LocalDate;
@@ -19,13 +18,13 @@ public class Menu {
     private JsonFileBatalla jsonFileBatalla;
     private LinkedList<Rapero> raperos;
     private LinkedList<String> paisos;
-    private Logica logica;
+    private Controller logica;
 
     public Menu (JsonFileCompeticio jsonFileCompeticio, JsonFileBatalla jsonFileBatalla) {
         this.competicio = jsonFileCompeticio.getCompetition();
         this.raperos = jsonFileCompeticio.getRappers();
         this.paisos = jsonFileCompeticio.getCountries();
-        this.logica = new Logica(jsonFileCompeticio, jsonFileBatalla);
+        this.logica = new Controller(jsonFileCompeticio, jsonFileBatalla);
         this.jsonFileBatalla = jsonFileBatalla;
     }
 
@@ -68,7 +67,7 @@ public class Menu {
                 System.out.println("2. Leave");
             break;
             case 2:
-                System.out.println("The winner of the competiton is: ");
+                System.out.println("The winner of the competiton is: " + logica.getWinner());
                 System.out.println("Press 2 if you want to leave");
             break;
         }
@@ -102,9 +101,60 @@ public class Menu {
         if (opcio == 1 && opcioCompetition == 1) {
             competicio.setRaperos(raperos);
             String usuari = competicio.loginRapero();
-            logica.fesParelles(usuari);
-            logica.showCompetiStatus();
-            logica.showCompetiAcabada();
+            fesParelles(usuari);
+            showCompetiStatus();
+            showCompetiAcabada();
         }
+    }
+
+    //mostrem la info de la competicio
+    public void showCompetiStatus() {
+        Random tipusBatallaRandom = new Random();
+        int tipus = tipusBatallaRandom.nextInt(3);
+        String tipusBatalla = null;
+        switch (tipus) {
+            case 0:
+                tipusBatalla = "acapella";
+                break;
+            case 1:
+                tipusBatalla = "sangre";
+                break;
+            case 2:
+                tipusBatalla = "escrita";
+                break;
+        }
+        int opcio = 0;
+        do {
+            System.out.println("\n-----------------------------------------------------------");
+            System.out.println("Phase: " + numFase + " / " + jsonFileCompeticio.getCompetition().getPhases().size() +  " | Score: " + jsonFileCompeticio.getRappers().get(indexUsuari).getPuntuacio() + " | Battle: " + numBatalla + " / 2 " + tipusBatalla + " | Rival: " + contrincant);
+            System.out.println("-----------------------------------------------------------\n");
+            System.out.println("1. Start the battle");
+            System.out.println("2. Show ranking");
+            System.out.println("3. Create profile");
+            System.out.println("4. Leave competition");
+            opcio = controller.getOptionLobby(tipusBatalla);
+        } while (opcio != 4);
+
+    }
+
+    public void showCompetiAcabada() {
+        int opcio = 0;
+        String phrase;
+        if (guanyador == indexUsuari) {
+            phrase = "Congrat broda! You've WON the competition!";
+        } else {
+            phrase = "You've lost kid, I'm sure you'll do better next time...";
+        }
+        // You've lost kid, I'm sure you'll do better next time...
+        do {
+            System.out.println("\n-----------------------------------------------------------");
+            System.out.println("Winner: " + jsonFileCompeticio.getRappers().get(guanyador).getStageName() + " | Score: " + jsonFileCompeticio.getRappers().get(guanyador).getPuntuacio() + " | " + phrase);
+            System.out.println("-----------------------------------------------------------\n");
+            System.out.println("1. Start the battle (deactivated)");
+            System.out.println("2. Show ranking");
+            System.out.println("3. Create profile");
+            System.out.println("4. Leave competition");
+            opcio = getOptionLobby("");
+        } while (opcio != 4);
     }
 }
