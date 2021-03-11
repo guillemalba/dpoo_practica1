@@ -63,9 +63,9 @@ public class Menu {
 
     }
 
-    public void getOption(LinkedList<Rapero> raperos, LinkedList<String> paisos, Competicio competicio) {
+    public boolean getOption(LinkedList<Rapero> raperos, LinkedList<String> paisos, Competicio competicio, String usuari) {
         int opcio = 0;
-
+        boolean start = false;
         System.out.println("\nChoose an option: ");
         Scanner reader = new Scanner(System.in);
         try {
@@ -89,11 +89,10 @@ public class Menu {
         }
         if (opcio == 1 && opcioCompetition == 1) {
             competicio.setRaperos(raperos);
-            String usuari = competicio.loginRapero();
-            fesParelles(usuari);
-            showCompetiStatus(raperos, competicio);
-            showCompetiAcabada(raperos, competicio);
+            usuari = competicio.loginRapero();
+            start = true;
         }
+        return start;
     }
 
     //mostrem la info de la competicio
@@ -126,7 +125,7 @@ public class Menu {
 
     }
 
-    public void showCompetiAcabada(LinkedList<Rapero> raperos, Competicio competicio) {
+    public void showCompetiAcabada(LinkedList<Rapero> raperos) {
         int opcio = 0;
         String phrase;
         if (guanyador == indexUsuari) {

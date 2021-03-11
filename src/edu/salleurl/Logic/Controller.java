@@ -33,12 +33,16 @@ public class Controller {
     }
 
     public void startProgram() {
-        int opcio = 0;
-        boolean exit = false;
+        boolean start = false;
         if(jsonFileCompeticio != null && jsonFileBatalla != null) {
             menu.showCompeticio(jsonFileCompeticio.getRappers(), jsonFileCompeticio.getCompetition());
             menu.showMenu();
-            menu.getOption(jsonFileCompeticio.getRappers(), jsonFileCompeticio.getCountries(), jsonFileCompeticio.getCompetition());
+            start = menu.getOption(jsonFileCompeticio.getRappers(), jsonFileCompeticio.getCountries(), jsonFileCompeticio.getCompetition(), usuari);
+            if (start) {
+                fesParelles(usuari);
+                menu.showCompetiStatus(jsonFileCompeticio.getRappers(), jsonFileCompeticio.getCompetition());
+                menu.showCompetiAcabada(jsonFileCompeticio.getRappers());
+            }
         } else {
             System.out.println("Error.");
         }
