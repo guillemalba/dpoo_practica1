@@ -362,7 +362,7 @@ public class Controller {
             opcio = getOptionLobby("");
         } while (opcio != 4);
     }
-*/
+
     public int getOptionLobby(String tipusBatalla) {
         int opcio = 0;
         boolean passaFase = false;
@@ -485,4 +485,5 @@ public class Controller {
             }
         return opcio;
     }
+    */
 }
