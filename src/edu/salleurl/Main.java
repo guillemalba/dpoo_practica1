@@ -1,9 +1,6 @@
 package edu.salleurl;
 
-import edu.salleurl.ApiJson.JsonFileBatalla;
-import edu.salleurl.ApiJson.JsonFileCompeticio;
 import edu.salleurl.ApiJson.ReadJson;
-import edu.salleurl.Logic.Competicio;
 import edu.salleurl.Logic.Controller;
 
 /**

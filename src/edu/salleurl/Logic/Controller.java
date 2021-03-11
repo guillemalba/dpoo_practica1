@@ -8,9 +8,10 @@ import java.util.*;
 
 public class Controller {
     private static final float MAX_PUNTUACIO = 30;
-    private Menu menu = new Menu();
     private JsonFileCompeticio jsonFileCompeticio;
     private JsonFileBatalla jsonFileBatalla;
+    private Menu menu = new Menu();
+
     int numerosFase1[];
     int numerosFase2[];
     float guanyadorBatallaFase[];
@@ -35,10 +36,9 @@ public class Controller {
         int opcio = 0;
         boolean exit = false;
         if(jsonFileCompeticio != null && jsonFileBatalla != null) {
-            Menu menu = new Menu(jsonFileCompeticio, jsonFileBatalla);
-            menu.showCompeticio();
+            menu.showCompeticio(jsonFileCompeticio.getRappers(), jsonFileCompeticio.getCompetition());
             menu.showMenu();
-            menu.getOption();
+            menu.getOption(jsonFileCompeticio.getRappers(), jsonFileCompeticio.getCountries(), jsonFileCompeticio.getCompetition());
         } else {
             System.out.println("Error.");
         }

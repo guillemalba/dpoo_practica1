@@ -1,6 +1,5 @@
 package edu.salleurl.ApiJson;
 
-import edu.salleurl.Logic.Competicio;
 import edu.salleurl.Logic.Fase;
 import edu.salleurl.Logic.Rapero;
 import org.json.simple.JSONArray;

@@ -14,21 +14,10 @@ import java.util.Scanner;
 
 public class Menu {
     int opcioCompetition = 0;
-    private Competicio competicio;
-    private JsonFileBatalla jsonFileBatalla;
-    private LinkedList<Rapero> raperos;
-    private LinkedList<String> paisos;
-    private Controller logica;
 
-    public Menu (JsonFileCompeticio jsonFileCompeticio, JsonFileBatalla jsonFileBatalla) {
-        this.competicio = jsonFileCompeticio.getCompetition();
-        this.raperos = jsonFileCompeticio.getRappers();
-        this.paisos = jsonFileCompeticio.getCountries();
-        this.logica = new Controller(jsonFileCompeticio, jsonFileBatalla);
-        this.jsonFileBatalla = jsonFileBatalla;
-    }
+    public Menu () {}
 
-    public void showCompeticio () {
+    public void showCompeticio (LinkedList<Rapero> raperos, Competicio competicio) {
         LocalDate today = LocalDate.now();
 
         System.out.println("Welcome to competition: " + competicio.getName());
@@ -67,14 +56,14 @@ public class Menu {
                 System.out.println("2. Leave");
             break;
             case 2:
-                System.out.println("The winner of the competiton is: " + logica.getWinner());
+                System.out.println("The winner of the competiton is: ------");
                 System.out.println("Press 2 if you want to leave");
             break;
         }
 
     }
 
-    public void getOption() {
+    public void getOption(LinkedList<Rapero> raperos, LinkedList<String> paisos, Competicio competicio) {
         int opcio = 0;
 
         System.out.println("\nChoose an option: ");
@@ -102,13 +91,13 @@ public class Menu {
             competicio.setRaperos(raperos);
             String usuari = competicio.loginRapero();
             fesParelles(usuari);
-            showCompetiStatus();
-            showCompetiAcabada();
+            showCompetiStatus(raperos, competicio);
+            showCompetiAcabada(raperos, competicio);
         }
     }
 
     //mostrem la info de la competicio
-    public void showCompetiStatus() {
+    public void showCompetiStatus(LinkedList<Rapero> raperos, Competicio competicio) {
         Random tipusBatallaRandom = new Random();
         int tipus = tipusBatallaRandom.nextInt(3);
         String tipusBatalla = null;
@@ -126,7 +115,7 @@ public class Menu {
         int opcio = 0;
         do {
             System.out.println("\n-----------------------------------------------------------");
-            System.out.println("Phase: " + numFase + " / " + jsonFileCompeticio.getCompetition().getPhases().size() +  " | Score: " + jsonFileCompeticio.getRappers().get(indexUsuari).getPuntuacio() + " | Battle: " + numBatalla + " / 2 " + tipusBatalla + " | Rival: " + contrincant);
+            System.out.println("Phase: " + numFase + " / " + competicio.getPhases().size() +  " | Score: " + raperos.get(indexUsuari).getPuntuacio() + " | Battle: " + numBatalla + " / 2 " + tipusBatalla + " | Rival: " + contrincant);
             System.out.println("-----------------------------------------------------------\n");
             System.out.println("1. Start the battle");
             System.out.println("2. Show ranking");
@@ -137,7 +126,7 @@ public class Menu {
 
     }
 
-    public void showCompetiAcabada() {
+    public void showCompetiAcabada(LinkedList<Rapero> raperos, Competicio competicio) {
         int opcio = 0;
         String phrase;
         if (guanyador == indexUsuari) {
@@ -148,7 +137,7 @@ public class Menu {
         // You've lost kid, I'm sure you'll do better next time...
         do {
             System.out.println("\n-----------------------------------------------------------");
-            System.out.println("Winner: " + jsonFileCompeticio.getRappers().get(guanyador).getStageName() + " | Score: " + jsonFileCompeticio.getRappers().get(guanyador).getPuntuacio() + " | " + phrase);
+            System.out.println("Winner: " + raperos.get(guanyador).getStageName() + " | Score: " + raperos.get(guanyador).getPuntuacio() + " | " + phrase);
             System.out.println("-----------------------------------------------------------\n");
             System.out.println("1. Start the battle (deactivated)");
             System.out.println("2. Show ranking");
