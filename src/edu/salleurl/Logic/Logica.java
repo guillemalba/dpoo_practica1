@@ -59,9 +59,8 @@ public class Logica {
         }
 
         if ((numBatalla == 1 || numBatalla == 2) && numFase == 2 && jsonFileCompeticio.getCompetition().getPhases().size() == 3) {
-            this.nomsFase2 = new String[(guanyadorBatallaFase.length/2)];
+            this.nomsFase2 = new String[topBatalla1.length];
 
-            jugadorGuanyadorBatallaFase1();
             int j = 0;
             for (int i=0; i < topBatalla1.length-1; i++){
                 if (topBatalla1[i] != topBatalla1[i+1]){
@@ -185,7 +184,7 @@ public class Logica {
             guanyadorBatallaFase[j] = jsonFileCompeticio.getRappers().get(j).getPuntuacio();
         }
         Arrays.sort(guanyadorBatallaFase);
-        for( int i = 0; i < guanyadorBatallaFase.length/2; ++i ) {
+        for (int i = 0; i < guanyadorBatallaFase.length/2; ++i ) {
             float temp = guanyadorBatallaFase[i];
             guanyadorBatallaFase[i] = guanyadorBatallaFase[guanyadorBatallaFase.length - i - 1];
             guanyadorBatallaFase[guanyadorBatallaFase.length - i - 1] = temp;
