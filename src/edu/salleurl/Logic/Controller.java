@@ -3,7 +3,10 @@ package edu.salleurl.Logic;
 import edu.salleurl.ApiJson.JsonFileBatalla;
 import edu.salleurl.ApiJson.JsonFileCompeticio;
 import edu.salleurl.Menu;
+import org.json.simple.JSONObject;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;
 
 public class Controller {
@@ -103,6 +106,7 @@ public class Controller {
                 } else {
                     guanyador = topPosicio[1];
                 }
+                writeJsonWinner();
             }
         }
         else
@@ -381,6 +385,22 @@ public class Controller {
                 break;
         }
     }
+
+    public void writeJsonWinner () {
+        JSONObject obj = new JSONObject();
+        obj.put("name", jsonFileCompeticio.getRappers().get(guanyador).getStageName());
+        //obj.put("name", "MariCarmen");
+
+        try {
+            FileWriter file = new FileWriter("files/winner.json");
+            file.write(obj.toJSONString());
+            file.flush();
+            file.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     /*
     //mostrem la info de la competicio

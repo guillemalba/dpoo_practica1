@@ -93,42 +93,53 @@ public abstract class Batalla {
         LinkedList<Integer> numRimas = new LinkedList<>();
         int numRimasUsuari = 0;
         int indexRima = 0;
+        boolean rimaOK;
 
-        System.out.println();
-        //System.out.println();
-        //System.out.println("rima0: " + rimas[0]);
-        //System.out.println("rimaLeng: " + rimas[0].lenght()); // TODO:
-
-        System.out.println();
-        if (rimas[0] == null) {
-            return 0;
+        /*
+        System.out.println("rima0: " + rimas[0]);
+        System.out.println("rima1: " + rimas[1]);
+        System.out.println("rima2: " + rimas[2]);
+        System.out.println("rima3: " + rimas[3]);
+        */
+        if (rimas[0].equalsIgnoreCase("M'he quedat en blanc")) {
+            numRimasUsuari = -1;    // assignem -1 perque el contrincant s'ha quedat en blanc, aquest valor es tindrà en compte a l'hora de calcular la puntuacio
         } else {
-            for (String rima: rimas){
-
+            for (String rima: rimas) {
+                System.out.println("Lenght is: " + rima.length());
                 if (rima.endsWith(",") || rima.endsWith(".")) {
-                    rima = rima.substring(0, rima.length() - 1);
-                }
-                if (lettersRimas.contains(rima.substring(rima.length()-2))) {
-                    indexRima = lettersRimas.indexOf(rima.substring(rima.length()-2));
-                    numRimas.set(indexRima,numRimas.get(indexRima)+1);
+                    if (rima.length() >= 3) {
+                        rimaOK = true;
+                        rima = rima.substring(0, rima.length() - 1);
+                    } else {
+                        rimaOK = false;
+                    }
                 } else {
-                    lettersRimas.add(rima.substring(rima.length()-2));
-                    numRimas.add(1);
+                    if (rima.length() >= 2) {
+                        rimaOK = true;
+                    } else {
+                        rimaOK = false;
+                    }
                 }
-
+                if (rimaOK) {
+                    if (lettersRimas.contains(rima.substring(rima.length()-2))) {
+                        indexRima = lettersRimas.indexOf(rima.substring(rima.length()-2));
+                        numRimas.set(indexRima,numRimas.get(indexRima)+1);
+                    } else {
+                        lettersRimas.add(rima.substring(rima.length()-2));
+                        numRimas.add(1);
+                    }
+                }
             }
-
             for (int j = 0; j < numRimas.size(); j++) {
                 if (numRimas.get(j) > 1) {
                     numRimasUsuari += numRimas.get(j);
                 }
             }
-
-            //System.out.println(numRimas);
-            //System.out.println(lettersRimas);
-
-            return numRimasUsuari;
         }
+
+        //System.out.println("Num Rimas totals: " + numRimas);
+        //System.out.println("NUM RIMAS: " + numRimasUsuari);
+        return numRimasUsuari;
     }
 
     public String[] mostraVersosContrincant (String usuari, int index, int i, String contrincant) {
@@ -149,6 +160,7 @@ public abstract class Batalla {
                             rimas = jsonFileBatalla.getThemes().get(index).getRhymes().get(0).get_1().get(i).split("\n");
                         } else {
                             System.out.println("M'he quedat en blanc\n");
+                            rimas[0] = "M'he quedat en blanc";
                             end = true;
                         }
 
@@ -158,6 +170,7 @@ public abstract class Batalla {
                             rimas = jsonFileBatalla.getThemes().get(index).getRhymes().get(0).get_2().get(i).split("\n");
                         } else {
                             System.out.println("M'he quedat en blanc\n");
+                            rimas[0] = "M'he quedat en blanc";
                             end = true;
                         }
                         break;

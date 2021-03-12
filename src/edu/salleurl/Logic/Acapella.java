@@ -14,7 +14,11 @@ public class Acapella extends Batalla{
     @java.lang.Override
     public float calculaPuntuacio(int numRimas) {
         //System.out.println("NUM RIMAS: " + numRimas);
-        puntuacio = (float)(6 * Math.sqrt(numRimas) + 3)/2;
+        if (numRimas == -1) {
+            puntuacio = 0;
+        } else {
+            puntuacio = (float)(6 * Math.sqrt(numRimas) + 3)/2;
+        }
         //System.out.println("Acapella " + puntuacio);
         return puntuacio;
     }

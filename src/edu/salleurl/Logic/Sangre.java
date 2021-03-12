@@ -18,7 +18,11 @@ public class Sangre extends Batalla{
     @java.lang.Override
     public float calculaPuntuacio(int numRimas) {
         //System.out.println("NUM RIMAS: " + numRimas);
-        puntuacio = (float)(PI * (numRimas * numRimas)/4);
+        if (numRimas == -1) {
+            puntuacio = 0;
+        } else {
+            puntuacio = (float)(PI * (numRimas * numRimas)/4);
+        }
         //System.out.println("Sangre " + puntuacio);
         return puntuacio;
     }
