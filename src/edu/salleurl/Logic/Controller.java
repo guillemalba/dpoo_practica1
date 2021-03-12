@@ -31,6 +31,7 @@ public class Controller {
     int indexUsuari = 0;
     boolean acabat = false;
     boolean faseAcabada = false;
+    boolean juga = true;
 
     public Controller(JsonFileCompeticio jsonFileCompeticio, JsonFileBatalla jsonFileBatalla) {
         this.jsonFileCompeticio = jsonFileCompeticio;
@@ -47,7 +48,9 @@ public class Controller {
                 batallaRestaRaperos(usuari);
                 do {
                     if (opcio == 1) {
-                        batallaUsuari();
+                        if (juga) {
+                            batallaUsuari();
+                        }
                         if (faseAcabada && numFase == 2) {
                             jugadorGuanyadorBatallaFase1();
                             faseAcabada = false;
@@ -61,7 +64,11 @@ public class Controller {
                     if (opcio == 2) {
                         ranquingCompeticio();
                     }
-                    opcio = menu.showCompetiStatus(jsonFileCompeticio.getRappers(), jsonFileCompeticio.getCompetition(), contrincant, numFase, numBatalla, indexUsuari);
+                    if (juga) {
+                        opcio = menu.showCompetiStatus(jsonFileCompeticio.getRappers(), jsonFileCompeticio.getCompetition(), contrincant, numFase, numBatalla, indexUsuari);
+                    } else {
+                        opcio = 1;
+                    }
                     if (opcio != 2) {
                         if (numBatalla == 1) {
                             numBatalla = 2;
@@ -72,7 +79,7 @@ public class Controller {
 
                     }
                     tipusBatalla = menu.getTipusBatalla();
-                } while (!acabat || opcio != 4);
+                } while (!acabat && opcio != 4);
                 menu.showCompetiAcabada(jsonFileCompeticio.getRappers(), guanyador, indexUsuari);
             }
         } else {
@@ -253,6 +260,14 @@ public class Controller {
                 }
             }
         }
+        juga = false;
+        if (jsonFileCompeticio.getCompetition().getPhases().size() == 3) {
+            for (int i = 0; i < topBatalla1.length && !juga; i++) {
+                if (topBatalla1[i] == jsonFileCompeticio.getRappers().get(indexUsuari).getPuntuacio()) {
+                    juga = true;
+                }
+            }
+        }
     }
 
     // retorna el guanyador de la competicio
@@ -270,7 +285,7 @@ public class Controller {
             guanyadorBatallaFase[i] = guanyadorBatallaFase[guanyadorBatallaFase.length - i - 1];
             guanyadorBatallaFase[guanyadorBatallaFase.length - i - 1] = temp;
         }
-        topBatalla2 = Arrays.copyOfRange(guanyadorBatallaFase, 0, guanyadorBatallaFase.length/2);
+        topBatalla2 = Arrays.copyOfRange(guanyadorBatallaFase, 0, 2);
         if (jsonFileCompeticio.getCompetition().getPhases().size() == 3) {
             if (topBatalla2[0] == jsonFileCompeticio.getRappers().get(indexUsuari).getPuntuacio()) {
                 for (int i = 0; i < jsonFileCompeticio.getRappers().size(); i++) {
