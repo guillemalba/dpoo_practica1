@@ -13,9 +13,9 @@ public class Acapella extends Batalla{
 
     @java.lang.Override
     public float calculaPuntuacio(int numRimas) {
-        System.out.println("NUM RIMAS: " + numRimas);
+        //System.out.println("NUM RIMAS: " + numRimas);
         puntuacio = (float)(6 * Math.sqrt(numRimas) + 3)/2;
-        System.out.println("Acapella " + puntuacio);
+        //System.out.println("Acapella " + puntuacio);
         return puntuacio;
     }
 }

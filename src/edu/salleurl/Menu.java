@@ -9,6 +9,9 @@ import java.util.*;
 
 public class Menu {
     int opcioCompetition = 0;
+    String usuari = null;
+    String contrincant = null;
+    String tipusBatalla = null;
 
     public Menu () {}
 
@@ -58,9 +61,8 @@ public class Menu {
 
     }
 
-    public boolean getOption(LinkedList<Rapero> raperos, LinkedList<String> paisos, Competicio competicio, String usuari) {
+    public String getOption(LinkedList<Rapero> raperos, LinkedList<String> paisos, Competicio competicio) {
         int opcio = 0;
-        boolean start = false;
         System.out.println("\nChoose an option: ");
         Scanner reader = new Scanner(System.in);
         try {
@@ -85,16 +87,15 @@ public class Menu {
         if (opcio == 1 && opcioCompetition == 1) {
             competicio.setRaperos(raperos);
             usuari = competicio.loginRapero();
-            start = true;
         }
-        return start;
+        return usuari;
     }
 
     //mostrem la info de la competicio
-    public void showCompetiStatus(LinkedList<Rapero> raperos, Competicio competicio) {
+    public int showCompetiStatus(LinkedList<Rapero> raperos, Competicio competicio, String contrincant, int numFase, int numBatalla, int indexUsuari) {
+        this.contrincant = contrincant;
         Random tipusBatallaRandom = new Random();
         int tipus = tipusBatallaRandom.nextInt(3);
-        String tipusBatalla = null;
         switch (tipus) {
             case 0:
                 tipusBatalla = "acapella";
@@ -107,28 +108,27 @@ public class Menu {
                 break;
         }
         int opcio = 0;
-        do {
-            System.out.println("\n-----------------------------------------------------------");
-            System.out.println("Phase: " + numFase + " / " + competicio.getPhases().size() +  " | Score: " + raperos.get(indexUsuari).getPuntuacio() + " | Battle: " + numBatalla + " / 2 " + tipusBatalla + " | Rival: " + contrincant);
-            System.out.println("-----------------------------------------------------------\n");
-            System.out.println("1. Start the battle");
-            System.out.println("2. Show ranking");
-            System.out.println("3. Create profile");
-            System.out.println("4. Leave competition");
-            opcio = controller.getOptionLobby(tipusBatalla);
-        } while (opcio != 4);
-
+        System.out.println("\n-----------------------------------------------------------");
+        System.out.println("Phase: " + numFase + " / " + competicio.getPhases().size() +  " | Score: " + raperos.get(indexUsuari).getPuntuacio() + " | Battle: " + numBatalla + " / 2 " + tipusBatalla + " | Rival: " + contrincant);
+        System.out.println("-----------------------------------------------------------\n");
+        System.out.println("1. Start the battle");
+        System.out.println("2. Show ranking");
+        System.out.println("3. Create profile");
+        System.out.println("4. Leave competition");
+        opcio = getOptionLobby();
+        return opcio;
     }
 
-    public void showCompetiAcabada(LinkedList<Rapero> raperos) {
+    public void showCompetiAcabada(LinkedList<Rapero> raperos, int guanyador, int indexUsuari) {
         int opcio = 0;
         String phrase;
+
         if (guanyador == indexUsuari) {
             phrase = "Congrat broda! You've WON the competition!";
         } else {
             phrase = "You've lost kid, I'm sure you'll do better next time...";
         }
-        // You've lost kid, I'm sure you'll do better next time...
+
         do {
             System.out.println("\n-----------------------------------------------------------");
             System.out.println("Winner: " + raperos.get(guanyador).getStageName() + " | Score: " + raperos.get(guanyador).getPuntuacio() + " | " + phrase);
@@ -137,11 +137,11 @@ public class Menu {
             System.out.println("2. Show ranking");
             System.out.println("3. Create profile");
             System.out.println("4. Leave competition");
-            opcio = getOptionLobby("");
+            opcio = getOptionLobby();
         } while (opcio != 4);
     }
 
-    public int getOptionLobby(String tipusBatalla) {
+    public int getOptionLobby() {
         int opcio = 0;
         boolean passaFase = false;
         System.out.println("\nChoose an option: ");
@@ -156,9 +156,9 @@ public class Menu {
             System.out.println("Nomes pots insertar numeros.\n");
             reader.next();
         }
+        /*
         switch (opcio) {
             case 1:
-                //Batalla batalla = new Batalla(jsonFileBatalla, jsonFileCompeticio);
                 Acapella acapella = new Acapella(jsonFileBatalla, jsonFileCompeticio);
                 Sangre sangre = new Sangre(jsonFileBatalla, jsonFileCompeticio);
                 Escrita escrita = new Escrita(jsonFileBatalla, jsonFileCompeticio);
@@ -260,7 +260,11 @@ public class Menu {
             case 4:
                 System.out.println("Thanks for your visit!");
                 break;
-        }
+        }*/
         return opcio;
+    }
+
+    public String getTipusBatalla() {
+        return tipusBatalla;
     }
 }

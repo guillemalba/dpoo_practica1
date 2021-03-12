@@ -3,11 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="9b5f7e3c-b67c-4926-b27e-fd24f37ff2ce" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/WriteJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/WriteJson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Acapella.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Acapella.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Batalla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Batalla.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Escrita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Escrita.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Sangre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Sangre.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Menu.java" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,6 +50,18 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.salleurl.Main" />
@@ -67,7 +82,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -226,14 +241,7 @@
       <option name="project" value="LOCAL" />
       <updated>1615371626311</updated>
     </task>
-    <task id="LOCAL-00021" summary="reorganitzant, no compila">
-      <created>1615459994339</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1615459994340</updated>
-    </task>
-    <option name="localTasksCounter" value="22" />
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,12 +252,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
@@ -258,7 +267,8 @@
     <MESSAGE value="add acapella escrita i sangre" />
     <MESSAGE value="safdsg" />
     <MESSAGE value="reorganitzant, no compila" />
-    <option name="LAST_COMMIT_MESSAGE" value="reorganitzant, no compila" />
+    <MESSAGE value="get option menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="get option menu" />
   </component>
   <component name="WindowStateProjectService">
     <state x="304" y="169" width="1071" height="706" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608637509365">
