@@ -5,6 +5,9 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.LinkedList;
 
+/**
+ * @Finalitat: Classe on es defineixen les variables i s'implementen les funcions relacionades amb els versos del fitxer batalles.json
+ */
 public class Rima {
     @SerializedName("1")
     @Expose

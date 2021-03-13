@@ -3,6 +3,9 @@ package edu.salleurl.Logic;
 import edu.salleurl.ApiJson.JsonFileBatalla;
 import edu.salleurl.ApiJson.JsonFileCompeticio;
 
+/**
+ * @Finalitat: Classe on es defineixen les variables i s'implementen les funcions relacionades amb el tipus de batalla Escrita
+ */
 public class Escrita extends Batalla{
 
     private int numSegonsMax;

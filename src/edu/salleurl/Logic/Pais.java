@@ -1,5 +1,8 @@
 package edu.salleurl.Logic;
 
+/**
+ * @Finalitat: Classe on es defineix el nom i s'implementa la funcio relacionada amb el pais
+ */
 public class Pais {
     private String name = null;
 

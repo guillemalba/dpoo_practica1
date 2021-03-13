@@ -7,6 +7,9 @@ import java.time.LocalDate;
 import java.util.Date;
 import java.util.LinkedList;
 
+/**
+ * @Finalitat: Classe on es defineixen les variables on guardarem tota la informacio del fitxer competicio.json
+ */
 public class JsonFileCompeticio {
     private Competicio competition;
     private LinkedList<String> countries;

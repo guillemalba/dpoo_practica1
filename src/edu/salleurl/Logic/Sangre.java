@@ -3,6 +3,9 @@ package edu.salleurl.Logic;
 import edu.salleurl.ApiJson.JsonFileBatalla;
 import edu.salleurl.ApiJson.JsonFileCompeticio;
 
+/**
+ * @Finalitat: Classe on es defineixen les variables i s'implementen les funcions relacionades amb el tipus de batalla Sangre
+ */
 public class Sangre extends Batalla{
 
     private static final double PI = 3.1415926535898;

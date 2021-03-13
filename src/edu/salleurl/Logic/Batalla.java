@@ -5,6 +5,9 @@ import edu.salleurl.ApiJson.JsonFileCompeticio;
 import java.util.*;
 import java.lang.Math;
 
+/**
+ * @Finalitat: Classe on es defineixen les variables i s'implementen les funcions relacionades amb les batalles
+ */
 public abstract class Batalla {
 
     private final JsonFileBatalla jsonFileBatalla;

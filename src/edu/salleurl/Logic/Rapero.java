@@ -2,6 +2,9 @@ package edu.salleurl.Logic;
 
 import javax.xml.crypto.Data;
 
+/**
+ * @Finalitat: En aquesta classe es defineixen les variables i s'implementen les funcions relacionades amb la informacio dels raperos
+ */
 public class Rapero {
     private String realName = null;
     private String stageName = null;

@@ -8,7 +8,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.Scanner;
-
+/**
+ * @Finalitat: Classe on es defineixen les variables i s'implementen les funcions relacionades amb la informacio de la competicio i els raperos
+ */
 public class Competicio {
 
     private WriteJson writeJson;

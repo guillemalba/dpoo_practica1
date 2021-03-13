@@ -5,6 +5,9 @@ import com.google.gson.Gson;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 
+/**
+ * @Finalitat: Classe on es defineixen les variables i funcions que serviran per llegir els fitxers .json
+ */
 public class ReadJson {
     private Gson g;
     private Gson g2;

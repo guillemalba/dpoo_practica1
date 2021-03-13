@@ -6,6 +6,9 @@ import edu.salleurl.Logic.*;
 import java.time.LocalDate;
 import java.util.*;
 
+/**
+ * @Finalitat: Classe trobem totes les funcions relacionades amb els menus i scans per tractar la informacio introduida per l'usuari
+ */
 public class Menu {
     int opcioCompetition = 0;
     String usuari = null;           // nom del usuari

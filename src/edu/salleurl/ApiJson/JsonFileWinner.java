@@ -4,6 +4,9 @@ import edu.salleurl.Logic.Tema;
 
 import java.util.LinkedList;
 
+/**
+ * @Finalitat: Classe on es defineix el nom del guanyador el qual guardarem del fitxer winner.json
+ */
 public class JsonFileWinner {
     private String name;
 

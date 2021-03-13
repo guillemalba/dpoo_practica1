@@ -10,6 +10,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
 
+/**
+ * @Finalitat: Aquesta classe es relaciona amb totes les altres classes per tractar de controlar tota la informacio, en aquesta classe tambe s'executa la funcio principal cridada en el Main.
+ */
 public class Controller {
     private static final float MAX_PUNTUACIO = 25;
     private JsonFileCompeticio jsonFileCompeticio;
