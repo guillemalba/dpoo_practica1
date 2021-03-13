@@ -2,8 +2,10 @@ package edu.salleurl.Logic;
 
 import edu.salleurl.ApiJson.WriteJson;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -124,6 +126,7 @@ public class Competicio {
                 comprovarErrorData(birthday);
             }
         } while (!comprovacioData);
+        birthday = formatData(birthday);
 
         existeix = false;
         do {
@@ -186,15 +189,27 @@ public class Competicio {
      * @Paràmetres: String dia
      * @Retorn: boolean
      */
-    public static boolean comprovarData (String dia) {
+    public static boolean comprovarData (String data) {
         try {
             SimpleDateFormat formatData = new SimpleDateFormat("dd/MM/yyyy");
             formatData.setLenient(false);
-            formatData.parse(dia);
+            formatData.parse(data);
         } catch (ParseException e) {
             return false;
         }
         return true;
+    }
+
+    public static String formatData (String data) {
+        String birthday = null;
+        try {
+            Date date = new SimpleDateFormat("dd/MM/yyyy").parse(data);
+            DateFormat formatData = new SimpleDateFormat("yyyy-MM-dd");
+            birthday = formatData.format(date);
+        } catch (ParseException e) {
+            System.out.println(e);
+        }
+        return birthday;
     }
 
     /**
