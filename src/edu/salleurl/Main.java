@@ -19,25 +19,5 @@ public class Main {
 
         Controller controller = new Controller(readJsonCompeticio.read(), readJsonBatalla.read2(), readJsonWinner.read3());
         controller.startProgram();
-
-        //JsonFileCompeticio jsonCompeticio = null;
-        //JsonFileBatalla jsonBatalla = null;
-
-        /*
-        jsonCompeticio = readJsonCompeticio.read();
-        jsonBatalla = readJsonBatalla.read2();
-
-        int opcio = 0;
-        boolean exit = false;
-        if(jsonCompeticio != null && jsonBatalla != null) {
-            Menu menu = new Menu(jsonCompeticio, jsonBatalla);
-            menu.showCompeticio();
-            menu.showMenu();
-            menu.getOption();
-        } else {
-            System.out.println("Error.");
-        }
-*/
-
     }
 }

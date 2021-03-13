@@ -51,9 +51,7 @@ public abstract class Batalla {
 
                     //calcula puntuacio
                     System.out.println();
-                    //System.out.println("Usuari: ");
                     puntsUsuari += calculaPuntuacio(numRimasUsuari);
-                    //System.out.println("Contrincant: ");
                     puntsContrincant += calculaPuntuacio(numRimasContrincant);
                 }
                 break;
@@ -70,9 +68,7 @@ public abstract class Batalla {
 
                     //calcula puntuacio
                     System.out.println();
-                    //System.out.println("User: ");
                     puntsUsuari += calculaPuntuacio(numRimasUsuari);
-                    //System.out.println("Contrincant: ");
                     puntsContrincant += calculaPuntuacio(numRimasContrincant);
 
                 }
@@ -146,9 +142,6 @@ public abstract class Batalla {
                 }
             }
         }
-
-        //System.out.println("Num Rimas totals: " + numRimas);
-        //System.out.println("NUM RIMAS: " + numRimasUsuari);
         return numRimasUsuari;
     }
 
