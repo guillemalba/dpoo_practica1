@@ -16,6 +16,11 @@ public class ReadJson {
         g3 = new Gson();
     }
 
+    /**
+     * @Finalitat: Llegeix i retorna tot el fitxer de competicio.json
+     * @Paràmetres: no
+     * @Retorn: JsonFileCompeticio
+     */
     public JsonFileCompeticio read() {
         JsonFileCompeticio data = null;
 
@@ -29,6 +34,11 @@ public class ReadJson {
         return data;
     }
 
+    /**
+     * @Finalitat: Llegeix i retorna tot el fitxer de batalles.json
+     * @Paràmetres: no
+     * @Retorn: JsonFileBatalla
+     */
     public JsonFileBatalla read2() {
         JsonFileBatalla data2 = new JsonFileBatalla();
 
@@ -42,6 +52,11 @@ public class ReadJson {
         return data2;
     }
 
+    /**
+     * @Finalitat: Llegeix i retorna tot el fitxer de winners.json
+     * @Paràmetres: no
+     * @Retorn: JsonFileWinner
+     */
     public JsonFileWinner read3() {
         JsonFileWinner data3 = new JsonFileWinner();
 

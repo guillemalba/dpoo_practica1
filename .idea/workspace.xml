@@ -2,23 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b5f7e3c-b67c-4926-b27e-fd24f37ff2ce" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/JsonFileWinner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/JsonFileBatalla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/JsonFileBatalla.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/JsonFileCompeticio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/JsonFileCompeticio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/JsonFileWinner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/JsonFileWinner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/ReadJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/ReadJson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Acapella.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Acapella.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Batalla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Batalla.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Competicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Competicio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/WriteJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/WriteJson.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Escrita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Escrita.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Fase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Fase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Pais.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Pais.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Rapero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Rapero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Rima.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Rima.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Sangre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Sangre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Tema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Tema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -245,7 +234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615459994340</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="comentaris de funcion afegits, queden pocs, mirar el TODO:">
+      <created>1615594625816</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1615594625817</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,7 +266,8 @@
     <MESSAGE value="add acapella escrita i sangre" />
     <MESSAGE value="safdsg" />
     <MESSAGE value="reorganitzant, no compila" />
-    <option name="LAST_COMMIT_MESSAGE" value="reorganitzant, no compila" />
+    <MESSAGE value="comentaris de funcion afegits, queden pocs, mirar el TODO:" />
+    <option name="LAST_COMMIT_MESSAGE" value="comentaris de funcion afegits, queden pocs, mirar el TODO:" />
   </component>
   <component name="WindowStateProjectService">
     <state x="304" y="169" width="1071" height="706" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608637509365">
@@ -285,27 +282,27 @@
       <screen x="0" y="25" width="1680" height="976" />
     </state>
     <state x="602" y="403" width="476" height="222" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.25.1680.976@0.25.1680.976" timestamp="1615461488456" />
-    <state x="410" y="25" key="CommitChangelistDialog2" timestamp="1615459993669">
-      <screen x="0" y="25" width="1680" height="976" />
+    <state x="410" y="25" key="CommitChangelistDialog2" timestamp="1615594625564">
+      <screen x="0" y="25" width="1680" height="971" />
     </state>
-    <state x="410" y="25" key="CommitChangelistDialog2/0.25.1680.971@0.25.1680.971" timestamp="1615371626072" />
+    <state x="410" y="25" key="CommitChangelistDialog2/0.25.1680.971@0.25.1680.971" timestamp="1615594625564" />
     <state x="410" y="25" key="CommitChangelistDialog2/0.25.1680.976@0.25.1680.976" timestamp="1615459993669" />
-    <state width="1638" height="418" key="GridCell.Tab.0.bottom" timestamp="1615587665220">
+    <state width="1638" height="418" key="GridCell.Tab.0.bottom" timestamp="1615594555816">
       <screen x="0" y="25" width="1680" height="971" />
     </state>
-    <state width="1638" height="418" key="GridCell.Tab.0.bottom/0.25.1680.971@0.25.1680.971" timestamp="1615587665220" />
-    <state width="1638" height="418" key="GridCell.Tab.0.center" timestamp="1615587665219">
+    <state width="1638" height="418" key="GridCell.Tab.0.bottom/0.25.1680.971@0.25.1680.971" timestamp="1615594555816" />
+    <state width="1638" height="418" key="GridCell.Tab.0.center" timestamp="1615594555815">
       <screen x="0" y="25" width="1680" height="971" />
     </state>
-    <state width="1638" height="418" key="GridCell.Tab.0.center/0.25.1680.971@0.25.1680.971" timestamp="1615587665219" />
-    <state width="1638" height="418" key="GridCell.Tab.0.left" timestamp="1615587665218">
+    <state width="1638" height="418" key="GridCell.Tab.0.center/0.25.1680.971@0.25.1680.971" timestamp="1615594555815" />
+    <state width="1638" height="418" key="GridCell.Tab.0.left" timestamp="1615594555814">
       <screen x="0" y="25" width="1680" height="971" />
     </state>
-    <state width="1638" height="418" key="GridCell.Tab.0.left/0.25.1680.971@0.25.1680.971" timestamp="1615587665218" />
-    <state width="1638" height="418" key="GridCell.Tab.0.right" timestamp="1615587665219">
+    <state width="1638" height="418" key="GridCell.Tab.0.left/0.25.1680.971@0.25.1680.971" timestamp="1615594555814" />
+    <state width="1638" height="418" key="GridCell.Tab.0.right" timestamp="1615594555816">
       <screen x="0" y="25" width="1680" height="971" />
     </state>
-    <state width="1638" height="418" key="GridCell.Tab.0.right/0.25.1680.971@0.25.1680.971" timestamp="1615587665219" />
+    <state width="1638" height="418" key="GridCell.Tab.0.right/0.25.1680.971@0.25.1680.971" timestamp="1615594555816" />
     <state width="1638" height="314" key="GridCell.Tab.1.bottom" timestamp="1609037072640">
       <screen x="0" y="25" width="1680" height="971" />
     </state>
@@ -327,10 +324,10 @@
     </state>
     <state x="349" y="145" key="SettingsEditor/0.25.1680.971@0.25.1680.971" timestamp="1615584068515" />
     <state x="349" y="146" key="SettingsEditor/0.25.1680.976@0.25.1680.976" timestamp="1615460233345" />
-    <state x="440" y="244" key="Vcs.Push.Dialog.v2" timestamp="1615459996771">
-      <screen x="0" y="25" width="1680" height="976" />
+    <state x="440" y="243" key="Vcs.Push.Dialog.v2" timestamp="1615594680552">
+      <screen x="0" y="25" width="1680" height="971" />
     </state>
-    <state x="440" y="243" key="Vcs.Push.Dialog.v2/0.25.1680.971@0.25.1680.971" timestamp="1615371628351" />
+    <state x="440" y="243" key="Vcs.Push.Dialog.v2/0.25.1680.971@0.25.1680.971" timestamp="1615594680552" />
     <state x="440" y="244" key="Vcs.Push.Dialog.v2/0.25.1680.976@0.25.1680.976" timestamp="1615459996771" />
     <state x="246" y="99" key="new project wizard" timestamp="1608732599054">
       <screen x="0" y="0" width="1680" height="1050" />

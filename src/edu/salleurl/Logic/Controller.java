@@ -471,6 +471,7 @@ public class Controller {
      * @Paràmetres: no
      * @Retorn: no
      */
+    // TODO: Posem aquesta funcio a WriteJson?
     public void writeJsonWinner () {
         JSONObject obj = new JSONObject();
         obj.put("name", jsonFileCompeticio.getRappers().get(guanyador).getStageName());
