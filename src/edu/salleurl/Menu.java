@@ -1,7 +1,5 @@
 package edu.salleurl;
 
-import edu.salleurl.ApiJson.JsonFileBatalla;
-import edu.salleurl.ApiJson.JsonFileCompeticio;
 import edu.salleurl.ApiJson.JsonFileWinner;
 import edu.salleurl.Logic.*;
 
@@ -16,7 +14,7 @@ public class Menu {
 
     public Menu () {}
 
-    /*
+    /**
      * @Finalitat: Mostra les dades de la competicio actual
      * @Paràmetres: LinkedList<Rapero> raperos, Competicio competicio
      * @Retorn: no
@@ -49,7 +47,7 @@ public class Menu {
         }
     }
 
-    /*
+    /**
      * @Finalitat: Mostra el menu inicial d'abans d'iniciar la competicio, en el moment que ja ha comencat i un cop hagi acabat, en aquest ultim cas, es mostrara el  nom  del guanyador de la competicio
      * @Paràmetres: JsonFileWinner jsonFileWinner
      * @Retorn: no
@@ -72,7 +70,7 @@ public class Menu {
 
     }
 
-    /*
+    /**
      * @Finalitat: Guardar la opcio del primer menu abans de la lobby, controlar  la informacio i retornar el menu del usuari que jugara
      * @Paràmetres: LinkedList<Rapero> raperos, LinkedList<String> paisos, Competicio competicio
      * @Retorn: String
@@ -110,7 +108,7 @@ public class Menu {
         return usuari;
     }
 
-    /*
+    /**
      * @Finalitat: Mostrar la info de la competicio amb la batalla i la fase actual, la puntuacio i el rival
      * @Paràmetres: LinkedList<Rapero> raperos, Competicio competicio, String contrincant, int numFase, int numBatalla, int indexUsuari
      * @Retorn: int
@@ -142,12 +140,12 @@ public class Menu {
         return opcio;
     }
 
-    /*
+    /**
      * @Finalitat: Mostrar el guanyador i el menu de la lobby un cop hagi acabat la competicio
      * @Paràmetres: LinkedList<Rapero> raperos, int guanyador, int indexUsuari
      * @Retorn: no
      */
-    public void showCompetiAcabada(LinkedList<Rapero> raperos, int guanyador, int indexUsuari) {
+    public int showCompetiAcabada(LinkedList<Rapero> raperos, int guanyador, int indexUsuari) {
         int opcio = 0;
         String phrase;
 
@@ -156,27 +154,24 @@ public class Menu {
         } else {
             phrase = "You've lost kid, I'm sure you'll do better next time...";
         }
-
-        do {
-            System.out.println("\n-----------------------------------------------------------");
-            System.out.println("Winner: " + raperos.get(guanyador).getStageName() + " | Score: " + raperos.get(guanyador).getPuntuacio() + " | " + phrase);
-            System.out.println("-----------------------------------------------------------\n");
-            System.out.println("1. Start the battle (deactivated)");
-            System.out.println("2. Show ranking");
-            System.out.println("3. Create profile");
-            System.out.println("4. Leave competition");
-            opcio = getOptionLobby();
-        } while (opcio != 4);
+        System.out.println("\n-----------------------------------------------------------");
+        System.out.println("Winner: " + raperos.get(guanyador).getStageName() + " | Score: " + raperos.get(guanyador).getPuntuacio() + " | " + phrase);
+        System.out.println("-----------------------------------------------------------\n");
+        System.out.println("1. Start the battle (deactivated)");
+        System.out.println("2. Show ranking");
+        System.out.println("3. Create profile");
+        System.out.println("4. Leave competition");
+        opcio = getOptionLobby();
+        return opcio;
     }
 
-    /*
+    /**
      * @Finalitat: Llegir el valor de la opcio introduida per l'usuari, comprovar errors i retornar el valor
      * @Paràmetres: no
      * @Retorn: int
      */
     public int getOptionLobby() {
         int opcio = 0;
-        boolean passaFase = false;
         System.out.println("\nChoose an option: ");
         Scanner reader = new Scanner(System.in);
         try {

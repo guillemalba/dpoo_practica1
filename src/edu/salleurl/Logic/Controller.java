@@ -94,11 +94,39 @@ public class Controller {
                     }
                     tipusBatalla = menu.getTipusBatalla();
                 } while (!acabat && opcio != 4);
-                menu.showCompetiAcabada(jsonFileCompeticio.getRappers(), guanyador, indexUsuari);
+                do {
+                    if (!acabat) {
+                        do {
+                            jsonFileCompeticio.getRappers().get(indexUsuari).setPuntuacio(0);
+                            if (faseAcabada && numFase == 2) {
+                                jugadorGuanyadorBatallaFase1();
+                                faseAcabada = false;
+                            }
+                            if (faseAcabada && numFase == 3) {
+                                jugadorGuanyadorBatallaFase2();
+                                faseAcabada = false;
+                            }
+                            batallaRestaRaperos(usuari);
+                            if (numBatalla == 1) {
+                                numBatalla = 2;
+                            } else {
+                                canviarFase();
+                            }
+                        } while (!acabat);
+                    }
+                    opcio = menu.showCompetiAcabada(jsonFileCompeticio.getRappers(), guanyador, indexUsuari);
+                    if (opcio == 2) {
+                        ranquingCompeticio();
+                    }
+                    if (opcio == 1) {
+                        System.out.println("Competition ended. You cannot battle anyone else!");
+                    }
+                } while (opcio != 4);
             }
         } else {
             System.out.println("Error.");
         }
+        System.out.println("Thanks for your visit!");
     }
 
     /**
@@ -135,7 +163,6 @@ public class Controller {
                     guanyador = topPosicio[1];
                 }
             }
-            writeJsonWinner();
         }
         else
         if ((numBatalla == 1 || numBatalla == 2) && numFase == 2 && jsonFileCompeticio.getCompetition().getPhases().size() == 3) {
@@ -444,6 +471,7 @@ public class Controller {
                 if (juga) {
                     guanyador = topPosicio[0];
                 }
+                writeJsonWinner();
             }
         }
         if (jsonFileCompeticio.getCompetition().getPhases().size() == 2) {
@@ -457,6 +485,7 @@ public class Controller {
                 if (juga) {
                     guanyador = topPosicio[0];
                 }
+                writeJsonWinner();
             }
         }
     }
@@ -493,7 +522,6 @@ public class Controller {
     public void writeJsonWinner () {
         JSONObject obj = new JSONObject();
         obj.put("name", jsonFileCompeticio.getRappers().get(guanyador).getStageName());
-        //obj.put("name", "MariCarmen");
 
         try {
             FileWriter file = new FileWriter("files/winner.json");
@@ -504,181 +532,4 @@ public class Controller {
             e.printStackTrace();
         }
     }
-
-
-    /*
-    //mostrem la info de la competicio
-    public void showCompetiStatus() {
-        Random tipusBatallaRandom = new Random();
-        int tipus = tipusBatallaRandom.nextInt(3);
-        String tipusBatalla = null;
-        switch (tipus) {
-            case 0:
-                tipusBatalla = "acapella";
-                break;
-            case 1:
-                tipusBatalla = "sangre";
-                break;
-            case 2:
-                tipusBatalla = "escrita";
-                break;
-        }
-        int opcio = 0;
-        do {
-            System.out.println("\n-----------------------------------------------------------");
-            System.out.println("Phase: " + numFase + " / " + jsonFileCompeticio.getCompetition().getPhases().size() +  " | Score: " + jsonFileCompeticio.getRappers().get(indexUsuari).getPuntuacio() + " | Battle: " + numBatalla + " / 2 " + tipusBatalla + " | Rival: " + contrincant);
-            System.out.println("-----------------------------------------------------------\n");
-            System.out.println("1. Start the battle");
-            System.out.println("2. Show ranking");
-            System.out.println("3. Create profile");
-            System.out.println("4. Leave competition");
-            opcio = getOptionLobby(tipusBatalla);
-        } while (opcio != 4);
-
-    }
-
-    public void showCompetiAcabada() {
-        int opcio = 0;
-        String phrase;
-        if (guanyador == indexUsuari) {
-            phrase = "Congrat broda! You've WON the competition!";
-        } else {
-            phrase = "You've lost kid, I'm sure you'll do better next time...";
-        }
-        // You've lost kid, I'm sure you'll do better next time...
-        do {
-            System.out.println("\n-----------------------------------------------------------");
-            System.out.println("Winner: " + jsonFileCompeticio.getRappers().get(guanyador).getStageName() + " | Score: " + jsonFileCompeticio.getRappers().get(guanyador).getPuntuacio() + " | " + phrase);
-            System.out.println("-----------------------------------------------------------\n");
-            System.out.println("1. Start the battle (deactivated)");
-            System.out.println("2. Show ranking");
-            System.out.println("3. Create profile");
-            System.out.println("4. Leave competition");
-            opcio = getOptionLobby("");
-        } while (opcio != 4);
-    }
-
-    public int getOptionLobby(String tipusBatalla) {
-        int opcio = 0;
-        boolean passaFase = false;
-        System.out.println("\nChoose an option: ");
-        Scanner reader = new Scanner(System.in);
-        try {
-            opcio = reader.nextInt();
-            if (opcio > 4 || opcio < 1) {
-                System.out.println("Nomes pots insertar numeros del 1 al 4.\n");
-            }
-
-        } catch (InputMismatchException ime) {
-            System.out.println("Nomes pots insertar numeros.\n");
-            reader.next();
-        }
-        switch (opcio) {
-            case 1:
-                //Batalla batalla = new Batalla(jsonFileBatalla, jsonFileCompeticio);
-                Acapella acapella = new Acapella(jsonFileBatalla, jsonFileCompeticio);
-                Sangre sangre = new Sangre(jsonFileBatalla, jsonFileCompeticio);
-                Escrita escrita = new Escrita(jsonFileBatalla, jsonFileCompeticio);
-
-                switch (numBatalla) {
-                    case 1:
-                        switch (tipusBatalla) {
-                            case "acapella":
-                                acapella.startBattle(usuari, contrincant, tipusBatalla);
-                                break;
-                            case "sangre":
-                                sangre.startBattle(usuari, contrincant, tipusBatalla);
-                                break;
-                            case "escrita":
-                                escrita.startBattle(usuari, contrincant, tipusBatalla);
-                                break;
-                        }
-                        numBatalla = 2;
-                        fesParelles(usuari);
-                    break;
-
-                    case 2:
-
-                        switch (tipusBatalla) {
-                            case "acapella":
-                                acapella.startBattle(usuari, contrincant, tipusBatalla);
-                                break;
-                            case "sangre":
-                                sangre.startBattle(usuari, contrincant, tipusBatalla);
-                                break;
-                            case "escrita":
-                                escrita.startBattle(usuari, contrincant, tipusBatalla);
-                                break;
-                        }
-
-                        jugadorGuanyadorBatallaFase1();
-                        if (numFase == jsonFileCompeticio.getCompetition().getPhases().size() && acabat) {
-                            opcio = 4;
-                        }
-                        if (jsonFileCompeticio.getCompetition().getPhases().size() == 2) {
-                            numFase = 3;
-                            if (topBatalla1[0] == jsonFileCompeticio.getRappers().get(indexUsuari).getPuntuacio() || topBatalla1[1] == jsonFileCompeticio.getRappers().get(indexUsuari).getPuntuacio()) {
-                                numBatalla = 1;
-                                numFase = 2;
-                                acabat = true;
-                            }
-                            else {
-                                fesParelles(usuari);
-                                System.out.println("You're not one of the two best rappers. For you the competition is over!");
-                                opcio = 4;
-                            }
-                        }
-                        if (jsonFileCompeticio.getCompetition().getPhases().size() == 3) {
-                            if (numFase == 2) {
-                                jugadorGuanyadorBatallaFase2();
-                                numFase = 3;
-                                if (topBatalla2[0] == jsonFileCompeticio.getRappers().get(indexUsuari).getPuntuacio() || topBatalla2[1] == jsonFileCompeticio.getRappers().get(indexUsuari).getPuntuacio()) {
-                                    numBatalla = 1;
-                                    numFase = 3;
-                                    acabat = true;
-                                } else {
-                                    fesParelles(usuari);
-                                    System.out.println("You're not one of the two best rappers. For you the competition is over!");
-                                    opcio = 4;
-                                }
-                            }
-                            if (numFase == 1) {
-                                numFase = 2;
-                                for (int i = 0; i < topBatalla1.length && !passaFase; i++) {
-                                    if (topBatalla1[i] == jsonFileCompeticio.getRappers().get(indexUsuari).getPuntuacio()) {
-                                        passaFase = true;
-                                    }
-                                }
-                                if (passaFase) {
-                                    numBatalla = 1;
-                                    fesParelles(usuari);
-                                } else {
-                                    numFase = 3;
-                                    fesParelles(usuari);
-                                    System.out.println("You're not one of the half best rappers. For you the competition is over!");
-                                }
-                            }
-                        }
-                    break;
-                }
-                break;
-
-                case 2:
-                    System.out.println("-----------------------------------------------------------");
-                    System.out.println("Pos.  |  Name  |  Score ");
-                    System.out.println("-----------------------------------------------------------\n");
-                    ranquingCompeticio(numFase);
-                break;
-
-                case 3:
-                    System.out.println("This option is not active yet.");
-                break;
-
-                case 4:
-                    System.out.println("Thanks for your visit!");
-                break;
-            }
-        return opcio;
-    }
-    */
 }
