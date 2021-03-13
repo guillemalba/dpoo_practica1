@@ -52,7 +52,6 @@ public class Controller {
      */
     public void startProgram() {
         int opcio = 0;
-        boolean unMes = false;
         if(jsonFileCompeticio != null && jsonFileBatalla != null) {
             menu.showCompeticio(jsonFileCompeticio.getRappers(), jsonFileCompeticio.getCompetition());
             menu.showMenu(jsonFileWinner);
