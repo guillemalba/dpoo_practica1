@@ -15,6 +15,11 @@ public abstract class Batalla {
         this.jsonFileCompeticio = jsonFileCompeticio;
     }
 
+    /*
+     * @Finalitat: TODO:
+     * @Paràmetres: -
+     * @Retorn: no
+     */
     public void startBattle(String usuari, String contrincant, String tipusBatalla) {
         Random random = new Random();
         int index = random.nextInt(jsonFileBatalla.getThemes().size());
@@ -86,8 +91,18 @@ public abstract class Batalla {
         }
     }
 
+    /*
+     * @Finalitat: Defini la funcio calculaPuntuacio per implementar-la en les clases (Acapella, Escrita, Sangre) i retornar el valor
+     * @Paràmetres: int numRimas
+     * @Retorn: float
+     */
     public abstract float calculaPuntuacio (int numRimas);
 
+    /*
+     * @Finalitat: Calcula el nombre de rimes que hi ha en els versos i els retorna, si l'usuari abans s'ha quedat en blanc posem el numero de rimes a -1
+     * @Paràmetres: String[] rimas
+     * @Retorn: int
+     */
     public int getNumRimas (String[] rimas) {
         LinkedList<String> lettersRimas = new LinkedList<>();
         LinkedList<Integer> numRimas = new LinkedList<>();
@@ -95,17 +110,11 @@ public abstract class Batalla {
         int indexRima = 0;
         boolean rimaOK;
 
-        /*
-        System.out.println("rima0: " + rimas[0]);
-        System.out.println("rima1: " + rimas[1]);
-        System.out.println("rima2: " + rimas[2]);
-        System.out.println("rima3: " + rimas[3]);
-        */
         if (rimas[0].equalsIgnoreCase("M'he quedat en blanc")) {
             numRimasUsuari = -1;    // assignem -1 perque el contrincant s'ha quedat en blanc, aquest valor es tindrà en compte a l'hora de calcular la puntuacio
         } else {
             for (String rima: rimas) {
-                System.out.println("Lenght is: " + rima.length());
+                // si els versos acaben amb ',' o '.' els treiem
                 if (rima.endsWith(",") || rima.endsWith(".")) {
                     if (rima.length() >= 3) {
                         rimaOK = true;
@@ -120,6 +129,7 @@ public abstract class Batalla {
                         rimaOK = false;
                     }
                 }
+                // si rimaOK = true, vol dir que els versos almenys tenen minim 2 letres i poden ser contabilitzats
                 if (rimaOK) {
                     if (lettersRimas.contains(rima.substring(rima.length()-2))) {
                         indexRima = lettersRimas.indexOf(rima.substring(rima.length()-2));
@@ -142,6 +152,11 @@ public abstract class Batalla {
         return numRimasUsuari;
     }
 
+    /*
+     * @Finalitat: Agafa la informacio dels raperos i els versos de 'jsonFileCompeticio' i 'jsonFileBatalla' i els mostra per mantalla
+     * @Paràmetres: String usuari, int index, int i, String contrincant
+     * @Retorn: String[]
+     */
     public String[] mostraVersosContrincant (String usuari, int index, int i, String contrincant) {
         boolean end = false;
         int level;
@@ -153,7 +168,6 @@ public abstract class Batalla {
         for (int j = 0; j < jsonFileCompeticio.getRappers().size(); j++) {
             if (jsonFileCompeticio.getRappers().get(j).getStageName().equalsIgnoreCase(usuari)) {
                 level = jsonFileCompeticio.getRappers().get(j).getLevel();
-                //level = 1; // delete this line
                 switch (level) {
                     case 1:
                         if (i < jsonFileBatalla.getThemes().get(index).getRhymes().get(0).get_1().size()) {
@@ -171,10 +185,12 @@ public abstract class Batalla {
                         } else {
                             System.out.println("M'he quedat en blanc\n");
                             rimas[0] = "M'he quedat en blanc";
+                            // boolean per fer que no mostri les rimes de la condició d'abaix en cas  que es quedi en blanc, ja que esta buit
                             end = true;
                         }
                         break;
                 }
+                // end es un boolean per fer que no mostri les rimes en cas que el contrincant es quedi en blanc, ja que esta buit
                 if (!end) {
                     System.out.println(rimas[0]);
                     System.out.println(rimas[1]);
@@ -187,6 +203,11 @@ public abstract class Batalla {
         return rimas;
     }
 
+    /*
+     * @Finalitat: Demana a l'usuari que teclegi els versos en el teclat per guardar-los i retornar-los
+     * @Paràmetres: String usuari
+     * @Retorn: String[]
+     */
     public String[] demanaVersosUsuari (String usuari) {
         String[] rimas = new String[4];
 
@@ -200,5 +221,4 @@ public abstract class Batalla {
 
         return rimas;
     }
-
 }

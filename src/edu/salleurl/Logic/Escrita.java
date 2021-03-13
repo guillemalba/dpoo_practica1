@@ -12,6 +12,11 @@ public class Escrita extends Batalla{
         super(jsonFileBatalla, jsonFileCompeticio);
     }
 
+    /**
+     * @Finalitat: Calcular la puntuacio de la funcio definida en el Controller, en cas que numero de rimes = -1, vol dir que el contrincant s'ha quedat en blanc i li assignem 0 punts
+     * @Paràmetres: int numRimas
+     * @Retorn: float
+     */
     @java.lang.Override
     public float calculaPuntuacio(int numRimas) {
         //System.out.println("NUM RIMAS: " + numRimas);

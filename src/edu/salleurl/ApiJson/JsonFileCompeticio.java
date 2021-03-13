@@ -18,14 +18,29 @@ public class JsonFileCompeticio {
         this.rappers = new LinkedList<>();
     }
 
+    /**
+     * @Finalitat: Retorna la competicio amb les seves dades del fitxer competicio.json
+     * @Paràmetres: no
+     * @Retorn: Competicio
+     */
     public Competicio getCompetition() {
         return competition;
     }
 
+    /**
+     * @Finalitat: Retorna els paisos
+     * @Paràmetres: no
+     * @Retorn: LinkedList<String>
+     */
     public LinkedList<String> getCountries() {
         return countries;
     }
 
+    /**
+     * @Finalitat: Retorna els raperos
+     * @Paràmetres: no
+     * @Retorn: LinkedList<Rapero>
+     */
     public LinkedList<Rapero> getRappers() {
         return rappers;
     }

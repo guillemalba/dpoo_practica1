@@ -15,6 +15,11 @@ public class WriteJson {
     public WriteJson() {
     }
 
+    /**
+     * @Finalitat: TODO:
+     * @Paràmetres: String name, String startDate, String endDate, LinkedList<Fase> phases, LinkedList<Rapero> raperos, LinkedList<String> paisos
+     * @Retorn: boolean
+     */
     public boolean write (String name, String startDate, String endDate, LinkedList<Fase> phases, LinkedList<Rapero> raperos, LinkedList<String> paisos) {
         JSONArray arrayPhases = new JSONArray();
         for (int i = 0; i < phases.size(); i++) {

@@ -2,6 +2,7 @@ package edu.salleurl.Logic;
 
 import edu.salleurl.ApiJson.JsonFileBatalla;
 import edu.salleurl.ApiJson.JsonFileCompeticio;
+import edu.salleurl.ApiJson.JsonFileWinner;
 import edu.salleurl.Menu;
 import org.json.simple.JSONObject;
 
@@ -13,7 +14,12 @@ public class Controller {
     private static final float MAX_PUNTUACIO = 25;
     private JsonFileCompeticio jsonFileCompeticio;
     private JsonFileBatalla jsonFileBatalla;
+    private JsonFileWinner jsonFileWinner;
     private Menu menu = new Menu();
+
+    // Constants per pintar text
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_YELLOW = "\u001B[33m";
 
     int numerosFase1[];
     int numerosFase2[];
@@ -22,28 +28,34 @@ public class Controller {
     float topBatalla2[];
     int topPosicio[];
     String nomsFase2[];
-    String usuari = null;
-    String contrincant = null;
-    String tipusBatalla = null;
-    int guanyador = 0;
-    int numBatalla = 1;
-    int numFase = 1;
-    int indexUsuari = 0;
+    String usuari = null;                       // nom del usuari
+    String contrincant = null;                  // nom del contrincant
+    String tipusBatalla = null;                 // nom del tipus de batalla (acapella, escrita,  sangre)
+    int guanyador = 0;                          // index del guanyador
+    int numBatalla = 1;                         // index de la batalla actual en que es troba
+    int numFase = 1;                            // index de la fase en que es troba
+    int indexUsuari = 0;                        // index del usuari
     boolean acabat = false;
-    boolean faseAcabada = false;
+    boolean faseAcabada = false;                // boolean que indica si ha acabat la fase
     boolean juga = true;
 
-    public Controller(JsonFileCompeticio jsonFileCompeticio, JsonFileBatalla jsonFileBatalla) {
+    public Controller(JsonFileCompeticio jsonFileCompeticio, JsonFileBatalla jsonFileBatalla, JsonFileWinner jsonFileWinner) {
         this.jsonFileCompeticio = jsonFileCompeticio;
         this.jsonFileBatalla = jsonFileBatalla;
+        this.jsonFileWinner = jsonFileWinner;
     }
 
+    /**
+     * @Finalitat: Funcio principal del programa que s'executa en el main i controla la resta de funcions perque el programa s'executi correctament
+     * @Paràmetres: no
+     * @Retorn: no
+     */
     public void startProgram() {
         int opcio = 0;
         boolean unMes = false;
         if(jsonFileCompeticio != null && jsonFileBatalla != null) {
             menu.showCompeticio(jsonFileCompeticio.getRappers(), jsonFileCompeticio.getCompetition());
-            menu.showMenu();
+            menu.showMenu(jsonFileWinner);
             usuari = menu.getOption(jsonFileCompeticio.getRappers(), jsonFileCompeticio.getCountries(), jsonFileCompeticio.getCompetition());
             if (usuari != null) {
                 batallaRestaRaperos(usuari);
@@ -81,6 +93,7 @@ public class Controller {
                             canviarFase();
                         }
                     }
+                    tipusBatalla = menu.getTipusBatalla();
                 } while (!acabat && opcio != 4);
                 menu.showCompetiAcabada(jsonFileCompeticio.getRappers(), guanyador, indexUsuari);
             }
@@ -89,6 +102,11 @@ public class Controller {
         }
     }
 
+    /**
+     * @Finalitat: //TODO:
+     * @Paràmetres: String usuari
+     * @Retorn: no
+     */
     public void batallaRestaRaperos(String usuari) {
         this.usuari = usuari;
         this.numerosFase1 = RandomizeArray(0, jsonFileCompeticio.getRappers().size()-1);
@@ -144,7 +162,11 @@ public class Controller {
         }
     }
 
-    // agafem el top1 i top2
+    /**
+     * @Finalitat: Agafem el index del top 1 i el top 2 i els guardem en un array
+     * @Paràmetres: no
+     * @Retorn: int[] amb el index del top1 i el top2
+     */
     public int[] getTop1Top2() {
         int top[] = new int[2];
         if (jsonFileCompeticio.getCompetition().getPhases().size() == 3) {
@@ -170,6 +192,11 @@ public class Controller {
         return top;
     }
 
+    /**
+     * @Finalitat: //TODO:
+     * @Paràmetres: int a, int b
+     * @Retorn: int[] amb numeros random
+     */
     public static int[] RandomizeArray(int a, int b){
         Random rgen = new Random();  // Random number generator
         int size = b-a+1;
@@ -188,6 +215,11 @@ public class Controller {
         return array;
     }
 
+    /**
+     * @Finalitat: //TODO:
+     * @Paràmetres: no
+     * @Retorn: no
+     */
     public void parellesFase1 () {
         int aux = 0;
         for (int i = 0; i < numerosFase1.length; i++) {
@@ -211,6 +243,11 @@ public class Controller {
         }
     }
 
+    /**
+     * @Finalitat: //TODO:
+     * @Paràmetres: no
+     * @Retorn: no
+     */
     public void parellesFase2 () {
         int aux = 0;
         int index = 0;
@@ -247,6 +284,11 @@ public class Controller {
         }
     }
 
+    /**
+     * @Finalitat: //TODO:
+     * @Paràmetres: no
+     * @Retorn: no
+     */
     public void jugadorGuanyadorBatallaFase1 () {
         for (int j = 0; j < jsonFileCompeticio.getRappers().size(); j++) {
             guanyadorBatallaFase[j] = jsonFileCompeticio.getRappers().get(j).getPuntuacio();
@@ -277,16 +319,19 @@ public class Controller {
                 }
             }
         }
-        else {
-            juga = false;
-            if (jsonFileCompeticio.getCompetition().getPhases().size() == 3) {
-                for (int i = 0; i < topBatalla1.length && !juga; i++) {
-                    if (topBatalla1[i] == jsonFileCompeticio.getRappers().get(indexUsuari).getPuntuacio()) {
-                        juga = true;
-                    }
+        juga = false;
+        if (jsonFileCompeticio.getCompetition().getPhases().size() == 3) {
+            for (int i = 0; i < topBatalla1.length && !juga; i++) {
+                if (topBatalla1[i] == jsonFileCompeticio.getRappers().get(indexUsuari).getPuntuacio()) {
+                    juga = true;
                 }
             }
         }
+    }
+
+    // retorna el guanyador de la competicio
+    public String getWinner() {
+        return jsonFileCompeticio.getRappers().get(guanyador).getStageName();
     }
 
     public void jugadorGuanyadorBatallaFase2 () {
@@ -318,6 +363,11 @@ public class Controller {
         }
     }
 
+    /**
+     * @Finalitat: Mostra per pantalla el ranking actual de la competicio dels patricipants que van guanyant les fases
+     * @Paràmetres: no
+     * @Retorn: no
+     */
     public void ranquingCompeticio () {
         int numParticipants = 0;
         if (numFase == 1) {
@@ -359,7 +409,11 @@ public class Controller {
             for (int i = 0; i < jsonFileCompeticio.getRappers().size(); i++) {
                 if (puntuacions[k] == jsonFileCompeticio.getRappers().get(i).getPuntuacio() && m < numParticipants) {
                     if (jsonFileCompeticio.getRappers().get(i).getStageName().equalsIgnoreCase(usuari)) {
+                        // pintem el text groc
+                        System.out.print(ANSI_YELLOW);
                         System.out.println(m + 1 + ". " + jsonFileCompeticio.getRappers().get(i).getStageName() + " - " + puntuacions[k] + " <-- You");
+                        // tornem a posar el text blanc
+                        System.out.print(ANSI_RESET);
                     } else {
                         System.out.println(m + 1 + ". " + jsonFileCompeticio.getRappers().get(i).getStageName() + " - " + puntuacions[k]);
                     }
@@ -369,6 +423,11 @@ public class Controller {
         }
     }
 
+    /**
+     * @Finalitat: TODO:
+     * @Paràmetres: no
+     * @Retorn: no
+     */
     private void canviarFase () {
         if (jsonFileCompeticio.getCompetition().getPhases().size() == 3) {
             if (numBatalla == 2 && numFase == 1) {
@@ -403,6 +462,11 @@ public class Controller {
         }
     }
 
+    /**
+     * @Finalitat: Executar la funcio de la batalla 'startBattle' implementada en cada clase de l'herencia de Batalla depenent del tipus de batalla (Acapella, Sangre o Escrita)
+     * @Paràmetres: no
+     * @Retorn: no
+     */
     private void batallaUsuari() {
         Acapella acapella = new Acapella(jsonFileBatalla, jsonFileCompeticio);
         Sangre sangre = new Sangre(jsonFileBatalla, jsonFileCompeticio);
@@ -421,6 +485,12 @@ public class Controller {
         }
     }
 
+    /**
+     * @Finalitat: Escriure en un fitxer anomenat 'winner.json' el guanyador de la competicio per mostrar-lo un cop s'acabi la competicio i l'usuari pari l'execucio del programma
+     * @Paràmetres: no
+     * @Retorn: no
+     */
+    // TODO: Posem aquesta funcio a WriteJson?
     public void writeJsonWinner () {
         JSONObject obj = new JSONObject();
         obj.put("name", jsonFileCompeticio.getRappers().get(guanyador).getStageName());

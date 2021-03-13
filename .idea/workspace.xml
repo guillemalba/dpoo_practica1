@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b5f7e3c-b67c-4926-b27e-fd24f37ff2ce" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Controller.java" afterDir="false" />
     </list>
@@ -44,18 +45,6 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.salleurl.Main" />
@@ -76,7 +65,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -235,14 +224,7 @@
       <option name="project" value="LOCAL" />
       <updated>1615371626311</updated>
     </task>
-    <task id="LOCAL-00021" summary="controller">
-      <created>1615575147796</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1615575147796</updated>
-    </task>
-    <option name="localTasksCounter" value="22" />
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,13 +235,12 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
@@ -269,8 +250,7 @@
     <MESSAGE value="safdsg" />
     <MESSAGE value="reorganitzant, no compila" />
     <MESSAGE value="get option menu" />
-    <MESSAGE value="controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="get option menu" />
   </component>
   <component name="WindowStateProjectService">
     <state x="304" y="169" width="1071" height="706" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608637509365">
@@ -285,27 +265,27 @@
       <screen x="0" y="25" width="1680" height="976" />
     </state>
     <state x="602" y="403" width="476" height="222" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.25.1680.976@0.25.1680.976" timestamp="1615461488456" />
-    <state x="410" y="25" key="CommitChangelistDialog2" timestamp="1615459993669">
-      <screen x="0" y="25" width="1680" height="976" />
+    <state x="410" y="25" key="CommitChangelistDialog2" timestamp="1615594625564">
+      <screen x="0" y="25" width="1680" height="971" />
     </state>
-    <state x="410" y="25" key="CommitChangelistDialog2/0.25.1680.971@0.25.1680.971" timestamp="1615371626072" />
+    <state x="410" y="25" key="CommitChangelistDialog2/0.25.1680.971@0.25.1680.971" timestamp="1615594625564" />
     <state x="410" y="25" key="CommitChangelistDialog2/0.25.1680.976@0.25.1680.976" timestamp="1615459993669" />
-    <state width="1638" height="539" key="GridCell.Tab.0.bottom" timestamp="1615562795801">
+    <state width="1638" height="418" key="GridCell.Tab.0.bottom" timestamp="1615594555816">
       <screen x="0" y="25" width="1680" height="971" />
     </state>
-    <state width="1638" height="539" key="GridCell.Tab.0.bottom/0.25.1680.971@0.25.1680.971" timestamp="1615562795801" />
-    <state width="1638" height="539" key="GridCell.Tab.0.center" timestamp="1615562795799">
+    <state width="1638" height="418" key="GridCell.Tab.0.bottom/0.25.1680.971@0.25.1680.971" timestamp="1615594555816" />
+    <state width="1638" height="418" key="GridCell.Tab.0.center" timestamp="1615594555815">
       <screen x="0" y="25" width="1680" height="971" />
     </state>
-    <state width="1638" height="539" key="GridCell.Tab.0.center/0.25.1680.971@0.25.1680.971" timestamp="1615562795799" />
-    <state width="1638" height="539" key="GridCell.Tab.0.left" timestamp="1615562795799">
+    <state width="1638" height="418" key="GridCell.Tab.0.center/0.25.1680.971@0.25.1680.971" timestamp="1615594555815" />
+    <state width="1638" height="418" key="GridCell.Tab.0.left" timestamp="1615594555814">
       <screen x="0" y="25" width="1680" height="971" />
     </state>
-    <state width="1638" height="539" key="GridCell.Tab.0.left/0.25.1680.971@0.25.1680.971" timestamp="1615562795799" />
-    <state width="1638" height="539" key="GridCell.Tab.0.right" timestamp="1615562795800">
+    <state width="1638" height="418" key="GridCell.Tab.0.left/0.25.1680.971@0.25.1680.971" timestamp="1615594555814" />
+    <state width="1638" height="418" key="GridCell.Tab.0.right" timestamp="1615594555816">
       <screen x="0" y="25" width="1680" height="971" />
     </state>
-    <state width="1638" height="539" key="GridCell.Tab.0.right/0.25.1680.971@0.25.1680.971" timestamp="1615562795800" />
+    <state width="1638" height="418" key="GridCell.Tab.0.right/0.25.1680.971@0.25.1680.971" timestamp="1615594555816" />
     <state width="1638" height="314" key="GridCell.Tab.1.bottom" timestamp="1609037072640">
       <screen x="0" y="25" width="1680" height="971" />
     </state>
@@ -322,14 +302,15 @@
       <screen x="0" y="25" width="1680" height="971" />
     </state>
     <state width="1638" height="314" key="GridCell.Tab.1.right/0.25.1680.971@0.25.1680.971" timestamp="1609037072640" />
-    <state x="349" y="146" key="SettingsEditor" timestamp="1615460233345">
-      <screen x="0" y="25" width="1680" height="976" />
+    <state x="349" y="145" key="SettingsEditor" timestamp="1615584068515">
+      <screen x="0" y="25" width="1680" height="971" />
     </state>
+    <state x="349" y="145" key="SettingsEditor/0.25.1680.971@0.25.1680.971" timestamp="1615584068515" />
     <state x="349" y="146" key="SettingsEditor/0.25.1680.976@0.25.1680.976" timestamp="1615460233345" />
-    <state x="440" y="244" key="Vcs.Push.Dialog.v2" timestamp="1615459996771">
-      <screen x="0" y="25" width="1680" height="976" />
+    <state x="440" y="243" key="Vcs.Push.Dialog.v2" timestamp="1615594680552">
+      <screen x="0" y="25" width="1680" height="971" />
     </state>
-    <state x="440" y="243" key="Vcs.Push.Dialog.v2/0.25.1680.971@0.25.1680.971" timestamp="1615371628351" />
+    <state x="440" y="243" key="Vcs.Push.Dialog.v2/0.25.1680.971@0.25.1680.971" timestamp="1615594680552" />
     <state x="440" y="244" key="Vcs.Push.Dialog.v2/0.25.1680.976@0.25.1680.976" timestamp="1615459996771" />
     <state x="246" y="99" key="new project wizard" timestamp="1608732599054">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -341,23 +322,23 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/edu/salleurl/Logic/Controller.java</url>
-          <line>120</line>
-          <option name="timeStamp" value="49" />
+          <line>226</line>
+          <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/edu/salleurl/Logic/Controller.java</url>
-          <line>384</line>
-          <option name="timeStamp" value="57" />
+          <line>367</line>
+          <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/edu/salleurl/Logic/Controller.java</url>
-          <line>240</line>
-          <option name="timeStamp" value="58" />
+          <line>101</line>
+          <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/edu/salleurl/Logic/Controller.java</url>
-          <line>398</line>
-          <option name="timeStamp" value="59" />
+          <line>115</line>
+          <option name="timeStamp" value="48" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

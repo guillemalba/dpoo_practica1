@@ -23,30 +23,65 @@ public class Competicio {
         this.writeJson = new WriteJson();
     }
 
+    /**
+     * @Finalitat: Retornar el nom de la competicio
+     * @Paràmetres: no
+     * @Retorn: String
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * @Finalitat: Retornar la data d'inici de la competicio
+     * @Paràmetres: no
+     * @Retorn: String
+     */
     public String getStartDate() {
         return startDate;
     }
 
+    /**
+     * @Finalitat: Retornar la data final de la competicio
+     * @Paràmetres: no
+     * @Retorn: String
+     */
     public String getEndDate() {
         return endDate;
     }
 
+    /**
+     * @Finalitat: Retornar la informacio de les fases
+     * @Paràmetres: no
+     * @Retorn: LinkedList<Fase>
+     */
     public LinkedList<Fase> getPhases() {
         return phases;
     }
 
+    /**
+     * @Finalitat: TODO:
+     * @Paràmetres: LinkedList<Rapero> raperos
+     * @Retorn: no
+     */
     public void setRaperos(LinkedList<Rapero> raperos) {
         this.raperos = raperos;
     }
 
+    /**
+     * @Finalitat: TODO:
+     * @Paràmetres: LinkedList<String> paisos
+     * @Retorn: no
+     */
     public void setPaisos(LinkedList<String> paisos) {
         this.paisos = paisos;
     }
 
+    /**
+     * @Finalitat: Enregistrar l'usuari amb totes les seves dades i comprovar que sigui correctes
+     * @Paràmetres: no
+     * @Retorn: no
+     */
     public void registerRapero () {
         Scanner reader = new Scanner(System.in);
         boolean existeix = false;
@@ -120,6 +155,11 @@ public class Competicio {
         }
     }
 
+    /**
+     * @Finalitat: Iniciar sessio del usuari ja existent, comprovar que existeixi i retornar el nom
+     * @Paràmetres: LinkedList<Rapero> raperos
+     * @Retorn: no
+     */
     public String loginRapero () {
         boolean trobat = false;
         String nom = null;
@@ -141,6 +181,11 @@ public class Competicio {
         return nom;
     }
 
+    /**
+     * @Finalitat: TODO:
+     * @Paràmetres: String dia
+     * @Retorn: boolean
+     */
     public static boolean comprovarData (String dia) {
         try {
             SimpleDateFormat formatData = new SimpleDateFormat("dd/MM/yyyy");
@@ -153,8 +198,9 @@ public class Competicio {
     }
 
     /**
-     * Comprovem d'on ve l'error de la data introduïda
-     * @param dia
+     * @Finalitat: Comprovem d'on ve l'error de la data introduida
+     * @Paràmetres: String dia
+     * @Retorn: no
      */
     public void comprovarErrorData (String dia) {
         int dia2 = Integer.parseInt(dia.split("/")[0]);
