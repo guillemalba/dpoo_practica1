@@ -292,7 +292,7 @@ public class Menu {
         return opcio;
     }
 
-    /*
+    /**
      * @Finalitat: Retornar el tipus de batalla (acapella, escrita o sangre)
      * @Paràmetres: no
      * @Retorn: String

@@ -355,11 +355,11 @@ public class Controller {
         }
     }
 
-    // retorna el guanyador de la competicio
-    public String getWinner() {
-        return jsonFileCompeticio.getRappers().get(guanyador).getStageName();
-    }
-
+    /**
+     * @Finalitat: //TODO:
+     * @Paràmetres: no
+     * @Retorn: no
+     */
     public void jugadorGuanyadorBatallaFase2 () {
         for (int j = 0; j < jsonFileCompeticio.getRappers().size(); j++) {
             guanyadorBatallaFase[j] = jsonFileCompeticio.getRappers().get(j).getPuntuacio();

@@ -200,6 +200,11 @@ public class Competicio {
         return true;
     }
 
+    /**
+     * @Finalitat: Canvia el format de la data del usuari i el retorna
+     * @Paràmetres: String data
+     * @Retorn: String
+     */
     public static String formatData (String data) {
         String birthday = null;
         try {

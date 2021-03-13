@@ -15,7 +15,7 @@ public abstract class Batalla {
         this.jsonFileCompeticio = jsonFileCompeticio;
     }
 
-    /*
+    /**
      * @Finalitat: TODO:
      * @Paràmetres: -
      * @Retorn: no
@@ -91,14 +91,14 @@ public abstract class Batalla {
         }
     }
 
-    /*
-     * @Finalitat: Defini la funcio calculaPuntuacio per implementar-la en les clases (Acapella, Escrita, Sangre) i retornar el valor
+    /**
+     * @Finalitat: Definir la funcio calculaPuntuacio per implementar-la en les clases (Acapella, Escrita, Sangre) i retornar el valor
      * @Paràmetres: int numRimas
      * @Retorn: float
      */
     public abstract float calculaPuntuacio (int numRimas);
 
-    /*
+    /**
      * @Finalitat: Calcula el nombre de rimes que hi ha en els versos i els retorna, si l'usuari abans s'ha quedat en blanc posem el numero de rimes a -1
      * @Paràmetres: String[] rimas
      * @Retorn: int
@@ -152,7 +152,7 @@ public abstract class Batalla {
         return numRimasUsuari;
     }
 
-    /*
+    /**
      * @Finalitat: Agafa la informacio dels raperos i els versos de 'jsonFileCompeticio' i 'jsonFileBatalla' i els mostra per mantalla
      * @Paràmetres: String usuari, int index, int i, String contrincant
      * @Retorn: String[]
@@ -203,7 +203,7 @@ public abstract class Batalla {
         return rimas;
     }
 
-    /*
+    /**
      * @Finalitat: Demana a l'usuari que teclegi els versos en el teclat per guardar-los i retornar-los
      * @Paràmetres: String usuari
      * @Retorn: String[]

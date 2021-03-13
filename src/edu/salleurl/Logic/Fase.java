@@ -14,7 +14,7 @@ public class Fase {
     }
 
     /**
-     * @Finalitat: Retornar el mom del pais
+     * @Finalitat: Retornar el nom del pais
      * @Paràmetres: no
      * @Retorn: String
      */

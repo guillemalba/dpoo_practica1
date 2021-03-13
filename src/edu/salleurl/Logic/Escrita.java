@@ -19,13 +19,11 @@ public class Escrita extends Batalla{
      */
     @java.lang.Override
     public float calculaPuntuacio(int numRimas) {
-        //System.out.println("NUM RIMAS: " + numRimas);
         if (numRimas == -1) {
             puntuacio = 0;
         } else {
             puntuacio = 1 + 3 * numRimas;
         }
-        //System.out.println("Escrita " + puntuacio);
         return puntuacio;
     }
 }

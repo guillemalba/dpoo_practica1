@@ -4,7 +4,7 @@ public class Pais {
     private String name = null;
 
     /**
-     * @Finalitat: Retornar el mom del pais
+     * @Finalitat: Retornar el nom del pais
      * @Paràmetres: no
      * @Retorn: String
      */
