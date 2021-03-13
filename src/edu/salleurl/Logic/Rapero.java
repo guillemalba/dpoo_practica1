@@ -15,8 +15,6 @@ public class Rapero {
 
     private float puntuacio = 0;
 
-    public Rapero () {}
-
     public Rapero (String realName, String stageName, String birth, String nationality, int level, String photo) {
         this.realName = realName;
         this.stageName = stageName;

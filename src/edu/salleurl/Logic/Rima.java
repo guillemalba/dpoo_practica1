@@ -21,7 +21,7 @@ public class Rima {
     public Rima () {}
 
     /**
-     * @Finalitat: TODO:
+     * @Finalitat: Retornar els versos del 1: del json
      * @Paràmetres: no
      * @Retorn: LinkedList<String>
      */
@@ -30,16 +30,7 @@ public class Rima {
     }
 
     /**
-     * @Finalitat: TODO:
-     * @Paràmetres: LinkedList<String> _1
-     * @Retorn: no
-     */
-    public void set_1(LinkedList<String> _1) {
-        this._1 = _1;
-    }
-
-    /**
-     * @Finalitat: TODO:
+     * @Finalitat: Retornar els versos del 2: del json
      * @Paràmetres: no
      * @Retorn: LinkedList<String>
      */
@@ -47,12 +38,4 @@ public class Rima {
         return _2;
     }
 
-    /**
-     * @Finalitat: TODO:
-     * @Paràmetres: LinkedList<String> _2
-     * @Retorn: no
-     */
-    public void set_2(LinkedList<String> _2) {
-        this._2 = _2;
-    }
 }

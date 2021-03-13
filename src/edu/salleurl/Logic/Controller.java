@@ -22,25 +22,25 @@ public class Controller {
 
     // Constants per pintar text
     public static final String ANSI_RESET = "\u001B[0m";
-    public static final String ANSI_YELLOW = "\u001B[33m";
+    public static final String YELLOW_BOLD_BRIGHT = "\033[1;93m";
 
-    int numerosFase1[];
-    int numerosFase2[];
-    float guanyadorBatallaFase[];
-    float topBatalla1[];
-    float topBatalla2[];
-    int topPosicio[];
-    String nomsFase2[];
-    String usuari = null;                       // nom del usuari
-    String contrincant = null;                  // nom del contrincant
-    String tipusBatalla = null;                 // nom del tipus de batalla (acapella, escrita,  sangre)
-    int guanyador = 0;                          // index del guanyador
-    int numBatalla = 1;                         // index de la batalla actual en que es troba
-    int numFase = 1;                            // index de la fase en que es troba
-    int indexUsuari = 0;                        // index del usuari
-    boolean acabat = false;
-    boolean faseAcabada = false;                // boolean que indica si ha acabat la fase
-    boolean juga = true;
+    private int numerosFase1[];
+    private int numerosFase2[];
+    private float guanyadorBatallaFase[];
+    private float topBatalla1[];
+    private float topBatalla2[];
+    private int topPosicio[];
+    private String nomsFase2[];
+    private String usuari = null;                       // nom del usuari
+    private String contrincant = null;                  // nom del contrincant
+    private String tipusBatalla = null;                 // nom del tipus de batalla (acapella, escrita,  sangre)
+    private int guanyador = 0;                          // index del guanyador
+    private int numBatalla = 1;                         // index de la batalla actual en que es troba
+    private int numFase = 1;                            // index de la fase en que es troba
+    private int indexUsuari = 0;                        // index del usuari
+    private boolean acabat = false;
+    private boolean faseAcabada = false;                // boolean que indica si ha acabat la fase
+    private boolean juga = true;
 
     public Controller(JsonFileCompeticio jsonFileCompeticio, JsonFileBatalla jsonFileBatalla, JsonFileWinner jsonFileWinner) {
         this.jsonFileCompeticio = jsonFileCompeticio;
@@ -236,7 +236,7 @@ public class Controller {
     }
 
     /**
-     * @Finalitat: //TODO:
+     * @Finalitat: // Funcio que crea un array amb el  index de 2 usuaris i els retorna ordenats aleatoriament
      * @Paràmetres: int a, int b
      * @Retorn: int[] amb numeros random
      */
@@ -453,7 +453,7 @@ public class Controller {
                 if (puntuacions[k] == jsonFileCompeticio.getRappers().get(i).getPuntuacio() && m < numParticipants) {
                     if (jsonFileCompeticio.getRappers().get(i).getStageName().equalsIgnoreCase(usuari)) {
                         // pintem el text groc
-                        System.out.print(ANSI_YELLOW);
+                        System.out.print(YELLOW_BOLD_BRIGHT);
                         System.out.println(m + 1 + ". " + jsonFileCompeticio.getRappers().get(i).getStageName() + " - " + puntuacions[k] + " <-- You");
                         // tornem a posar el text blanc
                         System.out.print(ANSI_RESET);
@@ -467,7 +467,7 @@ public class Controller {
     }
 
     /**
-     * @Finalitat: TODO:
+     * @Finalitat: Controla i modifica els index de les batalles i les fases, tambe obtenim el index del guanyador de la competicio i l'escrivim en un fitxer winner.json
      * @Paràmetres: no
      * @Retorn: no
      */
@@ -488,7 +488,7 @@ public class Controller {
                 if (juga) {
                     guanyador = topPosicio[0];
                 }
-                writeJsonWinner();
+                jsonFileCompeticio.getCompetition().getWriteJson().writeJsonWinner(jsonFileCompeticio, guanyador);
             }
         }
         if (jsonFileCompeticio.getCompetition().getPhases().size() == 2) {
@@ -502,7 +502,7 @@ public class Controller {
                 if (juga) {
                     guanyador = topPosicio[0];
                 }
-                writeJsonWinner();
+                jsonFileCompeticio.getCompetition().getWriteJson().writeJsonWinner(jsonFileCompeticio, guanyador);
             }
         }
     }
@@ -519,34 +519,14 @@ public class Controller {
         System.out.println(tipusBatalla);
         switch (tipusBatalla) {
             case "acapella":
-                acapella.startBattle(usuari, contrincant, tipusBatalla);
+                acapella.startBattle(usuari, contrincant);
                 break;
             case "sangre":
-                sangre.startBattle(usuari, contrincant, tipusBatalla);
+                sangre.startBattle(usuari, contrincant);
                 break;
             case "escrita":
-                escrita.startBattle(usuari, contrincant, tipusBatalla);
+                escrita.startBattle(usuari, contrincant);
                 break;
-        }
-    }
-
-    /**
-     * @Finalitat: Escriure en un fitxer anomenat 'winner.json' el guanyador de la competicio per mostrar-lo un cop s'acabi la competicio i l'usuari pari l'execucio del programma
-     * @Paràmetres: no
-     * @Retorn: no
-     */
-    // TODO: Posem aquesta funcio a WriteJson?
-    public void writeJsonWinner () {
-        JSONObject obj = new JSONObject();
-        obj.put("name", jsonFileCompeticio.getRappers().get(guanyador).getStageName());
-
-        try {
-            FileWriter file = new FileWriter("files/winner.json");
-            file.write(obj.toJSONString());
-            file.flush();
-            file.close();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 }

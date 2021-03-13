@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.LinkedList;
 
 /**
- * @Finalitat: TODO:
+ * @Finalitat: Classe amb els metodes els quals fem servir per escrivir en qualsevol fitxer json
  */
 public class WriteJson {
     private boolean escrit = false;
@@ -19,7 +19,7 @@ public class WriteJson {
     }
 
     /**
-     * @Finalitat: TODO:
+     * @Finalitat: Reescriu el fitxer competicio.json per quan haguem d'afegir algun usuari nou
      * @Paràmetres: String name, String startDate, String endDate, LinkedList<Fase> phases, LinkedList<Rapero> raperos, LinkedList<String> paisos
      * @Retorn: boolean
      */
@@ -72,5 +72,24 @@ public class WriteJson {
             e.printStackTrace();
         }
         return escrit;
+    }
+
+    /**
+     * @Finalitat: Escriure en un fitxer anomenat 'winner.json' el guanyador de la competicio per mostrar-lo un cop s'acabi la competicio i l'usuari pari l'execucio del programma
+     * @Paràmetres: no
+     * @Retorn: no
+     */
+    public void writeJsonWinner (JsonFileCompeticio jsonFileCompeticio, int guanyador) {
+        JSONObject obj = new JSONObject();
+        obj.put("name", jsonFileCompeticio.getRappers().get(guanyador).getStageName());
+
+        try {
+            FileWriter file = new FileWriter("files/winner.json");
+            file.write(obj.toJSONString());
+            file.flush();
+            file.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

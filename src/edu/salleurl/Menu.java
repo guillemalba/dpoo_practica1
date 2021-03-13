@@ -79,7 +79,7 @@ public class Menu {
     }
 
     /**
-     * @Finalitat: Guardar la opcio del primer menu abans de la lobby, controlar  la informacio i retornar el menu del usuari que jugara
+     * @Finalitat: Guardar la opcio del primer menu abans de la lobby, controlar la informacio i retornar el nom del usuari que jugara
      * @Paràmetres: LinkedList<Rapero> raperos, LinkedList<String> paisos, Competicio competicio
      * @Retorn: String
      */

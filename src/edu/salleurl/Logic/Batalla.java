@@ -19,11 +19,11 @@ public abstract class Batalla {
     }
 
     /**
-     * @Finalitat: TODO:
-     * @Paràmetres: -
+     * @Finalitat: Funcio que executa tot el procediment de les batalles i assignant la puntuacio als raperos despres de la batalla
+     * @Paràmetres: String usuari, String contrincant
      * @Retorn: no
      */
-    public void startBattle(String usuari, String contrincant, String tipusBatalla) {
+    public void startBattle(String usuari, String contrincant) {
         Random random = new Random();
         int index = random.nextInt(jsonFileBatalla.getThemes().size());
         int randUser = random.nextInt(2);
@@ -40,7 +40,7 @@ public abstract class Batalla {
         System.out.println();
         System.out.println("A coin is tossed in the air and...");
 
-        //randUser = 1;   // esborra aquesta linea
+        // switch per escollir amb un numero random qui comenca la batalla
         switch (randUser) {
             case 1:
                 for (int i = 0; i < 2; i++) {
@@ -80,6 +80,7 @@ public abstract class Batalla {
                 System.out.println("Error on randUser!");
                 break;
         }
+        // afegim la puntuacio dels usuaris
         for (int j = 0; j < jsonFileCompeticio.getRappers().size(); j++) {
             if (jsonFileCompeticio.getRappers().get(j).getStageName().equalsIgnoreCase(usuari)) {
                 jsonFileCompeticio.getRappers().get(j).setPuntuacio(puntsUsuari);
@@ -95,7 +96,7 @@ public abstract class Batalla {
      * @Paràmetres: int numRimas
      * @Retorn: float
      */
-    public abstract float calculaPuntuacio (int numRimas);
+    protected abstract float calculaPuntuacio (int numRimas);
 
     /**
      * @Finalitat: Calcula el nombre de rimes que hi ha en els versos i els retorna, si l'usuari abans s'ha quedat en blanc posem el numero de rimes a -1
@@ -130,6 +131,7 @@ public abstract class Batalla {
                 }
                 // si rimaOK = true, vol dir que els versos almenys tenen minim 2 letres i poden ser contabilitzats
                 if (rimaOK) {
+                    // si conte una rima en les dues ultimes lletres li sumem 1
                     if (lettersRimas.contains(rima.substring(rima.length()-2))) {
                         indexRima = lettersRimas.indexOf(rima.substring(rima.length()-2));
                         numRimas.set(indexRima,numRimas.get(indexRima)+1);
@@ -161,7 +163,9 @@ public abstract class Batalla {
         System.out.println(contrincant + " your turn! Drop it\n");
         System.out.println(contrincant + ":\n");
 
+        // bucle per recorrer tots els raperos
         for (int j = 0; j < jsonFileCompeticio.getRappers().size(); j++) {
+            // si el rapero del fitxer es igual al del usuari agafem el seu nivell i amb un switch mostrem els versos del nivell
             if (jsonFileCompeticio.getRappers().get(j).getStageName().equalsIgnoreCase(usuari)) {
                 level = jsonFileCompeticio.getRappers().get(j).getLevel();
                 switch (level) {
@@ -170,6 +174,7 @@ public abstract class Batalla {
                             rimas = jsonFileBatalla.getThemes().get(index).getRhymes().get(0).get_1().get(i).split("\n");
                         } else {
                             System.out.println("M'he quedat en blanc\n");
+                            // assignem "M'he quedat en blanc" a la casella 0 per indicar que s'ha quedat en blanc i se li assignaran 0 punts
                             rimas[0] = "M'he quedat en blanc";
                             end = true;
                         }
@@ -180,8 +185,8 @@ public abstract class Batalla {
                             rimas = jsonFileBatalla.getThemes().get(index).getRhymes().get(0).get_2().get(i).split("\n");
                         } else {
                             System.out.println("M'he quedat en blanc\n");
+                            // assignem "M'he quedat en blanc" a la casella 0 per indicar que s'ha quedat en blanc i se li assignaran 0 punts
                             rimas[0] = "M'he quedat en blanc";
-                            // boolean per fer que no mostri les rimes de la condició d'abaix en cas  que es quedi en blanc, ja que esta buit
                             end = true;
                         }
                         break;

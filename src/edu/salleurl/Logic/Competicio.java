@@ -64,7 +64,7 @@ public class Competicio {
     }
 
     /**
-     * @Finalitat: TODO:
+     * @Finalitat: Funcio que guarda la informacio dels raperos del json
      * @Paràmetres: LinkedList<Rapero> raperos
      * @Retorn: no
      */
@@ -73,7 +73,7 @@ public class Competicio {
     }
 
     /**
-     * @Finalitat: TODO:
+     * @Finalitat: Funcio que guarda la informacio dels paisos del json
      * @Paràmetres: LinkedList<String> paisos
      * @Retorn: no
      */
@@ -97,6 +97,8 @@ public class Competicio {
 
         System.out.println("-----------------------------------------------------------");
         System.out.println("Please, enter your personal information:");
+
+        // demanem totes les dades del usuari i comprovem els errors
         do {
             System.out.println("- Full name: ");
             nom = reader.nextLine();
@@ -168,6 +170,7 @@ public class Competicio {
     public String loginRapero () {
         boolean trobat = false;
         String nom = null;
+        // demanem el login i comprovem que existeixi
         do {
             System.out.println("-----------------------------------------------------------");
             System.out.println("Enter your artistic name: ");
@@ -187,7 +190,7 @@ public class Competicio {
     }
 
     /**
-     * @Finalitat: TODO:
+     * @Finalitat: Comprova que la data introduida per l'usuari estigui en el format correcte
      * @Paràmetres: String dia
      * @Retorn: boolean
      */
@@ -255,5 +258,9 @@ public class Competicio {
                 }
             }
         }
+    }
+
+    public WriteJson getWriteJson () {
+        return writeJson;
     }
 }

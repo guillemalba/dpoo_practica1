@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9b5f7e3c-b67c-4926-b27e-fd24f37ff2ce" name="Default Changelist" comment="">
+    <list default="true" id="9b5f7e3c-b67c-4926-b27e-fd24f37ff2ce" name="Default Changelist" comment="small fixes">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/files/competició.json" beforeDir="false" afterPath="$PROJECT_DIR$/files/competició.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/WriteJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/WriteJson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Batalla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Batalla.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Competicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Competicio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Rapero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Rapero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Rima.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Rima.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,19 +50,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -79,7 +72,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -261,7 +254,7 @@
       <option name="project" value="LOCAL" />
       <updated>1615645553952</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,13 +265,12 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
@@ -289,7 +281,8 @@
     <MESSAGE value="reorganitzant, no compila" />
     <MESSAGE value="get option menu" />
     <MESSAGE value="batalla acabada!!!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="batalla acabada!!!!!" />
+    <MESSAGE value="small fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="small fixes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="474" y="193" key="#Inspections" timestamp="1615647951792">
@@ -313,22 +306,22 @@
     </state>
     <state x="410" y="25" key="CommitChangelistDialog2/0.25.1680.971@0.25.1680.971" timestamp="1615646425835" />
     <state x="410" y="25" key="CommitChangelistDialog2/0.25.1680.976@0.25.1680.976" timestamp="1615459993669" />
-    <state width="1638" height="731" key="GridCell.Tab.0.bottom" timestamp="1615648325746">
+    <state width="1638" height="731" key="GridCell.Tab.0.bottom" timestamp="1615668907191">
       <screen x="0" y="25" width="1680" height="971" />
     </state>
-    <state width="1638" height="731" key="GridCell.Tab.0.bottom/0.25.1680.971@0.25.1680.971" timestamp="1615648325746" />
-    <state width="1638" height="731" key="GridCell.Tab.0.center" timestamp="1615648325746">
+    <state width="1638" height="731" key="GridCell.Tab.0.bottom/0.25.1680.971@0.25.1680.971" timestamp="1615668907191" />
+    <state width="1638" height="731" key="GridCell.Tab.0.center" timestamp="1615668907189">
       <screen x="0" y="25" width="1680" height="971" />
     </state>
-    <state width="1638" height="731" key="GridCell.Tab.0.center/0.25.1680.971@0.25.1680.971" timestamp="1615648325746" />
-    <state width="1638" height="731" key="GridCell.Tab.0.left" timestamp="1615648325746">
+    <state width="1638" height="731" key="GridCell.Tab.0.center/0.25.1680.971@0.25.1680.971" timestamp="1615668907189" />
+    <state width="1638" height="731" key="GridCell.Tab.0.left" timestamp="1615668907188">
       <screen x="0" y="25" width="1680" height="971" />
     </state>
-    <state width="1638" height="731" key="GridCell.Tab.0.left/0.25.1680.971@0.25.1680.971" timestamp="1615648325746" />
-    <state width="1638" height="731" key="GridCell.Tab.0.right" timestamp="1615648325746">
+    <state width="1638" height="731" key="GridCell.Tab.0.left/0.25.1680.971@0.25.1680.971" timestamp="1615668907188" />
+    <state width="1638" height="731" key="GridCell.Tab.0.right" timestamp="1615668907190">
       <screen x="0" y="25" width="1680" height="971" />
     </state>
-    <state width="1638" height="731" key="GridCell.Tab.0.right/0.25.1680.971@0.25.1680.971" timestamp="1615648325746" />
+    <state width="1638" height="731" key="GridCell.Tab.0.right/0.25.1680.971@0.25.1680.971" timestamp="1615668907190" />
     <state width="1638" height="314" key="GridCell.Tab.1.bottom" timestamp="1609037072640">
       <screen x="0" y="25" width="1680" height="971" />
     </state>
@@ -345,10 +338,10 @@
       <screen x="0" y="25" width="1680" height="971" />
     </state>
     <state width="1638" height="314" key="GridCell.Tab.1.right/0.25.1680.971@0.25.1680.971" timestamp="1609037072640" />
-    <state x="349" y="145" key="SettingsEditor" timestamp="1615648445004">
+    <state x="349" y="145" key="SettingsEditor" timestamp="1615663460896">
       <screen x="0" y="25" width="1680" height="971" />
     </state>
-    <state x="349" y="145" key="SettingsEditor/0.25.1680.971@0.25.1680.971" timestamp="1615648445004" />
+    <state x="349" y="145" key="SettingsEditor/0.25.1680.971@0.25.1680.971" timestamp="1615663460896" />
     <state x="349" y="146" key="SettingsEditor/0.25.1680.976@0.25.1680.976" timestamp="1615460233345" />
     <state x="440" y="243" key="Vcs.Push.Dialog.v2" timestamp="1615646430524">
       <screen x="0" y="25" width="1680" height="971" />
@@ -359,21 +352,5 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="246" y="99" key="new project wizard/0.0.1680.1050@0.0.1680.1050" timestamp="1608732599054" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/edu/salleurl/Logic/Controller.java</url>
-          <line>64</line>
-          <option name="timeStamp" value="62" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/edu/salleurl/Logic/Controller.java</url>
-          <line>491</line>
-          <option name="timeStamp" value="65" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
