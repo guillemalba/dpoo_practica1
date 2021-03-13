@@ -15,8 +15,9 @@ public class Main {
     public static void main(String[] args) {
         ReadJson readJsonBatalla = new ReadJson();
         ReadJson readJsonCompeticio = new ReadJson();
+        ReadJson readJsonWinner = new ReadJson();
 
-        Controller controller = new Controller(readJsonCompeticio.read(), readJsonBatalla.read2());
+        Controller controller = new Controller(readJsonCompeticio.read(), readJsonBatalla.read2(), readJsonWinner.read3());
         controller.startProgram();
 
         //JsonFileCompeticio jsonCompeticio = null;

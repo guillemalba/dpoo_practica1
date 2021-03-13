@@ -8,10 +8,12 @@ import java.io.FileReader;
 public class ReadJson {
     private Gson g;
     private Gson g2;
+    private Gson g3;
 
     public ReadJson () {
         g = new Gson();
         g2 = new Gson();
+        g3 = new Gson();
     }
 
     public JsonFileCompeticio read() {
@@ -38,5 +40,18 @@ public class ReadJson {
             System.out.println("Error");
         }
         return data2;
+    }
+
+    public JsonFileWinner read3() {
+        JsonFileWinner data3 = new JsonFileWinner();
+
+        try {
+            FileReader lector3 = new FileReader("files/winner.json");
+            data3 = g3.fromJson(lector3, JsonFileWinner.class);
+
+        } catch (FileNotFoundException e) {
+            System.out.println("Error");
+        }
+        return data3;
     }
 }
