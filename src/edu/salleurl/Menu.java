@@ -52,10 +52,10 @@ public class Menu {
 
     /**
      * @Finalitat: Mostra el menu inicial d'abans d'iniciar la competicio, en el moment que ja ha comencat i un cop hagi acabat, en aquest ultim cas, es mostrara el  nom  del guanyador de la competicio
-     * @Paràmetres: JsonFileWinner jsonFileWinner
+     * @Paràmetres: JsonFileWinner jsonFileWinner, String winner
      * @Retorn: no
      */
-    public void showMenu (JsonFileWinner jsonFileWinner) {
+    public void showMenu (JsonFileWinner jsonFileWinner, String winner) {
         switch (opcioCompetition) {
             case 3:
                 System.out.println("\n1. Register");
@@ -66,7 +66,12 @@ public class Menu {
                 System.out.println("2. Leave");
             break;
             case 2:
-                System.out.println("\nThe winner of the competiton was: " + jsonFileWinner.getName());
+                if (jsonFileWinner.getName() == null) {
+                    System.out.println("\nThe winner of the competiton was: " + winner);
+                }
+                else {
+                    System.out.println("\nThe winner of the competiton was: " + jsonFileWinner.getName());
+                }
                 System.out.println("\nPress 2 if you want to leave");
             break;
         }
@@ -197,5 +202,14 @@ public class Menu {
      */
     public String getTipusBatalla() {
         return tipusBatalla;
+    }
+
+    /**
+     * @Finalitat: Retornar si la competicio ha de començar, ha començat o ja ha acabat
+     * @Paràmetres: no
+     * @Retorn: int
+     */
+    public int getOpcioCompetition() {
+        return opcioCompetition;
     }
 }

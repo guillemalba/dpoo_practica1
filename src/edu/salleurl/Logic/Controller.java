@@ -55,9 +55,14 @@ public class Controller {
      */
     public void startProgram() {
         int opcio = 0;
+        String winner = null;
         if(jsonFileCompeticio != null && jsonFileBatalla != null) {
             menu.showCompeticio(jsonFileCompeticio.getRappers(), jsonFileCompeticio.getCompetition());
-            menu.showMenu(jsonFileWinner);
+            if (menu.getOpcioCompetition() == 2 && jsonFileWinner.getName() == null) {
+                     batallaNoUsuari();
+                     winner = jsonFileCompeticio.getRappers().get(guanyador).getStageName();
+            }
+            menu.showMenu(jsonFileWinner, winner);
             usuari = menu.getOption(jsonFileCompeticio.getRappers(), jsonFileCompeticio.getCountries(), jsonFileCompeticio.getCompetition());
             if (usuari != null) {
                 batallaRestaRaperos(usuari);
@@ -99,23 +104,7 @@ public class Controller {
                 } while (!acabat && opcio != 4);
                 do {
                     if (!acabat) {
-                        do {
-                            jsonFileCompeticio.getRappers().get(indexUsuari).setPuntuacio(0);
-                            if (faseAcabada && numFase == 2) {
-                                jugadorGuanyadorBatallaFase1();
-                                faseAcabada = false;
-                            }
-                            if (faseAcabada && numFase == 3) {
-                                jugadorGuanyadorBatallaFase2();
-                                faseAcabada = false;
-                            }
-                            batallaRestaRaperos(usuari);
-                            if (numBatalla == 1) {
-                                numBatalla = 2;
-                            } else {
-                                canviarFase();
-                            }
-                        } while (!acabat);
+                        batallaNoUsuari();
                     }
                     opcio = menu.showCompetiAcabada(jsonFileCompeticio.getRappers(), guanyador, indexUsuari);
                     if (opcio == 2) {
@@ -130,6 +119,31 @@ public class Controller {
             System.out.println("Error.");
         }
         System.out.println("Thanks for your visit!");
+    }
+
+    /**
+     * @Finalitat: //TODO:
+     * @Paràmetres: no
+     * @Retorn: no
+     */
+    public void batallaNoUsuari() {
+        do {
+            jsonFileCompeticio.getRappers().get(indexUsuari).setPuntuacio(0);
+            if (faseAcabada && numFase == 2) {
+                jugadorGuanyadorBatallaFase1();
+                faseAcabada = false;
+            }
+            if (faseAcabada && numFase == 3) {
+                jugadorGuanyadorBatallaFase2();
+                faseAcabada = false;
+            }
+            batallaRestaRaperos(usuari);
+            if (numBatalla == 1) {
+                numBatalla = 2;
+            } else {
+                canviarFase();
+            }
+        } while (!acabat);
     }
 
     /**
