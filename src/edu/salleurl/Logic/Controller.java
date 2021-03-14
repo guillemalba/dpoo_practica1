@@ -27,13 +27,13 @@ public class Controller {
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String YELLOW_BOLD_BRIGHT = "\033[1;93m";
 
-    private int numerosFase1[];
-    private int numerosFase2[];
-    private float guanyadorBatallaFase[];
-    private float topBatalla1[];
-    private float topBatalla2[];
-    private int topPosicio[];
-    private String nomsFase2[];
+    private int numerosFase1[];                         // array on es guarda aleatoriament l'index de les parelles en la fase 1
+    private int numerosFase2[];                         // array on es guarda aleatoriament l'index de les parelles en la fase 2
+    private float guanyadorBatallaFase[];               // array on es guarda la puntuacio ordenada descendentment dels raperos
+    private float topBatalla1[];                        // array on es guarda els index dels jugadors que passen a la fase 2
+    private float topBatalla2[];                        // array on es guarda els index dels jugadors que passen a la fase 3
+    private int topPosicio[];                           // array on es guarda el index dels dos millor raperos
+    private String nomsFase2[];                         // array dels stageName dels raperos que participen en la fase 2
     private String usuari = null;                       // nom del usuari
     private String contrincant = null;                  // nom del contrincant
     private String tipusBatalla = null;                 // nom del tipus de batalla (acapella, escrita,  sangre)
@@ -41,9 +41,9 @@ public class Controller {
     private int numBatalla = 1;                         // index de la batalla actual en que es troba
     private int numFase = 1;                            // index de la fase en que es troba
     private int indexUsuari = 0;                        // index del usuari
-    private boolean acabat = false;
+    private boolean acabat = false;                     // boolean que controla si ha acabat la competicio o no
     private boolean faseAcabada = false;                // boolean que indica si ha acabat la fase
-    private boolean juga = true;
+    private boolean juga = true;                        // boolean que controla si l'usuari continua participant en la competicio o no
 
     public Controller(JsonFileCompeticio jsonFileCompeticio, JsonFileBatalla jsonFileBatalla, JsonFileWinner jsonFileWinner) {
         this.jsonFileCompeticio = jsonFileCompeticio;
@@ -61,14 +61,20 @@ public class Controller {
         String winner = null;
         if(jsonFileCompeticio != null && jsonFileBatalla != null) {
             menu.showCompeticio(jsonFileCompeticio.getRappers(), jsonFileCompeticio.getCompetition());
+
+            // per simular la competicio de la resta de raperos en el cas de que aquesta hagi passat i l'usuari no hagi participat
             if (menu.getOpcioCompetition() == 2 && jsonFileWinner.getName() == null) {
                      batallaNoUsuari();
                      winner = jsonFileCompeticio.getRappers().get(guanyador).getStageName();
             }
             menu.showMenu(jsonFileWinner, winner);
             usuari = menu.getOption(jsonFileCompeticio);
+
+            // comença la competicio
             if (usuari != null) {
                 batallaRestaRaperos(usuari);
+
+                // fer la competicio fins que acabi o abandoni
                 do {
                     if (opcio == 1) {
                         if (faseAcabada && numFase == 2) {
@@ -105,6 +111,8 @@ public class Controller {
                     }
                     tipusBatalla = menu.getTipusBatalla();
                 } while (!acabat && opcio != 4);
+
+                // mostrar el menu quan la competicio ja hagi acabat
                 do {
                     if (!acabat) {
                         batallaNoUsuari();
@@ -125,7 +133,7 @@ public class Controller {
     }
 
     /**
-     * @Finalitat: //TODO:
+     * @Finalitat: Funcio per simular les batalles de la resta de raperos en el cas de que l'usuari no hi participi
      * @Paràmetres: no
      * @Retorn: no
      */
@@ -150,7 +158,7 @@ public class Controller {
     }
 
     /**
-     * @Finalitat: //TODO:
+     * @Finalitat: Funcio a on es decideix que s'ha de fer a partir de la batalla i fase que es trobin
      * @Paràmetres: String usuari
      * @Retorn: no
      */
@@ -159,11 +167,15 @@ public class Controller {
         this.numerosFase1 = RandomizeArray(0, jsonFileCompeticio.getRappers().size()-1);
         this.guanyadorBatallaFase = new float[numerosFase1.length];
 
+        // quan es trobi en la fase inicial
         if ((numBatalla == 1 || numBatalla == 2) && numFase == 1) {
             parellesFase1();
         }
+
+        // quan es trobi en la fase final
         else
         if ((numFase == 3 && !acabat) || (jsonFileCompeticio.getCompetition().getPhases().size() == 2 && numFase == 2 && !acabat)) {
+
             // agafem el top1 i top2 per la batalla final
             if (numBatalla == 1) {
                 topPosicio = getTop1Top2();
@@ -171,11 +183,13 @@ public class Controller {
 
             if (topPosicio[0] != indexUsuari && topPosicio[1] != indexUsuari) {
                 juga = false;
-                // top1 vs top2
+
+                // top1 vs top2 en el cas de que l'usuari no sigui cap d'aquests
                 for (int i = 0; i < topPosicio.length; i++) {
                     int random1 = (int) (Math.random() * MAX_PUNTUACIO);
                     jsonFileCompeticio.getRappers().get(topPosicio[i]).setPuntuacio(random1);
                 }
+
                 //comprovem si a la fase final ha canviat el guanyador
                 if (jsonFileCompeticio.getRappers().get(topPosicio[0]).getPuntuacio() > jsonFileCompeticio.getRappers().get(topPosicio[1]).getPuntuacio()) {
                     guanyador = topPosicio[0];
@@ -184,11 +198,14 @@ public class Controller {
                 }
             }
         }
+
+        // quan es trobi en la fase intermitja
         else
         if ((numBatalla == 1 || numBatalla == 2) && numFase == 2 && jsonFileCompeticio.getCompetition().getPhases().size() == 3) {
             if (numBatalla == 1) {
                 nomsFase2 = new String[topBatalla1.length];
 
+                // guardem els noms dels jugadors que participen en la fase 2
                 int m = 0;
                 for (int i = 0; i < topBatalla1.length; i++) {
                     int p = 0;
@@ -215,6 +232,8 @@ public class Controller {
      */
     public int[] getTop1Top2() {
         int top[] = new int[2];
+
+        // guardem l'index dels dos millors jugadors de la fase 2 en el cas de que hi hagin tres fases
         if (jsonFileCompeticio.getCompetition().getPhases().size() == 3) {
             for (int i = 0; i < jsonFileCompeticio.getRappers().size(); i++) {
                 if (jsonFileCompeticio.getRappers().get(i).getPuntuacio() == topBatalla2[0]) {
@@ -225,6 +244,8 @@ public class Controller {
                 }
             }
         }
+
+        // guardem l'index dels dos millors jugadors de la fase 1 en el cas de que hi hagin dues fases
         if (jsonFileCompeticio.getCompetition().getPhases().size() == 2) {
             for (int i = 0; i < jsonFileCompeticio.getRappers().size(); i++) {
                 if (jsonFileCompeticio.getRappers().get(i).getPuntuacio() == topBatalla1[0]) {
@@ -244,7 +265,7 @@ public class Controller {
      * @Retorn: int[] amb numeros random
      */
     public static int[] RandomizeArray(int a, int b){
-        Random rgen = new Random();  // Random number generator
+        Random rgen = new Random();
         int size = b-a+1;
         int[] array = new int[size];
 
@@ -262,7 +283,7 @@ public class Controller {
     }
 
     /**
-     * @Finalitat: //TODO:
+     * @Finalitat: Funcio a on es dona puntuacio a la resta de parelles que es troben en la fase 1 per tal de simular la batalla
      * @Paràmetres: no
      * @Retorn: no
      */
@@ -270,6 +291,8 @@ public class Controller {
         int aux = 0;
         for (int i = 0; i < numerosFase1.length; i++) {
             int random1 = (int) (Math.random() * MAX_PUNTUACIO);
+
+            // en el cas de que sigui la posicio de l'usuari posem puntuacio 0 a ell i al rapero amb el qual li toca fer parella i ens guardem el nom
             if (jsonFileCompeticio.getRappers().get(numerosFase1[i]).getStageName().equalsIgnoreCase(usuari)) {
                 indexUsuari = numerosFase1[i];
                 if (i % 2 == 0) {
@@ -290,7 +313,7 @@ public class Controller {
     }
 
     /**
-     * @Finalitat: //TODO:
+     * @Finalitat: Funcio a on es dona puntuacio a la resta de parelles que es troben en la fase 2 per tal de simular la batalla
      * @Paràmetres: no
      * @Retorn: no
      */
@@ -299,6 +322,9 @@ public class Controller {
         int index = 0;
         boolean seguent = false;
         numerosFase2 = RandomizeArray(0, nomsFase2.length-1);
+
+        // donem puntuacio a la resta de parelles de la fase 2
+        // donem puntuacio 0 a ell i al rapero amb el qual li toca fer parella i ens guradem el nom del contrincant
         for (int i = 0; i < numerosFase2.length; i++) {
             int random1 = (int) (Math.random() * MAX_PUNTUACIO);
             if (nomsFase2[numerosFase2[i]].equalsIgnoreCase(usuari)) {
@@ -331,11 +357,13 @@ public class Controller {
     }
 
     /**
-     * @Finalitat: //TODO:
+     * @Finalitat: Funcio a on es guarda els raperos amb la millor puntuacio de la fase 1 per passar en el seguent fase i mirem si l'usuari passa
      * @Paràmetres: no
      * @Retorn: no
      */
     public void jugadorGuanyadorBatallaFase1 () {
+
+        //guardem les puntuacions de tots els raperos, les ordenem i ens quedem amb la meitat mes alta que son els que passaran a la seguent fase
         for (int j = 0; j < jsonFileCompeticio.getRappers().size(); j++) {
             guanyadorBatallaFase[j] = jsonFileCompeticio.getRappers().get(j).getPuntuacio();
         }
@@ -346,6 +374,8 @@ public class Controller {
             guanyadorBatallaFase[guanyadorBatallaFase.length - i - 1] = temp;
         }
         topBatalla1 = Arrays.copyOfRange(guanyadorBatallaFase, 0, guanyadorBatallaFase.length/2);
+
+        // en el cas de que hi hagi 2 fases mirem si l'usuari es troba en els dos millors
         if (jsonFileCompeticio.getCompetition().getPhases().size() == 2) {
             juga = false;
             if (topBatalla1[0] == jsonFileCompeticio.getRappers().get(indexUsuari).getPuntuacio()) {
@@ -366,6 +396,8 @@ public class Controller {
             }
         }
         juga = false;
+
+        // en el cas de que hi hagi 3 fases mirem si l'usuari es troba en l'array dels que passen a la fase 2
         if (jsonFileCompeticio.getCompetition().getPhases().size() == 3) {
             for (int i = 0; i < topBatalla1.length && !juga; i++) {
                 if (topBatalla1[i] == jsonFileCompeticio.getRappers().get(indexUsuari).getPuntuacio()) {
@@ -376,11 +408,13 @@ public class Controller {
     }
 
     /**
-     * @Finalitat: //TODO:
+     * @Finalitat: Funcio a on es guarda els dos millors raperos de la fase 2 per passar a la fase final
      * @Paràmetres: no
      * @Retorn: no
      */
     public void jugadorGuanyadorBatallaFase2 () {
+
+        //guardem les puntuacions de tots els raperos, les ordenem i ens quedem amb els dos millors
         for (int j = 0; j < jsonFileCompeticio.getRappers().size(); j++) {
             guanyadorBatallaFase[j] = jsonFileCompeticio.getRappers().get(j).getPuntuacio();
         }
@@ -391,6 +425,8 @@ public class Controller {
             guanyadorBatallaFase[guanyadorBatallaFase.length - i - 1] = temp;
         }
         topBatalla2 = Arrays.copyOfRange(guanyadorBatallaFase, 0, 2);
+
+        // mirem si l'usuari es troba en els dos millors
         if (jsonFileCompeticio.getCompetition().getPhases().size() == 3) {
             if (topBatalla2[0] == jsonFileCompeticio.getRappers().get(indexUsuari).getPuntuacio()) {
                 for (int i = 0; i < jsonFileCompeticio.getRappers().size(); i++) {
@@ -415,6 +451,8 @@ public class Controller {
      * @Retorn: no
      */
     public void ranquingCompeticio () {
+
+        // guardem quants raperos ha de mostrar en el ranquing
         int numParticipants = 0;
         if (numFase == 1) {
             numParticipants = jsonFileCompeticio.getRappers().size();
@@ -427,12 +465,12 @@ public class Controller {
         }
         float puntuacions[] = new float[jsonFileCompeticio.getRappers().size()];
 
-        //guardem les puntuacions en un array
+        // guardem les puntuacions en un array
         for (int i = 0; i < jsonFileCompeticio.getRappers().size(); i++) {
             puntuacions[i] = jsonFileCompeticio.getRappers().get(i).getPuntuacio();
         }
 
-        //ordenem l'array de puntuacions de major a menor
+        // ordenem l'array de puntuacions de major a menor
         Arrays.sort(puntuacions);
         for( int i = 0; i < puntuacions.length/2; ++i ) {
             float temp = puntuacions[i];
@@ -440,7 +478,7 @@ public class Controller {
             puntuacions[puntuacions.length - i - 1] = temp;
         }
 
-        //ens quedem amb les puntuacions uniques
+        // ens quedem amb les puntuacions uniques
         int j = 0;
         for (int i=0; i < puntuacions.length-1; i++){
             if (puntuacions[i] != puntuacions[i+1]){
@@ -449,7 +487,7 @@ public class Controller {
         }
         puntuacions[j++] = puntuacions[puntuacions.length-1];
 
-        //mostrem el ranquing
+        // mostrem el ranquing
         int m = 0;
         for (int k = 0; k < puntuacions.length; k++) {
             for (int i = 0; i < jsonFileCompeticio.getRappers().size(); i++) {
@@ -470,7 +508,7 @@ public class Controller {
     }
 
     /**
-     * @Finalitat: Controla i modifica els index de les batalles i les fases, tambe obtenim el index del guanyador de la competicio i l'escrivim en un fitxer winner.json
+     * @Finalitat: Controla i modifica els index de les batalles i les fases i escrivim en un fitxer winner.json el guanyador
      * @Paràmetres: no
      * @Retorn: no
      */

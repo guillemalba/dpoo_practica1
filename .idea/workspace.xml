@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b5f7e3c-b67c-4926-b27e-fd24f37ff2ce" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/files/competició.json" beforeDir="false" afterPath="$PROJECT_DIR$/files/competició.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/JsonFileCompeticio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/JsonFileCompeticio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Competicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Competicio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,7 +259,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615659297252</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="acabaaaaat">
+      <created>1615682739423</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1615682739423</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,7 +294,8 @@
     <MESSAGE value="reorganitzant, no compila" />
     <MESSAGE value="get option menu" />
     <MESSAGE value="batalla acabada!!!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="batalla acabada!!!!!" />
+    <MESSAGE value="acabaaaaat" />
+    <option name="LAST_COMMIT_MESSAGE" value="acabaaaaat" />
   </component>
   <component name="WindowStateProjectService">
     <state x="474" y="193" key="#Inspections" timestamp="1615647951792">
