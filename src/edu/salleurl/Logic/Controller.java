@@ -19,6 +19,9 @@ public class Controller {
     private JsonFileBatalla jsonFileBatalla;
     private JsonFileWinner jsonFileWinner;
     private Menu menu = new Menu();
+    private Acapella acapella;
+    private Sangre sangre;
+    private Escrita escrita;
 
     // Constants per pintar text
     public static final String ANSI_RESET = "\u001B[0m";
@@ -63,7 +66,7 @@ public class Controller {
                      winner = jsonFileCompeticio.getRappers().get(guanyador).getStageName();
             }
             menu.showMenu(jsonFileWinner, winner);
-            usuari = menu.getOption(jsonFileCompeticio.getRappers(), jsonFileCompeticio.getCountries(), jsonFileCompeticio.getCompetition());
+            usuari = menu.getOption(jsonFileCompeticio);
             if (usuari != null) {
                 batallaRestaRaperos(usuari);
                 do {
@@ -488,7 +491,7 @@ public class Controller {
                 if (juga) {
                     guanyador = topPosicio[0];
                 }
-                jsonFileCompeticio.getCompetition().getWriteJson().writeJsonWinner(jsonFileCompeticio, guanyador);
+                jsonFileCompeticio.getWriteJson().writeJsonWinner(jsonFileCompeticio, guanyador);
             }
         }
         if (jsonFileCompeticio.getCompetition().getPhases().size() == 2) {
@@ -502,7 +505,7 @@ public class Controller {
                 if (juga) {
                     guanyador = topPosicio[0];
                 }
-                jsonFileCompeticio.getCompetition().getWriteJson().writeJsonWinner(jsonFileCompeticio, guanyador);
+                jsonFileCompeticio.getWriteJson().writeJsonWinner(jsonFileCompeticio, guanyador);
             }
         }
     }
@@ -513,9 +516,9 @@ public class Controller {
      * @Retorn: no
      */
     private void batallaUsuari() {
-        Acapella acapella = new Acapella(jsonFileBatalla, jsonFileCompeticio);
-        Sangre sangre = new Sangre(jsonFileBatalla, jsonFileCompeticio);
-        Escrita escrita = new Escrita(jsonFileBatalla, jsonFileCompeticio);
+        acapella = new Acapella(jsonFileBatalla, jsonFileCompeticio);
+        sangre = new Sangre(jsonFileBatalla, jsonFileCompeticio);
+        escrita = new Escrita(jsonFileBatalla, jsonFileCompeticio);
         System.out.println(tipusBatalla);
         switch (tipusBatalla) {
             case "acapella":

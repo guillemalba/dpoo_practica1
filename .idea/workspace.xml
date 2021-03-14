@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9b5f7e3c-b67c-4926-b27e-fd24f37ff2ce" name="Default Changelist" comment="small fixes">
+    <list default="true" id="9b5f7e3c-b67c-4926-b27e-fd24f37ff2ce" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/files/competició.json" beforeDir="false" afterPath="$PROJECT_DIR$/files/competició.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/WriteJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/WriteJson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Batalla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Batalla.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/JsonFileCompeticio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/JsonFileCompeticio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Competicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Competicio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Rapero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Rapero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Rima.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Rima.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,6 +50,18 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.salleurl.Main" />
@@ -72,7 +82,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -247,12 +257,12 @@
       <option name="project" value="LOCAL" />
       <updated>1615640705174</updated>
     </task>
-    <task id="LOCAL-00023" summary="small fixes">
-      <created>1615645553952</created>
+    <task id="LOCAL-00023" summary="queda reeees">
+      <created>1615659297252</created>
       <option name="number" value="00023" />
       <option name="presentableId" value="LOCAL-00023" />
       <option name="project" value="LOCAL" />
-      <updated>1615645553952</updated>
+      <updated>1615659297252</updated>
     </task>
     <option name="localTasksCounter" value="24" />
     <servers />
@@ -265,12 +275,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
@@ -281,8 +292,7 @@
     <MESSAGE value="reorganitzant, no compila" />
     <MESSAGE value="get option menu" />
     <MESSAGE value="batalla acabada!!!!!" />
-    <MESSAGE value="small fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="small fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="batalla acabada!!!!!" />
   </component>
   <component name="WindowStateProjectService">
     <state x="474" y="193" key="#Inspections" timestamp="1615647951792">

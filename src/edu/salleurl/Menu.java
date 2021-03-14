@@ -1,5 +1,6 @@
 package edu.salleurl;
 
+import edu.salleurl.ApiJson.JsonFileCompeticio;
 import edu.salleurl.ApiJson.JsonFileWinner;
 import edu.salleurl.Logic.*;
 
@@ -83,7 +84,7 @@ public class Menu {
      * @Paràmetres: LinkedList<Rapero> raperos, LinkedList<String> paisos, Competicio competicio
      * @Retorn: String
      */
-    public String getOption(LinkedList<Rapero> raperos, LinkedList<String> paisos, Competicio competicio) {
+    public String getOption(JsonFileCompeticio jsonFileCompeticio) {
         int opcio = 0;
         do {
             System.out.println("\nChoose an option: ");
@@ -102,14 +103,11 @@ public class Menu {
                 System.out.println("Thanks for your visit!");
             }
             if (opcio == 1 && opcioCompetition == 3) {
-                competicio.setRaperos(raperos);
-                competicio.setPaisos(paisos);
-                competicio.registerRapero();
+                jsonFileCompeticio.registerRapero();
                 System.out.println("\nThanks for your visit!");
             }
             if (opcio == 1 && opcioCompetition == 1) {
-                competicio.setRaperos(raperos);
-                usuari = competicio.loginRapero();
+                usuari = jsonFileCompeticio.loginRapero();
             }
         } while (opcio != 1 && opcio != 2);
 

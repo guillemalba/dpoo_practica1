@@ -16,11 +16,9 @@ public class Main {
      * @Retorn: no
      */
     public static void main(String[] args) {
-        ReadJson readJsonBatalla = new ReadJson();
-        ReadJson readJsonCompeticio = new ReadJson();
-        ReadJson readJsonWinner = new ReadJson();
+        ReadJson readJson = new ReadJson();
 
-        Controller controller = new Controller(readJsonCompeticio.read(), readJsonBatalla.read2(), readJsonWinner.read3());
+        Controller controller = new Controller(readJson.read(), readJson.read2(), readJson.read3());
         controller.startProgram();
     }
 }
