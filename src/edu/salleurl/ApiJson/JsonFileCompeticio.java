@@ -37,7 +37,7 @@ public class JsonFileCompeticio {
 
     /**
      * Retorna els paisos
-     * @return LinkedList<String>
+     * @return Llista dels paisos
      */
     public LinkedList<String> getCountries() {
         return countries;
@@ -45,7 +45,7 @@ public class JsonFileCompeticio {
 
     /**
      * Retorna els raperos
-     * @return LinkedList<Rapero>
+     * @return Llista dels raperos
      */
     public LinkedList<Rapero> getRappers() {
         return rappers;

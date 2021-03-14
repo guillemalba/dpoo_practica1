@@ -1,26 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9b5f7e3c-b67c-4926-b27e-fd24f37ff2ce" name="Default Changelist" comment="- comentaris de funcions arreglats&#10;- ara siiiiiiii que esta acabat (crec 😂)">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/JsonFileBatalla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/JsonFileBatalla.java" afterDir="false" />
+    <list default="true" id="9b5f7e3c-b67c-4926-b27e-fd24f37ff2ce" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/JsonFileCompeticio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/JsonFileCompeticio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/JsonFileWinner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/JsonFileWinner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/ReadJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/ReadJson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/WriteJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/WriteJson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Acapella.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Acapella.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Batalla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Batalla.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Competicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Competicio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Escrita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Escrita.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Fase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Fase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Pais.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Pais.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Rapero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Rapero.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Rima.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Rima.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Sangre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Sangre.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Tema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Tema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -102,7 +87,7 @@
       <workItem from="1615458457172" duration="3429000" />
       <workItem from="1615648331401" duration="97000" />
       <workItem from="1615648452659" duration="1277000" />
-      <workItem from="1615728675247" duration="4484000" />
+      <workItem from="1615728675247" duration="4811000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1607792566704</created>
@@ -272,7 +257,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615682739423</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="- comentaris de funcions arreglats&#10;- ara siiiiiiii que esta acabat (crec 😂)">
+      <created>1615734714835</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1615734714836</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -320,27 +312,31 @@
       <screen x="0" y="25" width="1680" height="976" />
     </state>
     <state x="602" y="403" width="476" height="222" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.25.1680.976@0.25.1680.976" timestamp="1615461488456" />
-    <state x="410" y="25" key="CommitChangelistDialog2" timestamp="1615734075861">
+    <state x="582" y="236" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1615734953685">
       <screen x="0" y="25" width="1680" height="971" />
     </state>
-    <state x="410" y="25" key="CommitChangelistDialog2/0.25.1680.971@0.25.1680.971" timestamp="1615734075861" />
+    <state x="582" y="236" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.25.1680.971@0.25.1680.971" timestamp="1615734953685" />
+    <state x="410" y="25" key="CommitChangelistDialog2" timestamp="1615734714206">
+      <screen x="0" y="25" width="1680" height="971" />
+    </state>
+    <state x="410" y="25" key="CommitChangelistDialog2/0.25.1680.971@0.25.1680.971" timestamp="1615734714206" />
     <state x="410" y="25" key="CommitChangelistDialog2/0.25.1680.976@0.25.1680.976" timestamp="1615459993669" />
-    <state width="1638" height="731" key="GridCell.Tab.0.bottom" timestamp="1615668907191">
+    <state width="1638" height="492" key="GridCell.Tab.0.bottom" timestamp="1615735092734">
       <screen x="0" y="25" width="1680" height="971" />
     </state>
-    <state width="1638" height="731" key="GridCell.Tab.0.bottom/0.25.1680.971@0.25.1680.971" timestamp="1615668907191" />
-    <state width="1638" height="731" key="GridCell.Tab.0.center" timestamp="1615668907189">
+    <state width="1638" height="492" key="GridCell.Tab.0.bottom/0.25.1680.971@0.25.1680.971" timestamp="1615735092734" />
+    <state width="1638" height="492" key="GridCell.Tab.0.center" timestamp="1615735092733">
       <screen x="0" y="25" width="1680" height="971" />
     </state>
-    <state width="1638" height="731" key="GridCell.Tab.0.center/0.25.1680.971@0.25.1680.971" timestamp="1615668907189" />
-    <state width="1638" height="731" key="GridCell.Tab.0.left" timestamp="1615668907188">
+    <state width="1638" height="492" key="GridCell.Tab.0.center/0.25.1680.971@0.25.1680.971" timestamp="1615735092733" />
+    <state width="1638" height="492" key="GridCell.Tab.0.left" timestamp="1615735092733">
       <screen x="0" y="25" width="1680" height="971" />
     </state>
-    <state width="1638" height="731" key="GridCell.Tab.0.left/0.25.1680.971@0.25.1680.971" timestamp="1615668907188" />
-    <state width="1638" height="731" key="GridCell.Tab.0.right" timestamp="1615668907190">
+    <state width="1638" height="492" key="GridCell.Tab.0.left/0.25.1680.971@0.25.1680.971" timestamp="1615735092733" />
+    <state width="1638" height="492" key="GridCell.Tab.0.right" timestamp="1615735092733">
       <screen x="0" y="25" width="1680" height="971" />
     </state>
-    <state width="1638" height="731" key="GridCell.Tab.0.right/0.25.1680.971@0.25.1680.971" timestamp="1615668907190" />
+    <state width="1638" height="492" key="GridCell.Tab.0.right/0.25.1680.971@0.25.1680.971" timestamp="1615735092733" />
     <state width="1638" height="314" key="GridCell.Tab.1.bottom" timestamp="1609037072640">
       <screen x="0" y="25" width="1680" height="971" />
     </state>
@@ -362,10 +358,10 @@
     </state>
     <state x="349" y="145" key="SettingsEditor/0.25.1680.971@0.25.1680.971" timestamp="1615728696188" />
     <state x="349" y="146" key="SettingsEditor/0.25.1680.976@0.25.1680.976" timestamp="1615460233345" />
-    <state x="440" y="243" key="Vcs.Push.Dialog.v2" timestamp="1615646430524">
+    <state x="440" y="243" key="Vcs.Push.Dialog.v2" timestamp="1615734721815">
       <screen x="0" y="25" width="1680" height="971" />
     </state>
-    <state x="440" y="243" key="Vcs.Push.Dialog.v2/0.25.1680.971@0.25.1680.971" timestamp="1615646430524" />
+    <state x="440" y="243" key="Vcs.Push.Dialog.v2/0.25.1680.971@0.25.1680.971" timestamp="1615734721815" />
     <state x="440" y="244" key="Vcs.Push.Dialog.v2/0.25.1680.976@0.25.1680.976" timestamp="1615459996771" />
     <state x="246" y="99" key="new project wizard" timestamp="1608732599054">
       <screen x="0" y="0" width="1680" height="1050" />

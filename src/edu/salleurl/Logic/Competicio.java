@@ -43,7 +43,7 @@ public class Competicio {
 
     /**
      * Retornar la informacio de les fases
-     * @return LinkedList<Fase>
+     * @return Llista de les fases
      */
     public LinkedList<Fase> getPhases() {
         return phases;

@@ -22,7 +22,7 @@ public class Rima {
 
     /**
      * Retornar els versos del 1: del json
-     * @return LinkedList<String>
+     * @return Llista dels versos
      */
     public LinkedList<String> get_1() {
         return _1;
@@ -30,7 +30,7 @@ public class Rima {
 
     /**
      * Retornar els versos del 2: del json
-     * @return LinkedList<String>
+     * @return Llista dels versos
      */
     public LinkedList<String> get_2() {
         return _2;

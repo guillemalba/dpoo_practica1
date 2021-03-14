@@ -20,7 +20,7 @@ public class Tema {
 
     /**
      * Retorna els versos
-     * @return LinkedList<Rima> dels versos
+     * @return Llista dels versos
      */
     public LinkedList<Rima> getRhymes() {
         return rhymes;

@@ -20,7 +20,7 @@ public class Menu {
 
     /**
      * Mostra les dades de la competicio actual
-     * @param raperos LinkedList<Rapero> dels raperos
+     * @param raperos Llista dels raperos
      * @param competicio info de la competicio
      */
     public void showCompeticio (LinkedList<Rapero> raperos, Competicio competicio) {
