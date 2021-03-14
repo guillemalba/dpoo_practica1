@@ -3,7 +3,7 @@ package edu.salleurl.Logic;
 import javax.xml.crypto.Data;
 
 /**
- * @Finalitat: En aquesta classe es defineixen les variables i s'implementen les funcions relacionades amb la informacio dels raperos
+ * En aquesta classe es defineixen les variables i s'implementen les funcions relacionades amb la informacio dels raperos
  */
 public class Rapero {
     private String realName = null;
@@ -25,126 +25,112 @@ public class Rapero {
     }
 
     /**
-     * @Finalitat: Retornar el nom real del rapero
-     * @Paràmetres: no
-     * @Retorn: String
+     * Retornar el nom real del rapero
+     * @return String del mom real
      */
     public String getRealName() {
         return realName;
     }
 
     /**
-     * @Finalitat: Definir el nom real del rapero
-     * @Paràmetres: String realName
-     * @Retorn: no
+     * Definir el nom real del rapero
+     * @param realName string del nom real
      */
     public void setRealName(String realName) {
         this.realName = realName;
     }
 
     /**
-     * @Finalitat: Retornar el nom artistic del rapero
-     * @Paràmetres: no
-     * @Retorn: String
+     * Retornar el nom artistic del rapero
+     * @return String del nom artistic
      */
     public String getStageName() {
         return stageName;
     }
 
     /**
-     * @Finalitat: Definir el nom artistic del rapero
-     * @Paràmetres: String stageName
-     * @Retorn: no
+     * Definir el nom artistic del rapero
+     * @param stageName String del nom artistic
      */
     public void setStageName(String stageName) {
         this.stageName = stageName;
     }
 
     /**
-     * @Finalitat: Retornar la data de naixement del rapero
-     * @Paràmetres: no
-     * @Retorn: String
+     * Retornar la data de naixement del rapero
+     * @return String amb la data de naixement
      */
     public String getBirth() {
         return birth;
     }
 
     /**
-     * @Finalitat: Definir la data de naixement del rapero
-     * @Paràmetres: String birth
-     * @Retorn: no
+     * Definir la data de naixement del rapero
+     * @param birth String del naixement
      */
     public void setBirth(String birth) {
         this.birth = birth;
     }
 
     /**
-     * @Finalitat: Retornar la nacionalitat del rapero
-     * @Paràmetres: no
-     * @Retorn: String
+     * Retornar la nacionalitat del rapero
+     * @return String de la nacionalitat
      */
     public String getNationality() {
         return nationality;
     }
 
     /**
-     * @Finalitat: Definir la nacionalitat del rapero
-     * @Paràmetres: String nationality
-     * @Retorn: no
+     * Definir la nacionalitat del rapero
+     * @param nationality String de la nacionalitat
      */
     public void setNationality(String nationality) {
         this.nationality = nationality;
     }
 
     /**
-     * @Finalitat: Retornar el nivell del rapero
-     * @Paràmetres: no
-     * @Retorn: int
+     * Retornar el nivell del rapero
+     * @return int del nivell
      */
     public int getLevel() {
         return level;
     }
 
     /**
-     * @Finalitat: Definir el nivell del rapero
-     * @Paràmetres: int level
-     * @Retorn: no
+     * Definir el nivell del rapero
+     * @param level int del nivell
      */
     public void setLevel(int level) {
         this.level = level;
     }
 
     /**
-     * @Finalitat: Retornar la foto del rapero
-     * @Paràmetres: no
-     * @Retorn: String
+     * Retornar la foto del rapero
+     * @return String del link
      */
     public String getPhoto() {
         return photo;
     }
 
     /**
-     * @Finalitat: Definir la foto del rapero
-     * @Paràmetres: String photo
-     * @Retorn: no
+     * Definir la foto del rapero
+     * @param photo String del link
      */
     public void setPhoto(String photo) {
         this.photo = photo;
     }
 
     /**
-     * @Finalitat: Retornar la puntuacio del rapero
-     * @Paràmetres: no
-     * @Retorn: float
+     * Retornar la puntuacio del rapero
+     * @return float de la puntuacio
      */
     public float getPuntuacio() {
         return puntuacio;
     }
 
     /**
-     * @Finalitat: Definir la puntuacio del rapero
-     * @Paràmetres: float puntuacio
-     * @Retorn: no
+     * Definir la puntuacio del rapero
+     * @param puntuacio float de la puntuacio
      */
     public void setPuntuacio(float puntuacio) {
         this.puntuacio = this.puntuacio + puntuacio;

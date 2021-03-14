@@ -6,7 +6,7 @@ import java.util.*;
 import java.lang.Math;
 
 /**
- * @Finalitat: Classe on es defineixen les variables i s'implementen les funcions relacionades amb les batalles
+ * Classe on es defineixen les variables i s'implementen les funcions relacionades amb les batalles
  */
 public abstract class Batalla {
 
@@ -19,9 +19,9 @@ public abstract class Batalla {
     }
 
     /**
-     * @Finalitat: Funcio que executa tot el procediment de les batalles i assignant la puntuacio als raperos despres de la batalla
-     * @Paràmetres: String usuari, String contrincant
-     * @Retorn: no
+     * Funcio que executa tot el procediment de les batalles i assignant la puntuacio als raperos despres de la batalla
+     * @param usuari nom del usuari
+     * @param contrincant nom del contrincant
      */
     public void startBattle(String usuari, String contrincant) {
         Random random = new Random();
@@ -92,16 +92,16 @@ public abstract class Batalla {
     }
 
     /**
-     * @Finalitat: Definir la funcio calculaPuntuacio per implementar-la en les clases (Acapella, Escrita, Sangre) i retornar el valor
-     * @Paràmetres: int numRimas
-     * @Retorn: float
+     * Definir la funcio calculaPuntuacio per implementar-la en les clases (Acapella, Escrita, Sangre) i retornar el valor
+     * @param numRimas numero de rimes fetes
+     * @return float de la puntuacio
      */
     protected abstract float calculaPuntuacio (int numRimas);
 
     /**
-     * @Finalitat: Calcula el nombre de rimes que hi ha en els versos i els retorna, si l'usuari abans s'ha quedat en blanc posem el numero de rimes a -1
-     * @Paràmetres: String[] rimas
-     * @Retorn: int
+     * Calcula el nombre de rimes que hi ha en els versos i els retorna, si l'usuari abans s'ha quedat en blanc posem el numero de rimes a -1
+     * @param rimas string amb els versos per trobar les rimes
+     * @return int amb el numero de rimes que ha fet
      */
     public int getNumRimas (String[] rimas) {
         LinkedList<String> lettersRimas = new LinkedList<>();
@@ -151,9 +151,12 @@ public abstract class Batalla {
     }
 
     /**
-     * @Finalitat: Agafa la informacio dels raperos i els versos de 'jsonFileCompeticio' i 'jsonFileBatalla' i els mostra per mantalla
-     * @Paràmetres: String usuari, int index, int i, String contrincant
-     * @Retorn: String[]
+     * Agafa la informacio dels raperos i els versos de 'jsonFileCompeticio' i 'jsonFileBatalla' i els mostra per mantalla
+     * @param usuari nom del usuari
+     * @param index index aleatori dels temes
+     * @param i index dels versos
+     * @param contrincant nom del contrincant
+     * @return String[] amb els versos
      */
     public String[] mostraVersosContrincant (String usuari, int index, int i, String contrincant) {
         boolean end = false;
@@ -205,9 +208,9 @@ public abstract class Batalla {
     }
 
     /**
-     * @Finalitat: Demana a l'usuari que teclegi els versos en el teclat per guardar-los i retornar-los
-     * @Paràmetres: String usuari
-     * @Retorn: String[]
+     * Demana a l'usuari que teclegi els versos en el teclat per guardar-los i retornar-los
+     * @param usuari nom del usuari
+     * @return String[] amb els versos
      */
     public String[] demanaVersosUsuari (String usuari) {
         String[] rimas = new String[4];

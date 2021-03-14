@@ -12,7 +12,7 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 /**
- * @Finalitat: Classe on es defineixen les variables on guardarem tota la informacio del fitxer competicio.json
+ * Classe on es defineixen les variables on guardarem tota la informacio del fitxer competicio.json
  */
 public class JsonFileCompeticio {
     private Competicio competition;
@@ -28,36 +28,31 @@ public class JsonFileCompeticio {
     }
 
     /**
-     * @Finalitat: Retorna la competicio amb les seves dades del fitxer competicio.json
-     * @Paràmetres: no
-     * @Retorn: Competicio
+     * Retorna la competicio amb les seves dades del fitxer competicio.json
+     * @return competicio
      */
     public Competicio getCompetition() {
         return competition;
     }
 
     /**
-     * @Finalitat: Retorna els paisos
-     * @Paràmetres: no
-     * @Retorn: LinkedList<String>
+     * Retorna els paisos
+     * @return LinkedList<String>
      */
     public LinkedList<String> getCountries() {
         return countries;
     }
 
     /**
-     * @Finalitat: Retorna els raperos
-     * @Paràmetres: no
-     * @Retorn: LinkedList<Rapero>
+     * Retorna els raperos
+     * @return LinkedList<Rapero>
      */
     public LinkedList<Rapero> getRappers() {
         return rappers;
     }
 
     /**
-     * @Finalitat: Enregistrar l'usuari amb totes les seves dades i comprovar que sigui correctes
-     * @Paràmetres: no
-     * @Retorn: no
+     * Enregistrar l'usuari amb totes les seves dades i comprovar que sigui correctes
      */
     public void registerRapero () {
         Scanner reader = new Scanner(System.in);
@@ -136,9 +131,8 @@ public class JsonFileCompeticio {
     }
 
     /**
-     * @Finalitat: Iniciar sessio del usuari ja existent, comprovar que existeixi i retornar el nom
-     * @Paràmetres: LinkedList<Rapero> raperos
-     * @Retorn: no
+     * Iniciar sessio del usuari ja existent, comprovar que existeixi i retornar el nom
+     * @return String
      */
     public String loginRapero () {
         boolean trobat = false;
@@ -163,9 +157,9 @@ public class JsonFileCompeticio {
     }
 
     /**
-     * @Finalitat: Comprova que la data introduida per l'usuari estigui en el format correcte
-     * @Paràmetres: String dia
-     * @Retorn: boolean
+     * Comprova que la data introduida per l'usuari estigui en el format correcte
+     * @param data data introduida per l'usuari
+     * @return boolean
      */
     public static boolean comprovarData (String data) {
         try {
@@ -179,9 +173,9 @@ public class JsonFileCompeticio {
     }
 
     /**
-     * @Finalitat: Canvia el format de la data del usuari i el retorna
-     * @Paràmetres: String data
-     * @Retorn: String
+     * Canvia el format de la data del usuari i el retorna
+     * @param data data introduida per l'usuari
+     * @return String
      */
     public static String formatData (String data) {
         String birthday = null;
@@ -196,9 +190,8 @@ public class JsonFileCompeticio {
     }
 
     /**
-     * @Finalitat: Comprovem d'on ve l'error de la data introduida
-     * @Paràmetres: String dia
-     * @Retorn: no
+     * Comprovem d'on ve l'error de la data introduida
+     * @param dia data introduida per l'usuari
      */
     public void comprovarErrorData (String dia) {
         int dia2 = Integer.parseInt(dia.split("/")[0]);
@@ -233,6 +226,10 @@ public class JsonFileCompeticio {
         }
     }
 
+    /**
+     * Retorna el WriteJson
+     * @return WriteJson
+     */
     public WriteJson getWriteJson () {
         return writeJson;
     }

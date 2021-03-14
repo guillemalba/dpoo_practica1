@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import java.util.*;
 
 /**
- * @Finalitat: Classe trobem totes les funcions relacionades amb els menus i scans per tractar la informacio introduida per l'usuari
+ * Classe trobem totes les funcions relacionades amb els menus i scans per tractar la informacio introduida per l'usuari
  */
 public class Menu {
     int opcioCompetition = 0;
@@ -19,9 +19,9 @@ public class Menu {
     public Menu () {}
 
     /**
-     * @Finalitat: Mostra les dades de la competicio actual
-     * @Paràmetres: LinkedList<Rapero> raperos, Competicio competicio
-     * @Retorn: no
+     * Mostra les dades de la competicio actual
+     * @param raperos LinkedList<Rapero> dels raperos
+     * @param competicio info de la competicio
      */
     public void showCompeticio (LinkedList<Rapero> raperos, Competicio competicio) {
         LocalDate today = LocalDate.now();
@@ -52,9 +52,9 @@ public class Menu {
     }
 
     /**
-     * @Finalitat: Mostra el menu inicial d'abans d'iniciar la competicio, en el moment que ja ha comencat i un cop hagi acabat, en aquest ultim cas, es mostrara el  nom  del guanyador de la competicio
-     * @Paràmetres: JsonFileWinner jsonFileWinner, String winner
-     * @Retorn: no
+     * Mostra el menu inicial d'abans d'iniciar la competicio, en el moment que ja ha comencat i un cop hagi acabat, en aquest ultim cas, es mostrara el  nom  del guanyador de la competicio
+     * @param jsonFileWinner classe per fer servir el metode i escriure el nom del guanyador
+     * @param winner String amb el nom del guanyador
      */
     public void showMenu (JsonFileWinner jsonFileWinner, String winner) {
         switch (opcioCompetition) {
@@ -80,9 +80,9 @@ public class Menu {
     }
 
     /**
-     * @Finalitat: Guardar la opcio del primer menu abans de la lobby, controlar la informacio i retornar el nom del usuari que jugara
-     * @Paràmetres: LinkedList<Rapero> raperos, LinkedList<String> paisos, Competicio competicio
-     * @Retorn: String
+     * Guardar la opcio del primer menu abans de la lobby, controlar la informacio i retornar el nom del usuari que jugara
+     * @param jsonFileCompeticio Classe del json de la competicio per fer login o registrar el rapero
+     * @return String del nom del usuari
      */
     public String getOption(JsonFileCompeticio jsonFileCompeticio) {
         int opcio = 0;
@@ -115,9 +115,14 @@ public class Menu {
     }
 
     /**
-     * @Finalitat: Mostrar la info de la competicio amb la batalla i la fase actual, la puntuacio i el rival
-     * @Paràmetres: LinkedList<Rapero> raperos, Competicio competicio, String contrincant, int numFase, int numBatalla, int indexUsuari
-     * @Retorn: int
+     * Mostrar la info de la competicio amb la batalla i la fase actual, la puntuacio i el rival
+     * @param raperos LLista de raperos
+     * @param competicio info de la competicio
+     * @param contrincant nom del contrincant
+     * @param numFase index de la fase
+     * @param numBatalla index de la batalla
+     * @param indexUsuari index del usuari
+     * @return int de la opcio
      */
     public int showCompetiStatus(LinkedList<Rapero> raperos, Competicio competicio, String contrincant, int numFase, int numBatalla, int indexUsuari) {
         this.contrincant = contrincant;
@@ -147,9 +152,11 @@ public class Menu {
     }
 
     /**
-     * @Finalitat: Mostrar el guanyador i el menu de la lobby un cop hagi acabat la competicio
-     * @Paràmetres: LinkedList<Rapero> raperos, int guanyador, int indexUsuari
-     * @Retorn: no
+     * Mostrar el guanyador i el menu de la lobby un cop hagi acabat la competicio
+     * @param raperos Llista de raperos
+     * @param guanyador index del guanyador
+     * @param indexUsuari index del usuari
+     * @return int de la opcio
      */
     public int showCompetiAcabada(LinkedList<Rapero> raperos, int guanyador, int indexUsuari) {
         int opcio = 0;
@@ -172,9 +179,8 @@ public class Menu {
     }
 
     /**
-     * @Finalitat: Llegir el valor de la opcio introduida per l'usuari, comprovar errors i retornar el valor
-     * @Paràmetres: no
-     * @Retorn: int
+     * Llegir el valor de la opcio introduida per l'usuari, comprovar errors i retornar el valor
+     * @return int de la opcio
      */
     public int getOptionLobby() {
         int opcio = 0;
@@ -194,18 +200,16 @@ public class Menu {
     }
 
     /**
-     * @Finalitat: Retornar el tipus de batalla (acapella, escrita o sangre)
-     * @Paràmetres: no
-     * @Retorn: String
+     * Retornar el tipus de batalla (acapella, escrita o sangre)
+     * @return String del tipus de batalla (acapella, escrita, sangre)
      */
     public String getTipusBatalla() {
         return tipusBatalla;
     }
 
     /**
-     * @Finalitat: Retornar si la competicio ha de començar, ha començat o ja ha acabat
-     * @Paràmetres: no
-     * @Retorn: int
+     * Retornar si la competicio ha de començar, ha començat o ja ha acabat
+     * @return int de la opcio
      */
     public int getOpcioCompetition() {
         return opcioCompetition;

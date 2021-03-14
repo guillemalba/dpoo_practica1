@@ -6,7 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 
 /**
- * @Finalitat: Classe on es defineixen les variables i funcions que serviran per llegir els fitxers .json
+ * Classe on es defineixen les variables i funcions que serviran per llegir els fitxers .json
  */
 public class ReadJson {
     private Gson g;
@@ -20,9 +20,8 @@ public class ReadJson {
     }
 
     /**
-     * @Finalitat: Llegeix i retorna tot el fitxer de competicio.json
-     * @Paràmetres: no
-     * @Retorn: JsonFileCompeticio
+     * Llegeix i retorna tot el fitxer de competicio.json
+     * @return JsonFileCompeticio
      */
     public JsonFileCompeticio read() {
         JsonFileCompeticio data = null;
@@ -38,9 +37,8 @@ public class ReadJson {
     }
 
     /**
-     * @Finalitat: Llegeix i retorna tot el fitxer de batalles.json
-     * @Paràmetres: no
-     * @Retorn: JsonFileBatalla
+     * Llegeix i retorna tot el fitxer de batalles.json
+     * @return JsonFileBatalla
      */
     public JsonFileBatalla read2() {
         JsonFileBatalla data2 = new JsonFileBatalla();
@@ -56,9 +54,8 @@ public class ReadJson {
     }
 
     /**
-     * @Finalitat: Llegeix i retorna tot el fitxer de winners.json
-     * @Paràmetres: no
-     * @Retorn: JsonFileWinner
+     * Llegeix i retorna tot el fitxer de winners.json
+     * @return JsonFileWinner
      */
     public JsonFileWinner read3() {
         JsonFileWinner data3 = new JsonFileWinner();

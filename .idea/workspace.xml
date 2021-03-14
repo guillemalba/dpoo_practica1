@@ -1,10 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9b5f7e3c-b67c-4926-b27e-fd24f37ff2ce" name="Default Changelist" comment="">
+    <list default="true" id="9b5f7e3c-b67c-4926-b27e-fd24f37ff2ce" name="Default Changelist" comment="- comentaris de funcions arreglats&#10;- ara siiiiiiii que esta acabat (crec 😂)">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/competició.json" beforeDir="false" afterPath="$PROJECT_DIR$/files/competició.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/JsonFileBatalla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/JsonFileBatalla.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/JsonFileCompeticio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/JsonFileCompeticio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/JsonFileWinner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/JsonFileWinner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/ReadJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/ReadJson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/WriteJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/ApiJson/WriteJson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Acapella.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Acapella.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Batalla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Batalla.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Competicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Competicio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Escrita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Escrita.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Fase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Fase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Pais.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Pais.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Rapero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Rapero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Rima.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Rima.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Sangre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Sangre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Logic/Tema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Logic/Tema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/salleurl/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/salleurl/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,18 +62,6 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.salleurl.Main" />
@@ -77,7 +82,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -97,6 +102,7 @@
       <workItem from="1615458457172" duration="3429000" />
       <workItem from="1615648331401" duration="97000" />
       <workItem from="1615648452659" duration="1277000" />
+      <workItem from="1615728675247" duration="4484000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1607792566704</created>
@@ -277,13 +283,12 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
@@ -295,7 +300,8 @@
     <MESSAGE value="get option menu" />
     <MESSAGE value="batalla acabada!!!!!" />
     <MESSAGE value="acabaaaaat" />
-    <option name="LAST_COMMIT_MESSAGE" value="acabaaaaat" />
+    <MESSAGE value="- comentaris de funcions arreglats&#10;- ara siiiiiiii que esta acabat (crec )" />
+    <option name="LAST_COMMIT_MESSAGE" value="- comentaris de funcions arreglats&#10;- ara siiiiiiii que esta acabat (crec )" />
   </component>
   <component name="WindowStateProjectService">
     <state x="474" y="193" key="#Inspections" timestamp="1615647951792">
@@ -314,10 +320,10 @@
       <screen x="0" y="25" width="1680" height="976" />
     </state>
     <state x="602" y="403" width="476" height="222" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.25.1680.976@0.25.1680.976" timestamp="1615461488456" />
-    <state x="410" y="25" key="CommitChangelistDialog2" timestamp="1615646425835">
+    <state x="410" y="25" key="CommitChangelistDialog2" timestamp="1615734075861">
       <screen x="0" y="25" width="1680" height="971" />
     </state>
-    <state x="410" y="25" key="CommitChangelistDialog2/0.25.1680.971@0.25.1680.971" timestamp="1615646425835" />
+    <state x="410" y="25" key="CommitChangelistDialog2/0.25.1680.971@0.25.1680.971" timestamp="1615734075861" />
     <state x="410" y="25" key="CommitChangelistDialog2/0.25.1680.976@0.25.1680.976" timestamp="1615459993669" />
     <state width="1638" height="731" key="GridCell.Tab.0.bottom" timestamp="1615668907191">
       <screen x="0" y="25" width="1680" height="971" />
@@ -351,10 +357,10 @@
       <screen x="0" y="25" width="1680" height="971" />
     </state>
     <state width="1638" height="314" key="GridCell.Tab.1.right/0.25.1680.971@0.25.1680.971" timestamp="1609037072640" />
-    <state x="349" y="145" key="SettingsEditor" timestamp="1615663460896">
+    <state x="349" y="145" key="SettingsEditor" timestamp="1615728696188">
       <screen x="0" y="25" width="1680" height="971" />
     </state>
-    <state x="349" y="145" key="SettingsEditor/0.25.1680.971@0.25.1680.971" timestamp="1615663460896" />
+    <state x="349" y="145" key="SettingsEditor/0.25.1680.971@0.25.1680.971" timestamp="1615728696188" />
     <state x="349" y="146" key="SettingsEditor/0.25.1680.976@0.25.1680.976" timestamp="1615460233345" />
     <state x="440" y="243" key="Vcs.Push.Dialog.v2" timestamp="1615646430524">
       <screen x="0" y="25" width="1680" height="971" />

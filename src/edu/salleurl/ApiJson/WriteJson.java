@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.LinkedList;
 
 /**
- * @Finalitat: Classe amb els metodes els quals fem servir per escrivir en qualsevol fitxer json
+ * Classe amb els metodes els quals fem servir per escrivir en qualsevol fitxer json
  */
 public class WriteJson {
     private boolean escrit = false;
@@ -19,9 +19,14 @@ public class WriteJson {
     }
 
     /**
-     * @Finalitat: Reescriu el fitxer competicio.json per quan haguem d'afegir algun usuari nou
-     * @Paràmetres: String name, String startDate, String endDate, LinkedList<Fase> phases, LinkedList<Rapero> raperos, LinkedList<String> paisos
-     * @Retorn: boolean
+     * Reescriu el fitxer competicio.json per quan haguem d'afegir algun usuari nou
+     * @param name nom de la competicio
+     * @param startDate data inici
+     * @param endDate data final
+     * @param phases llista de les fases
+     * @param raperos llista dels raperos
+     * @param paisos llista dels paisos
+     * @return boolean
      */
     public boolean write (String name, String startDate, String endDate, LinkedList<Fase> phases, LinkedList<Rapero> raperos, LinkedList<String> paisos) {
         JSONArray arrayPhases = new JSONArray();
@@ -31,7 +36,6 @@ public class WriteJson {
             objCountriesPhases.put("country", phases.get(i).getCountry());
             arrayPhases.add(objCountriesPhases);
         }
-
 
         JSONObject objCompetition = new JSONObject();
         objCompetition.put("name", name);
@@ -75,9 +79,9 @@ public class WriteJson {
     }
 
     /**
-     * @Finalitat: Escriure en un fitxer anomenat 'winner.json' el guanyador de la competicio per mostrar-lo un cop s'acabi la competicio i l'usuari pari l'execucio del programma
-     * @Paràmetres: no
-     * @Retorn: no
+     * Escriure en un fitxer anomenat 'winner.json' el guanyador de la competicio per mostrar-lo un cop s'acabi la competicio i l'usuari pari l'execucio del programma
+     * @param jsonFileCompeticio informacio de la competicio
+     * @param guanyador index del rapero guanyador
      */
     public void writeJsonWinner (JsonFileCompeticio jsonFileCompeticio, int guanyador) {
         JSONObject obj = new JSONObject();

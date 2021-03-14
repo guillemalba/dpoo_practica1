@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 
 /**
- * @Finalitat: Classe on es defineixen les variables i s'implementen les funcions relacionades amb la informacio de la competicio i els raperos
+ * Classe on es defineixen les variables i s'implementen les funcions relacionades amb la informacio de la competicio i els raperos
  */
 public class Competicio {
 
@@ -18,36 +18,32 @@ public class Competicio {
     }
 
     /**
-     * @Finalitat: Retornar el nom de la competicio
-     * @Paràmetres: no
-     * @Retorn: String
+     * Retornar el nom de la competicio
+     * @return String amb el nom
      */
     public String getName() {
         return name;
     }
 
     /**
-     * @Finalitat: Retornar la data d'inici de la competicio
-     * @Paràmetres: no
-     * @Retorn: String
+     * Retornar la data d'inici de la competicio
+     * @return String
      */
     public String getStartDate() {
         return startDate;
     }
 
     /**
-     * @Finalitat: Retornar la data final de la competicio
-     * @Paràmetres: no
-     * @Retorn: String
+     * Retornar la data final de la competicio
+     * @return String
      */
     public String getEndDate() {
         return endDate;
     }
 
     /**
-     * @Finalitat: Retornar la informacio de les fases
-     * @Paràmetres: no
-     * @Retorn: LinkedList<Fase>
+     * Retornar la informacio de les fases
+     * @return LinkedList<Fase>
      */
     public LinkedList<Fase> getPhases() {
         return phases;

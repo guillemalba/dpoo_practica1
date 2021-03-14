@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.LinkedList;
 
 /**
- * @Finalitat: Classe on es defineixen les variables i s'implementen les funcions relacionades amb els versos del fitxer batalles.json
+ * Classe on es defineixen les variables i s'implementen les funcions relacionades amb els versos del fitxer batalles.json
  */
 public class Rima {
     @SerializedName("1")
@@ -21,18 +21,16 @@ public class Rima {
     public Rima () {}
 
     /**
-     * @Finalitat: Retornar els versos del 1: del json
-     * @Paràmetres: no
-     * @Retorn: LinkedList<String>
+     * Retornar els versos del 1: del json
+     * @return LinkedList<String>
      */
     public LinkedList<String> get_1() {
         return _1;
     }
 
     /**
-     * @Finalitat: Retornar els versos del 2: del json
-     * @Paràmetres: no
-     * @Retorn: LinkedList<String>
+     * Retornar els versos del 2: del json
+     * @return LinkedList<String>
      */
     public LinkedList<String> get_2() {
         return _2;

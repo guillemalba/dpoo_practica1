@@ -4,7 +4,7 @@ import edu.salleurl.ApiJson.JsonFileBatalla;
 import edu.salleurl.ApiJson.JsonFileCompeticio;
 
 /**
- * @Finalitat: Classe on es defineixen les variables i s'implementen les funcions relacionades amb el tipus de batalla Escrita
+ * Classe on es defineixen les variables i s'implementen les funcions relacionades amb el tipus de batalla Escrita
  */
 public class Escrita extends Batalla{
 
@@ -16,9 +16,9 @@ public class Escrita extends Batalla{
     }
 
     /**
-     * @Finalitat: Calcular la puntuacio de la funcio definida en el Controller, en cas que numero de rimes = -1, vol dir que el contrincant s'ha quedat en blanc i li assignem 0 punts
-     * @Paràmetres: int numRimas
-     * @Retorn: float
+     * Calcular la puntuacio de la funcio definida en el Controller, en cas que numero de rimes = -1, vol dir que el contrincant s'ha quedat en blanc i li assignem 0 punts
+     * @param numRimas numero de rimes fetes
+     * @return float de la puntuacio
      */
     @java.lang.Override
     public float calculaPuntuacio(int numRimas) {

@@ -5,15 +5,13 @@ import edu.salleurl.Logic.Controller;
 
 
 /**
- * @Finalitat: Classe on es fan les crides per a que l'exercici funcioni be
+ * Classe on es fan les crides per a que l'exercici funcioni be
  */
 public class Main {
 
-
     /**
-     * @Finalitat: Procediment principal de l'exercici.
-     * @Paràmetres: String[] args
-     * @Retorn: no
+     * Procediment principal de l'exercici.
+     * @param args .
      */
     public static void main(String[] args) {
         ReadJson readJson = new ReadJson();

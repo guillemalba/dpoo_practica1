@@ -1,25 +1,23 @@
 package edu.salleurl.Logic;
 
 /**
- * @Finalitat: Classe on es defineixen les variables i s'implementen les funcions relacionades amb la fase del fitxer competicio.json
+ * Classe on es defineixen les variables i s'implementen les funcions relacionades amb la fase del fitxer competicio.json
  */
 public class Fase {
     private float budget;
     private String country = null;
 
     /**
-     * @Finalitat: Retornar el pressupost
-     * @Paràmetres: no
-     * @Retorn: float
+     * Retornar el pressupost
+     * @return float del pressupost
      */
     public float getBudget() {
         return budget;
     }
 
     /**
-     * @Finalitat: Retornar el nom del pais
-     * @Paràmetres: no
-     * @Retorn: String
+     * Retornar el nom del pais
+     * @return String del pais
      */
     public String getCountry() {
         return country;

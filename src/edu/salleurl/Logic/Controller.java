@@ -9,9 +9,8 @@ import org.json.simple.JSONObject;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
-
 /**
- * @Finalitat: Aquesta classe es relaciona amb totes les altres classes per tractar de controlar tota la informacio, en aquesta classe tambe s'executa la funcio principal cridada en el Main.
+ * Aquesta classe es relaciona amb totes les altres classes per tractar de controlar tota la informacio, en aquesta classe tambe s'executa la funcio principal cridada en el Main.
  */
 public class Controller {
     private static final float MAX_PUNTUACIO = 25;
@@ -52,9 +51,7 @@ public class Controller {
     }
 
     /**
-     * @Finalitat: Funcio principal del programa que s'executa en el main i controla la resta de funcions perque el programa s'executi correctament
-     * @Paràmetres: no
-     * @Retorn: no
+     * Funcio principal del programa que s'executa en el main i controla la resta de funcions perque el programa s'executi correctament
      */
     public void startProgram() {
         int opcio = 0;
@@ -133,9 +130,7 @@ public class Controller {
     }
 
     /**
-     * @Finalitat: Funcio per simular les batalles de la resta de raperos en el cas de que l'usuari no hi participi
-     * @Paràmetres: no
-     * @Retorn: no
+     * Funcio per simular les batalles de la resta de raperos en el cas de que l'usuari no hi participi
      */
     public void batallaNoUsuari() {
         do {
@@ -158,9 +153,8 @@ public class Controller {
     }
 
     /**
-     * @Finalitat: Funcio a on es decideix que s'ha de fer a partir de la batalla i fase que es trobin
-     * @Paràmetres: String usuari
-     * @Retorn: no
+     *
+     * @param usuari String del usuari
      */
     public void batallaRestaRaperos(String usuari) {
         this.usuari = usuari;
@@ -226,9 +220,8 @@ public class Controller {
     }
 
     /**
-     * @Finalitat: Agafem el index del top 1 i el top 2 i els guardem en un array
-     * @Paràmetres: no
-     * @Retorn: int[] amb el index del top1 i el top2
+     * Agafem el index del top 1 i el top 2 i els guardem en un array
+     * @return int[] amb el index del top1 i el top2
      */
     public int[] getTop1Top2() {
         int top[] = new int[2];
@@ -260,9 +253,10 @@ public class Controller {
     }
 
     /**
-     * @Finalitat: // Funcio que crea un array amb el  index de 2 usuaris i els retorna ordenats aleatoriament
-     * @Paràmetres: int a, int b
-     * @Retorn: int[] amb numeros random
+     * Funcio que crea un array amb el index de 2 usuaris i els retorna ordenats aleatoriament
+     * @param a index rapero a
+     * @param b index rapero b
+     * @return int[] amb els index ordenats aleatoriament
      */
     public static int[] RandomizeArray(int a, int b){
         Random rgen = new Random();
@@ -283,9 +277,7 @@ public class Controller {
     }
 
     /**
-     * @Finalitat: Funcio a on es dona puntuacio a la resta de parelles que es troben en la fase 1 per tal de simular la batalla
-     * @Paràmetres: no
-     * @Retorn: no
+     * Funcio a on es dona puntuacio a la resta de parelles que es troben en la fase 1 per tal de simular la batalla
      */
     public void parellesFase1 () {
         int aux = 0;
@@ -313,9 +305,7 @@ public class Controller {
     }
 
     /**
-     * @Finalitat: Funcio a on es dona puntuacio a la resta de parelles que es troben en la fase 2 per tal de simular la batalla
-     * @Paràmetres: no
-     * @Retorn: no
+     * Funcio a on es dona puntuacio a la resta de parelles que es troben en la fase 2 per tal de simular la batalla
      */
     public void parellesFase2 () {
         int aux = 0;
@@ -357,9 +347,7 @@ public class Controller {
     }
 
     /**
-     * @Finalitat: Funcio a on es guarda els raperos amb la millor puntuacio de la fase 1 per passar en el seguent fase i mirem si l'usuari passa
-     * @Paràmetres: no
-     * @Retorn: no
+     * Funcio a on es guarda els raperos amb la millor puntuacio de la fase 1 per passar en el seguent fase i mirem si l'usuari passa
      */
     public void jugadorGuanyadorBatallaFase1 () {
 
@@ -408,9 +396,7 @@ public class Controller {
     }
 
     /**
-     * @Finalitat: Funcio a on es guarda els dos millors raperos de la fase 2 per passar a la fase final
-     * @Paràmetres: no
-     * @Retorn: no
+     * Funcio a on es guarda els dos millors raperos de la fase 2 per passar a la fase final
      */
     public void jugadorGuanyadorBatallaFase2 () {
 
@@ -446,9 +432,7 @@ public class Controller {
     }
 
     /**
-     * @Finalitat: Mostra per pantalla el ranking actual de la competicio dels patricipants que van guanyant les fases
-     * @Paràmetres: no
-     * @Retorn: no
+     * Mostra per pantalla el ranking actual de la competicio dels patricipants que van guanyant les fases
      */
     public void ranquingCompeticio () {
 
@@ -508,9 +492,7 @@ public class Controller {
     }
 
     /**
-     * @Finalitat: Controla i modifica els index de les batalles i les fases i escrivim en un fitxer winner.json el guanyador
-     * @Paràmetres: no
-     * @Retorn: no
+     * Controla i modifica els index de les batalles i les fases i escrivim en un fitxer winner.json el guanyador
      */
     private void canviarFase () {
         if (jsonFileCompeticio.getCompetition().getPhases().size() == 3) {
@@ -549,9 +531,7 @@ public class Controller {
     }
 
     /**
-     * @Finalitat: Executar la funcio de la batalla 'startBattle' implementada en cada clase de l'herencia de Batalla depenent del tipus de batalla (Acapella, Sangre o Escrita)
-     * @Paràmetres: no
-     * @Retorn: no
+     * Executar la funcio de la batalla 'startBattle' implementada en cada clase de l'herencia de Batalla depenent del tipus de batalla (Acapella, Sangre o Escrita)
      */
     private void batallaUsuari() {
         acapella = new Acapella(jsonFileBatalla, jsonFileCompeticio);
