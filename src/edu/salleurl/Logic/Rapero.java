@@ -1,11 +1,13 @@
 package edu.salleurl.Logic;
 
+import edu.salleurl.profile.Profileable;
+
 import javax.xml.crypto.Data;
 
 /**
  * En aquesta classe es defineixen les variables i s'implementen les funcions relacionades amb la informacio dels raperos
  */
-public class Rapero {
+public class Rapero implements Profileable {
     private String realName = null;
     private String stageName = null;
     private String birth;
@@ -26,7 +28,7 @@ public class Rapero {
 
     /**
      * Retornar el nom real del rapero
-     * @return String del mom real
+     * @return String del nom real
      */
     public String getRealName() {
         return realName;
@@ -134,5 +136,41 @@ public class Rapero {
      */
     public void setPuntuacio(float puntuacio) {
         this.puntuacio = this.puntuacio + puntuacio;
+    }
+
+    /**
+     * Retornar el nom real del rapero
+     * @return el nom real
+     */
+    @Override
+    public String getName() {
+        return realName;
+    }
+
+    /**
+     * Retornar el nom artistic del rapero
+     * @return el nom artistic
+     */
+    @Override
+    public String getNickname() {
+        return stageName;
+    }
+
+    /**
+     * Retornar la data de naixement del rapero
+     * @return la data de naixement
+     */
+    @Override
+    public String getBirthdate() {
+        return birth;
+    }
+
+    /**
+     * Retornar la foto del rapero
+     * @return la url de la imatge
+     */
+    @Override
+    public String getPictureUrl() {
+        return photo;
     }
 }

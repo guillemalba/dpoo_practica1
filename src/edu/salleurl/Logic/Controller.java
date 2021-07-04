@@ -3,10 +3,13 @@ package edu.salleurl.Logic;
 import edu.salleurl.ApiJson.JsonFileBatalla;
 import edu.salleurl.ApiJson.JsonFileCompeticio;
 import edu.salleurl.ApiJson.JsonFileWinner;
+import edu.salleurl.ApiJson.WebService;
 import edu.salleurl.Menu;
+import edu.salleurl.profile.Profile;
+import edu.salleurl.profile.ProfileFactory;
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
 /**
@@ -93,19 +96,27 @@ public class Controller {
                         opcio = 1;
                     }
                     tipusBatalla = menu.getTipusBatalla();
-                    if (opcio == 1) {
-                        if (juga) {
-                            batallaUsuari();
+                    if (opcio == 3) {
+                        System.out.println("Enter the name of the rapper:");
+                        Scanner reader = new Scanner(System.in);
+                        String nom = reader.nextLine();
+                        getInfoCountry(nom);
+                    }
+                    else {
+                        if (opcio == 1) {
+                            if (juga) {
+                                batallaUsuari();
+                            }
+                        }
+                        if (opcio != 2) {
+                            if (numBatalla == 1) {
+                                numBatalla = 2;
+                            } else {
+                                canviarFase();
+                            }
                         }
                     }
-                    if (opcio != 2) {
-                        if (numBatalla == 1) {
-                            numBatalla = 2;
-                        }
-                        else {
-                            canviarFase();
-                        }
-                    }
+
                     tipusBatalla = menu.getTipusBatalla();
                 } while (!acabat && opcio != 4);
 
@@ -153,7 +164,7 @@ public class Controller {
     }
 
     /**
-     *
+     * Funcio on es s'organitzen les batalles
      * @param usuari String del usuari
      */
     public void batallaRestaRaperos(String usuari) {
@@ -548,6 +559,54 @@ public class Controller {
             case "escrita":
                 escrita.startBattle(usuari, contrincant);
                 break;
+        }
+    }
+
+    /**
+     * Funcio on es busca al webService la informacio del pais que forma part el rapero
+     * @param nom String del usuari que es vol buscar el perfil
+     */
+    private void getInfoCountry(String nom) {
+        boolean trobat = false;
+        for (int i = 0; i < jsonFileCompeticio.getRappers().size(); i++) {
+            if (nom.equalsIgnoreCase(jsonFileCompeticio.getRappers().get(i).getStageName()) || nom.equalsIgnoreCase(jsonFileCompeticio.getRappers().get(i).getRealName())) {
+                String country = jsonFileCompeticio.getRappers().get(i).getNationality();
+                System.out.println("Getting information about their country of origin (" + country + ")...");
+                trobat = true;
+                WebService rest = new WebService();
+                JSONArray infoCountry = rest.getCountryInfo(country);
+
+                if (infoCountry != null) {
+                    JSONObject pais = (JSONObject) infoCountry.get(0);
+                    JSONArray allLanguages = (JSONArray) pais.get("languages");
+                    String[] countryLanguages = new String[allLanguages.size()];
+                    for (int j = 0; j < allLanguages.size(); j++) {
+                        JSONObject language = (JSONObject) allLanguages.get(j);
+                        countryLanguages[j] = (String) language.get("name");
+                    }
+                    String flag = (String) pais.get("flag");
+                    String stageName = jsonFileCompeticio.getRappers().get(i).getStageName().replace(" ", "");
+                    String file = stageName + ".html";
+                    Profile perfil = ProfileFactory.createProfile(file, jsonFileCompeticio.getRappers().get(i));
+                    perfil.setCountry(country);
+                    perfil.setFlagUrl(flag);
+                    for (int m = 0; m < countryLanguages.length; m++) {
+                        perfil.addLanguage(countryLanguages[m]);
+                    }
+
+                    try {
+                        System.out.println("Generating HTML file...");
+                        perfil.writeAndOpen();
+                        System.out.println("Done! The profile will open in your default browser.");
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                }
+            }
+        }
+        if (trobat == false) {
+            System.out.println("Yo' bro, there's no " + nom + " in ma' list.\n");
         }
     }
 }
